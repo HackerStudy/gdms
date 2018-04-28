@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <!-- 打开延迟加载开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 把立即加载改为延迟加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 开启驼峰命名转换 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 空值映射开关 -->
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+
+    <!-- 设置别名 -->
+    <typeAliases>
+        <package name="com.gdms"/>
+    </typeAliases>
+
+</configuration>
