@@ -28,6 +28,7 @@ layui.define(['jquery', 'element', 'nprogress', 'utils'], function(exports) {
     };
     Tab.fn = Tab.prototype;
     Tab.fn.set = function(options) {
+        console.log(options);
         var that = this;
         $.extend(true, that.config, options);
         return that;
@@ -51,6 +52,7 @@ layui.define(['jquery', 'element', 'nprogress', 'utils'], function(exports) {
      */
     Tab.fn.tabAdd = function(params) {
         _tab.tabAdd(params);
+        console.log(params);
     };
     /**
      * 关闭一个选项卡

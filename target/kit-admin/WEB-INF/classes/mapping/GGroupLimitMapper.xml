@@ -43,7 +43,7 @@
     RIGHT join kit_g_limit l
     on g.limit_id = l.limit_id
     where g.group_id = #{groupId,jdbcType=INTEGER}
-    ORDER BY l.limit_sequence DESC
+    ORDER BY l.limit_sequence asc
   </select>
 
   <select id="getModelByGroupIdAndLimitId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

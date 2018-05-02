@@ -20,24 +20,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>${kitWeb.kitWebName}管理系统</title>
+    <title>首页 - 长大本科毕业设计过程管理系统</title>
     <link rel="stylesheet" href="<%=basePath%>templates/style/plugins/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>templates/style/plugins/font-awesome/css/font-awesome.min.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>templates/style/build/css/app.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>templates/style/build/css/themes/green.css" media="all">
-    <script>
-        // session 验证
-        var session = "${kitWeb.kitWebName}";
-        if(session==null || session==""){
-            window.location.href='<%=basePath%>'+"user/index";
-        }
-    </script>
+    <%--<script>--%>
+        <%--// session 验证--%>
+        <%--var Usersession="${user.username}"--%>
+        <%--if(Usersession==null ||Usersession==""){--%>
+            <%--window.location.href='<%=basePath%>'+"templates/view/login.jsp";--%>
+        <%--}--%>
+    <%--</script>--%>
 </head>
 
 <body class="kit-theme">
 <div class="layui-layout layui-layout-admin kit-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">${kitWeb.kitWebName}管理系统</div>
+        <div class="layui-logo">长大本科毕业设计过程管理系统</div>
         <div class="layui-logo kit-logo-mobile">系统</div>
         <%--<ul class="layui-nav layui-layout-left kit-nav" kit-one-level>--%>
             <%--<li class="layui-nav-item"><a href="javascript:;">控制台</a></li>--%>
@@ -45,15 +45,30 @@
         <%--</ul>--%>
         <ul class="layui-nav layui-layout-right kit-nav">
             <li class="layui-nav-item">
-                <a href="javascript:;">
-                    <img src="<%=basePath%>${admin.kitAdminImgUrl}" class="layui-nav-img"> ${admin.kitAdminName}
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="javascript:;">查看个人资料</a></dd>
-                    <dd><a href="javascript:;">修改个人资料</a></dd>
-                </dl>
+                    <c:choose><c:when test="${user.identity==1}">
+                                <a href="javascript:;">
+                                    <img src="<%=basePath%>${admin.kitAdminImgUrl}" class="layui-nav-img"> ${admin.kitAdminName}
+                                </a>
+                                <dl class="layui-nav-child">
+                                    <dd><a href="javascript:;">查看个人资料</a></dd>
+                                    <dd><a href="javascript:;">修改个人资料</a></dd>
+                                </dl></c:when><c:when test="${user.identity==2}">
+                                <a href="javascript:;">
+                                    <img src="<%=basePath%>${student.icon}" class="layui-nav-img"> ${student.name}
+                                </a>
+                                <dl class="layui-nav-child">
+                                    <dd><a href="javascript:;">查看个人资料</a></dd>
+                                    <dd><a href="javascript:;">修改个人资料</a></dd>
+                                </dl></c:when><c:otherwise>
+                                <a href="javascript:;">
+                                    <img src="<%=basePath%>${teacher.icon}" class="layui-nav-img"> ${teacher.tname}
+                                </a>
+                                <dl class="layui-nav-child">
+                                    <dd><a href="javascript:;">查看个人资料</a></dd>
+                                    <dd><a href="javascript:;">修改个人资料</a></dd>
+                                </dl></c:otherwise></c:choose>
             </li>
-            <li class="layui-nav-item"><a href="<%=basePath%>admin/uplogin"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
+            <li class="layui-nav-item"><a href="<%=basePath%>uplogin"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
         </ul>
     </div>
 
@@ -102,10 +117,10 @@
 <script src="<%=basePath%>admin/js/getGroup.js"></script>
 <script>
     // 数据存 Cookie
-    var adminid = '${admin.kitAdminId}';
-    var kitWeb = '${kitWeb.kitWebName}';
-    setCookie("adminid",adminid,'m15');
-    setCookie("kitWeb",kitWeb,'m15');
+    <%--var adminid = '${admin.kitAdminId}';--%>
+    <%--var kitWeb = '${kitWeb.kitWebName}';--%>
+    <%--setCookie("adminid",adminid,'m15');--%>
+    <%--setCookie("kitWeb",kitWeb,'m15');--%>
 </script>
 <script>
     var message;

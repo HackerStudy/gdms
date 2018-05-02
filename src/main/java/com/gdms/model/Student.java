@@ -11,26 +11,28 @@ import javax.persistence.Table;
 public class Student {
     @Id
     @GeneratedValue(generator = "UUID")
-    private int sid;
+    private int id;
+    private String sid;
     private String name;
     private String password;
-    private String sex;
-    private String department;
-    private String major;
+    private int sex;
+    private int did;
+    private int mid;
     private String grade;
     private String sclass;
-    private int phone;
+    private String phone;
     private String email;
     private String icon;
     private int adviserid;
     private int replygroupid;
 
-    public Student(String name, String password, String sex, String department, String major, String grade, String sclass, int phone, String email, String icon, int adviserid, int replygroupid) {
+    public Student(String sid, String name, String password, int sex, int did, int mid, String grade, String sclass, String phone, String email, String icon, int adviserid, int replygroupid) {
+        this.sid = sid;
         this.name = name;
         this.password = password;
         this.sex = sex;
-        this.department = department;
-        this.major = major;
+        this.did = did;
+        this.mid = mid;
         this.grade = grade;
         this.sclass = sclass;
         this.phone = phone;
@@ -43,11 +45,19 @@ public class Student {
     public Student() {
     }
 
-    public int getSid() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSid() {
         return sid;
     }
 
-    public void setSid(int sid) {
+    public void setSid(String sid) {
         this.sid = sid;
     }
 
@@ -67,28 +77,28 @@ public class Student {
         this.password = password;
     }
 
-    public String getSex() {
+    public int getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 
-    public String getDepartment() {
-        return department;
+    public int getDid() {
+        return did;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setDid(int did) {
+        this.did = did;
     }
 
-    public String getMajor() {
-        return major;
+    public int getMid() {
+        return mid;
     }
 
-    public void setMajor(String major) {
-        this.major = major;
+    public void setMid(int mid) {
+        this.mid = mid;
     }
 
     public String getGrade() {
@@ -107,11 +117,11 @@ public class Student {
         this.sclass = sclass;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -150,15 +160,16 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "sid=" + sid +
+                "id=" + id +
+                ", sid='" + sid + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                ", sex='" + sex + '\'' +
-                ", department='" + department + '\'' +
-                ", major='" + major + '\'' +
+                ", sex=" + sex +
+                ", did=" + did +
+                ", mid=" + mid +
                 ", grade='" + grade + '\'' +
                 ", sclass='" + sclass + '\'' +
-                ", phone=" + phone +
+                ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", icon='" + icon + '\'' +
                 ", adviserid=" + adviserid +

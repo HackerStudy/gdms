@@ -18,7 +18,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>登录 - 长大本科毕业设计管理系统</title>
+    <title>登录 - 长大本科毕业设计过程管理系统</title>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>templates/style/plugins/layui/css/register-login.css">
 </head>
@@ -26,12 +26,12 @@
 <div id="box"></div>
 <div class="cent-box">
     <div class="cent-box-header">
-        <h1 class="main-title" style="width: 300px">${kitWeb.kitWebName}</h1>
+        <h1 class="main-title" style="width: 300px">长大本科毕业设计过程</h1>
         <h2 class="sub-title"> 管理系统</h2>
     </div>
 
     <div class="cont-main clearfix">
-        <form class="login form" action="<%=basePath%>admin/tologin" method="post">
+        <form class="login form" action="<%=basePath%>login" method="post">
             <div class="group">
                 <div class="group-ipt email">
                     <input type="text" name="username" id="email" class="ipt" placeholder="请输入您的账号" required>
@@ -41,10 +41,11 @@
                 </div>
             </div>
             <div class="firstselect" style="text-align: center;">
-                <select name="identity" class="selectpicker" style="width:130px; height: 34px; margin:12px auto;border-radius: 6px; outline:none; font-size:14px">
-                    <option value='1' selected="selected">学生</option>
-                    <option value='2'>老师</option>
-                    <option value='3'>管理员</option>
+                <select name="identityid" class="selectpicker" style="width:130px; height: 34px; margin:12px auto;border-radius: 6px; outline:none; font-size:14px">
+                    <option value='2' selected="selected">学生</option>
+                    <option value='3'>指导老师</option>
+                    <option value='4'>答辩老师</option>
+                    <option value='1'>管理员</option>
                 </select>
             </div>
             <!-- <div class=" verify">

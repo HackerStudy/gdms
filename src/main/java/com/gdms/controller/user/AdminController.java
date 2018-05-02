@@ -80,7 +80,7 @@ public class AdminController {
         // 取值
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        int identity=Integer.valueOf(request.getParameter("identity"));
+        int identity=Integer.valueOf(request.getParameter("identityid"));
         // 组装对象
         Admin admin = new Admin();
         admin.setKitAdminUsername(username);

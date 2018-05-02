@@ -75,7 +75,7 @@ public class MenuGroupLimitController {
         GLimit gLimit = new GLimit();
         gLimit.setLimitLeaderid(0);
         List<GLimit> limits = gLimitService.queryListByWhere(gLimit);
-        mv.setViewName("/user/menu/add");
+        mv.setViewName("/view/menu/add");
         mv.addObject("kitList",limits);
         return mv;
     }

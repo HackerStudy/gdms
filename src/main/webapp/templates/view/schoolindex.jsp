@@ -15,6 +15,8 @@
     <title>首页</title>
     <link rel="stylesheet" href="../templates/style/plugins/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="../templates/style/plugins/font-awesome/css/font-awesome.min.css" media="all">
+    <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
+    <script src="<%=basePath%>templates/style/plugins/layui/jquery-3.3.1.min.js"></script>
     <style>
         .info-box {
             height: 85px;
@@ -83,7 +85,7 @@
                         <h3 class="layui-timeline-title">毕设公告</h3>
                         <ul>
                             <li>
-                                <a href="javascript:;" kit-target data-options="{url:'www.baidu.com',icon:'',title:'毕设公告',id:'9'}">长沙学院大四毕业生毕业设计选题通知</a>
+                                <a href="javascript:;" onClick="openA('毕设公告','http://www.baidu.com')">长沙学院大四毕业生毕业设计选题通知</a>
                             </li>
                             <li>
                                 <a href="http://www.baidu.com" target="_blank">长沙学院大四毕业生毕业设计指导老师选择通知</a>
@@ -145,10 +147,12 @@
         </div>
     </div>
 </div>
-<script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
-<script src="<%=basePath%>admin/js/getGroup.js"></script>
-<script src="../templates/style/plugins/layui/layui.js"></script>
 <script>
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        layer.message('Hello');
+    });
+
     layui.use('jquery', function() {
         var $ = layui.jquery;
         $('#test').on('click', function() {
@@ -157,31 +161,30 @@
             });
         });
     });
-</script>
-<script>
-    var message;
-    layui.config({
-        base: '<%=basePath%>templates/style/build/js/'
-    }).use(['app', 'message'], function() {
-        var app = layui.app,
-            $ = layui.jquery,
-            layer = layui.layer;
-        //将message设置为全局以便子页面调用
-        message = layui.message;
-        //主入口
-        app.set({
-            type: 'iframe'
-        }).init();
-        $('#pay').on('click', function() {
-            layer.open({
-                title: false,
-                type: 1,
-                content: '<img src="<%=basePath%>templates/style/build/images/pay.png" />',
-                area: ['500px', '250px'],
-                shadeClose: true
-            });
-        });
+
+    layui.use('layer', function() { //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        //触发事件
+        window.active = {
+            aOpen: function (title,url) {
+                console.log('url:' + url);
+                var index = layer.open({
+                    type: 2,
+                    title:title,
+                    content: url,
+                    area: ['600px','450px'],
+                    maxmin: true
+                });
+                layer.full(index);
+            }
+        }
     });
+
+    function openA(title,url) {
+        //弹出即全屏
+       active.aOpen(title,url);
+    }
+
 </script>
 </body>
 

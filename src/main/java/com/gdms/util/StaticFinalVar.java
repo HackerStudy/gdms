@@ -19,7 +19,7 @@ public class StaticFinalVar {
     public static final String PARAMETER_ERR = "缺少参数";
     public static final String SERVICE_ERR = "服务器端错误";
 
-    public static final String USERNAME_OR_PWD_ERR = "用户名或者密码错误";
+    public static final String USERNAME_OR_PWD_ERR = "用户名、密码或者身份错误";
     public static final String ADD_OK = "添加成功";
     public static final String ADD_ERR = "添加失败，请稍后再试";
     public static final String DEL_OK = "删除成功";

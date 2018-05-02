@@ -1,54 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gdms.dao.UserMapper" >
-    <resultMap id="StudentMap" type="student" >
-        <id column="sid" property="sid" jdbcType="INTEGER" />
+    <resultMap id="StudentMap" type="Student" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="sid" property="sid" jdbcType="VARCHAR" />
         <result column="name" property="name" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
-        <result column="sex" property="sex" jdbcType="VARCHAR"/>
-        <result column="department" property="department" jdbcType="VARCHAR" />
-        <result column="major" property="major" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="INTEGER"/>
+        <result column="did" property="did" jdbcType="INTEGER" />
+        <result column="mid" property="mid" jdbcType="INTEGER" />
         <result column="grade" property="grade" jdbcType="VARCHAR" />
         <result column="sclass" property="sclass" jdbcType="VARCHAR" />
-        <result column="phone" property="phone" jdbcType="INTEGER" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
         <result column="icon" property="icon" jdbcType="VARCHAR" />
         <result column="adviserid" property="adviserid" jdbcType="INTEGER" />
         <result column="replygroupid" property="replygroupid" jdbcType="INTEGER" />
     </resultMap>
 
-    <!--<resultMap id="teacherMap" type="teacher" >-->
-        <!--<id column="sid" property="sid" jdbcType="INTEGER" />-->
-        <!--<result column="name" property="name" jdbcType="VARCHAR" />-->
-        <!--<result column="password" property="password" jdbcType="VARCHAR" />-->
-        <!--<result column="sex" property="sex" jdbcType="VARCHAR"/>-->
-        <!--<result column="department" property="department" jdbcType="VARCHAR" />-->
-        <!--<result column="major" property="major" jdbcType="VARCHAR" />-->
-        <!--<result column="grade" property="grade" jdbcType="VARCHAR" />-->
-        <!--<result column="sclass" property="sclass" jdbcType="VARCHAR" />-->
-        <!--<result column="phone" property="phone" jdbcType="INTEGER" />-->
-        <!--<result column="email" property="email" jdbcType="VARCHAR" />-->
-        <!--<result column="icon" property="icon" jdbcType="VARCHAR" />-->
-        <!--<result column="adviserid" property="adviserid" jdbcType="INTEGER" />-->
-        <!--<result column="replygroupid" property="replygroupid" jdbcType="INTEGER" />-->
-    <!--</resultMap>-->
+    <resultMap id="TeacherMap" type="Teacher" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="tid" property="tid" jdbcType="VARCHAR" />
+        <result column="tname" property="tname" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="INTEGER"/>
+        <result column="work_time" property="work_time" jdbcType="VARCHAR" />
+        <result column="hdegree" property="hdegree" jdbcType="VARCHAR" />
+        <result column="teaching_direction" property="teaching_direction" jdbcType="VARCHAR" />
+        <result column="position" property="position" jdbcType="VARCHAR" />
+        <result column="icon" property="icon" jdbcType="VARCHAR" />
+        <result column="did" property="did" jdbcType="INTEGER" />
+        <result column="mid" property="mid" jdbcType="INTEGER" />
+        <result column="identity_id" property="identity_id" jdbcType="INTEGER" />
+    </resultMap>
 
     <sql id="student_List" >
-      sid,name,password,sex,department,major,grade,sclass,phone,email,icon,adviserid,replygroupid
+      id,sid,name,password,sex,did,mid,grade,sclass,phone,email,icon,adviserid,replygroupid
     </sql>
 
-    <!--<sql id="teacher_List" >-->
-        <!--sid,name,password,sex,department,major,grade,sclass,phone,email,icon,adviserid,replygroupid-->
-    <!--</sql>-->
+    <sql id="teacher_List" >
+        id,tid,tname,password,sex,work_time,hdegree,teaching_direction,position,icon,did,mid,identity_id
+    </sql>
 
-    <!--&lt;!&ndash;根据用户名密码查询用户，用于登陆&ndash;&gt;-->
-    <!--<select id="getModelByUsernameAndPassword" resultMap="BaseResultMap" parameterType="com.gdms.model.Admin" >-->
-        <!--select-->
-        <!--<include refid="Base_Column_List" />-->
-        <!--from kit_admin-->
-        <!--where kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR} and kit_admin_password = #{kitAdminPassword,jdbcType=VARCHAR}-->
-    <!--</select>-->
+    <!--根据用户名查询用户，用于登陆-->
+    <select id="selectStudentByid" resultType="Student" parameterType="String" >
+        select
+        <include refid="student_List" />
+        from student
+        where sid = #{username,jdbcType=VARCHAR}
+    </select>
 
+    <select id="selectTeacherById" resultType="Teacher" parameterType="String" >
+        select
+        <include refid="teacher_List" />
+        from teacher
+        where tid = #{username,jdbcType=VARCHAR}
+    </select>
+
+    <select id="findIdentityByTid" resultType="Integer" parameterType="String" >
+        select
+        identity_id
+        from teacher
+        where tid = #{username,jdbcType=VARCHAR}
+    </select>
     <!--&lt;!&ndash;根据用户的姓名查询用户，用于登陆&ndash;&gt;-->
     <!--<select id="selectUserByUsername" resultType="com.gdms.model.Admin" parameterType="java.lang.String" >-->
         <!--select * from kit_admin where kit_admin_username = #{username,jdbcType=VARCHAR}-->

@@ -76,7 +76,7 @@
             <%--<td>15664161151</td>--%>
             <%--<td>179111651161@qq.com</td>--%>
             <td>
-                <button class="layui-btn layui-btn-sm layui-btn-warm" onClick="look(this,'')"><i class="layui-icon">&#xe621;</i>查看</button>
+                <button class="layui-btn layui-btn-sm layui-btn-warm" onClick="look(this)"><i class="layui-icon">&#xe621;</i>查看</button>
                 <button class="layui-btn layui-btn-sm layui-btn-normal" onClick="update(this,'')"><i class="layui-icon">&#xe642;</i> 编辑</button>
                 <button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this,'')"><i class="layui-icon">&#xe640;</i> 删除</button>
             </td>
@@ -144,6 +144,8 @@
         });
         parent.layer.iframeAuto(index);
     };
+
+
 
 </script>
 

@@ -29,11 +29,11 @@
     <!--<mvc:interceptors>-->
         <!--<mvc:interceptor>-->
             <!--&lt;!&ndash;默认拦截的连接&ndash;&gt;-->
-            <!--<mvc:mapping path="/**"/>-->
+            <!--<mvc:mapping path="**/index.jsp"/>-->
             <!--&lt;!&ndash;不拦截的连接&ndash;&gt;-->
-            <!--<mvc:exclude-mapping path="/api**/**"/>-->
-            <!--<mvc:exclude-mapping path="/user/**"/>-->
-            <!--<bean class="cc.openkit.user.interceptor.CommonInterceptor"></bean>-->
+            <!--<mvc:exclude-mapping path="**/login.jsp"/>-->
+            <!--&lt;!&ndash;<mvc:exclude-mapping path="/user/**"/>&ndash;&gt;-->
+            <!--<bean class="com.gdms.interceptor.CommonInterceptor"></bean>-->
         <!--</mvc:interceptor>-->
     <!--</mvc:interceptors>-->
 

@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 鹏
+  Date: 2018/4/26
+  Time: 16:21
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -5,153 +12,163 @@
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>用户管理</title>
+    <title>管理员信息管理</title>
     <link rel="stylesheet" href="<%=basePath%>templates/style/plugins/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>templates/style/build/css/doc.css" media="all">
     <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
     <script src="<%=basePath%>templates/style/plugins/layui/jquery-3.3.1.min.js"></script>
+    <script src="<%=basePath%>templates/admin/js/getGroup.js"></script>
 </head>
-
 <body>
-    <div class="kit-doc">
-        <!--这里写页面的代码-->
-        <blockquote class="layui-elem-quote">这里的用户是后台登录的用户，不是前台注册的用户</blockquote>
-        <div class="kit-doc-title">
-            <fieldset>
-                <legend><a name="blockquote">用户列表</a></legend>
-            </fieldset>
+<div class="kit-doc">
+    <!--这里写页面的代码-->
+    <blockquote class="layui-elem-quote">这是关于管理员的信息管理页面</blockquote>
+    <div class="kit-doc-title">
+        <fieldset>
+            <legend><a name="blockquote">管理员信息管理</a></legend>
+        </fieldset>
+    </div>
+    <div>
+        <button class="layui-btn" id="add">添加</button>
+        <div class="layui-inline" style="float: right">
+        <div class="layui-input-inline">
+        <input name="selectbysid" lay-verify="required|phone" autocomplete="off" class="layui-input" type="tel">
         </div>
-        <div>
-            <c:if test="${kitG.groupC==1}"><button class="layui-btn" id="add">添加</button></c:if>
-            <div class="layui-inline" style="float: right">
-                <div class="layui-input-inline">
-                    <input name="search" id="search" lay-verify="required" autocomplete="off" class="layui-input" type="text">
-                </div>
-                <button class="layui-btn layui-btn-primary" onclick="search()">搜索</button>
-            </div>
-                
-            <div style="clear:both;"></div>
-
-            <table class="layui-hide" id="test" lay-filter="demo"></table>
-
-            <script type="text/html" id="indexTpl">
-                {{d.LAY_TABLE_INDEX+1}}
-            </script>
-
-            <script type="text/html" id="barDemo">
-                <c:if test="${kitG.groupU==1}"><button class="layui-btn layui-btn-xs" lay-event="edit">编辑</button></c:if>
-                {{#  if(d.kitAdminId != 1){ }}
-                    <c:if test="${kitG.groupR==1}"><button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button></c:if>
-                {{#  } }}
-            </script>
+        <button class="layui-btn layui-btn-primary">搜索</button>
         </div>
-        <!--这里写页面的代码-->
     </div>
 
-    <script>
-        // 添加
-        layui.use(['jquery', 'layer', 'table'], function () {
-            var table = layui.table;
-            //让层自适应iframe
-            $('#add').on('click', function(){
-                var index = layer.open({
-                    type: 2,
-                    content: '<%=basePath%>admin/goAdd',
-                    area: ['400px', '570px'],
-                    maxmin: true,
-                    end: function () {
-                        location.reload();
-                    }
-                });
-                parent.layer.iframeAuto(index);
-            });
-        });
+    <table class="layui-table" lay-filter="kittable">
+        <colgroup>
+            <col width="40">
+            <col width="80">
+            <col width="60">
+            <col width="200">
+            <col>
+            <col width="70">
+        </colgroup>
+        <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>院部</th>
+            <th>专业</th>
+            <th>年级</th>
+            <th>班级</th>
+            <%--<th>联系电话</th>--%>
+            <%--<th>邮箱</th>--%>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>B20140304689</td>
+            <td>老王</td>
+            <td>男</td>
+            <td>计算机工程与应用数学学院</td>
+            <td>软件工程</td>
+            <td>14级</td>
+            <td>软件开发1班</td>
+            <%--<td>15664161151</td>--%>
+            <%--<td>179111651161@qq.com</td>--%>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-warm" onClick="look(this,'1')"><i class="layui-icon">&#xe621;</i>查看</button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal" onClick="update(this)"><i class="layui-icon">&#xe642;</i> 编辑</button>
+                <button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this,'1')"><i class="layui-icon">&#xe640;</i> 删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--这里写页面的代码-->
+</div>
 
-        // 渲染数据
-        layui.use('table', function(){
-            var table = layui.table;
-            var search = $('#search').val();
+<script>
 
-            table.render({
-                elem: '#test'
-                ,url:'<%=basePath%>user/getAllJson'
-                ,where: {search: search}
-                ,method: 'post'
-                ,page: {layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']}
-                ,cols: [[
-                    {field:'',align:'center', width:70,  title: '序号', toolbar: '#indexTpl'}
-                    ,{field:'kitAdminName', title: '管理员名字'}
-                    ,{field:'kitAdminUsername', title: '登录名'}
-                    ,{field:'groupName', title: '所属分组'}
-                    ,{field:'right',align:'center', width:150, toolbar: '#barDemo', title: '操作'}
-                ]]
+    layui.config({
+        base: '<%=basePath%>templates/style/build/js/'
+    })
 
-            });
+    layui.use(['jquery', 'layer', 'table'], function () {
 
-            //监听工具条
-            table.on('tool(demo)', function(obj){
-                var data = obj.data;
-                if(obj.event === 'edit'){
-                    // 编辑
-                    var index = layer.open({
-                        type: 2,
-                        content: '<%=basePath%>user/goUpdate?id='+data.kitAdminId,
-                        area: ['400px', '570px'],
-                        maxmin: true,
-                        end: function () {
-                            location.reload();
-                        }
-                    });
-                    parent.layer.iframeAuto(index);
+        var table = layui.table;
 
-                } else if(obj.event === 'del'){
-                    layer.confirm('真的要删除么？', function(index){
-                        // 写删除方法
-                        $.post("<%=basePath%>user/del", {"id": data.kitAdminId}, function (data) {
-                            if (data.code == "200") {
-                                layer.msg(data.msg, {icon: 1, time: 1000});
-                                // 前端修改
-                                layer.close(index);
-                                window.location.reload();
-                            } else {
-                                layer.msg(data.msg, {icon: 0, time: 1000});
-                                layer.close(index);
-                            }
-                        });
-                    });
+        //让层自适应iframe
+        $('#add').on('click', function(){
+            var index = layer.open({
+                type: 2,
+                title:'添加学生',
+                content: '<%=basePath%>user/addStudent',
+                area: ['600px', '450px'],
+                maxmin: true,
+                end: function () {
+                    location.reload();
                 }
             });
+            parent.layer.iframeAuto(index);
         });
-        function search(){
-            var table = layui.table;
-            var search = $('#search').val();
+    });
 
-            table.render({
-                elem: '#test'
-                ,url:'<%=basePath%>user/getAllJson'
-                ,where: {search: search}
-                ,method: 'post'
-                ,page: {layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']}
-                ,cols: [[
-                    {field:'left',align:'center', width:140,  title: '序号', toolbar: '#indexTpl'}
-                    ,{field:'kitAdminName', title: '管理员名字'}
-                    ,{field:'kitAdminUsername', title: '登录名'}
-                    ,{field:'groupName', title: '所属分组'}
-                    ,{field:'right',align:'center', width:150, toolbar: '#barDemo', title: '操作'}
-                ]]
 
+    // 删除
+    function del(obj,id){
+        //询问框
+        layer.confirm('真的要删除么？', {
+            btn: ['确定','取消'], //按钮
+            end: function () {
+                location.reload();
+            }
+        }, function(){
+            $.post("<%=basePath%>user/delStudent",{'id':id},function(data){
+                // 获取 session
+                if(data.code!=200){
+                    layer.msg(data.msg, {icon: 5});
+                }
+                if(data.code==200){
+                    layer.msg(data.msg, {icon: 6});
+                }
+                parent.layer.iframeAuto(index);
             });
-        }
+        }, function(){
+        });
+    };
 
-    </script>
+    // 修改
+    function update(obj){
+        var index = layer.open({
+            type: 2,
+            title:'修改学生信息',
+            content: '<%=basePath%>user/updatestudent',
+            area: ['600px', '450px'],
+            maxmin: true,
+            end: function () {
+                location.reload();
+            }
+        });
+        parent.layer.iframeAuto(index);
+    };
+
+    function look(obj,sid){
+        var index = layer.open({
+            type: 2,
+            title:'查看学生信息',
+            content: '<%=basePath%>user/lookstudent?sid='+sid,
+            area: ['600px', '450px'],
+            maxmin: true,
+            end: function () {
+                location.reload();
+            }
+        });
+        parent.layer.iframeAuto(index);
+    };
+
+
+</script>
 
 </body>
-
 </html>

@@ -27,6 +27,7 @@ layui.define(['jquery', 'element', 'nprogress', 'utils'], function(exports) {
     };
     Tab.fn = Tab.prototype;
     Tab.fn.set = function(options) {
+        console.log("你好");
         var that = this;
         $.extend(true, that.config, options);
         return that;
@@ -49,6 +50,7 @@ layui.define(['jquery', 'element', 'nprogress', 'utils'], function(exports) {
      * 添加一个选项卡
      */
     Tab.fn.tabAdd = function(params) {
+        console.log("你好");
         _tab.tabAdd(params);
     };
     /**

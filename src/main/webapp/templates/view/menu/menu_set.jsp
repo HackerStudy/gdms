@@ -119,7 +119,7 @@
                 var index = layer.open({
                     type: 2,
                     content: '<%=basePath%>gLimit/goAdd',
-                    area: ['800px', '600px'],
+                    area: ['600px', '450px'],
                     maxmin: true,
                     end: function () {
                         location.reload();

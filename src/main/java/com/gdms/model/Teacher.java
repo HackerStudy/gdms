@@ -7,46 +7,53 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Component("teacher")
-@Table(name="teacher")
 public class Teacher {
-    @Id
-    @GeneratedValue(generator = "UUID")
-    private int tid;
+    private int id;
+    private String tid;
     private String tname;
     private String password;
-    private String sex;
+    private int sex;
     private String work_time;
     private String hdegree;
-    private String thesis;
+    private String teaching_direction;
     private String position;
     private String icon;
-    private String belong_department;
-    private String belong_major;
-    private String identity_id;
+    private int did;
+    private int mid;
+    private int identity_id;
 
-    public Teacher(int tid, String tname, String password, String sex, String work_time, String hdegree, String thesis, String position, String icon, String belong_department, String belong_major, String identity_id) {
+    public Teacher(int id, String tid, String tname, String password, int sex, String work_time, String hdegree, String teaching_direction, String position, String icon, int did, int mid, int identity_id) {
+        this.id = id;
         this.tid = tid;
         this.tname = tname;
         this.password = password;
         this.sex = sex;
         this.work_time = work_time;
         this.hdegree = hdegree;
-        this.thesis = thesis;
+        this.teaching_direction = teaching_direction;
         this.position = position;
         this.icon = icon;
-        this.belong_department = belong_department;
-        this.belong_major = belong_major;
+        this.did = did;
+        this.mid = mid;
         this.identity_id = identity_id;
     }
 
     public Teacher() {
     }
 
-    public int getTid() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTid() {
         return tid;
     }
 
-    public void setTid(int tid) {
+    public void setTid(String tid) {
         this.tid = tid;
     }
 
@@ -66,11 +73,11 @@ public class Teacher {
         this.password = password;
     }
 
-    public String getSex() {
+    public int getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 
@@ -90,12 +97,12 @@ public class Teacher {
         this.hdegree = hdegree;
     }
 
-    public String getThesis() {
-        return thesis;
+    public String getTeaching_direction() {
+        return teaching_direction;
     }
 
-    public void setThesis(String thesis) {
-        this.thesis = thesis;
+    public void setTeaching_direction(String teaching_direction) {
+        this.teaching_direction = teaching_direction;
     }
 
     public String getPosition() {
@@ -114,45 +121,46 @@ public class Teacher {
         this.icon = icon;
     }
 
-    public String getBelong_department() {
-        return belong_department;
+    public int getDid() {
+        return did;
     }
 
-    public void setBelong_department(String belong_department) {
-        this.belong_department = belong_department;
+    public void setDid(int did) {
+        this.did = did;
     }
 
-    public String getBelong_major() {
-        return belong_major;
+    public int getMid() {
+        return mid;
     }
 
-    public void setBelong_major(String belong_major) {
-        this.belong_major = belong_major;
+    public void setMid(int mid) {
+        this.mid = mid;
     }
 
-    public String getIdentity_id() {
+    public int getIdentity_id() {
         return identity_id;
     }
 
-    public void setIdentity_id(String identity_id) {
+    public void setIdentity_id(int identity_id) {
         this.identity_id = identity_id;
     }
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "tid=" + tid +
+                "id=" + id +
+                ", tid='" + tid + '\'' +
                 ", tname='" + tname + '\'' +
                 ", password='" + password + '\'' +
-                ", sex='" + sex + '\'' +
+                ", sex=" + sex +
                 ", work_time='" + work_time + '\'' +
                 ", hdegree='" + hdegree + '\'' +
-                ", thesis='" + thesis + '\'' +
+                ", teaching_direction='" + teaching_direction + '\'' +
                 ", position='" + position + '\'' +
                 ", icon='" + icon + '\'' +
-                ", belong_department='" + belong_department + '\'' +
-                ", belong_major='" + belong_major + '\'' +
-                ", identity_id='" + identity_id + '\'' +
+                ", did=" + did +
+                ", mid=" + mid +
+                ", identity_id=" + identity_id +
                 '}';
     }
 }

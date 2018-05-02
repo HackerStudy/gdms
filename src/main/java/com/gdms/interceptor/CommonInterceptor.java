@@ -1,5 +1,6 @@
 package com.gdms.interceptor;
 
+import com.gdms.model.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,26 +28,19 @@ public class CommonInterceptor implements HandlerInterceptor{
      * @throws Exception
      */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("TestInterceptor......preHandle");
-
-        //return false表示拦截，不向下执行
-        //return true表示放行
-        // 获取用户的ID
-
-//        HttpSession session = request.getSession();
-//        String adminid = request.getParameter("adminid");
-//        String kitWeb = request.getParameter("kitWeb");
-//        String actionid = request.getParameter("actionid");
-
-        if(false){ // 如果为空 拦截  跳转登录
+        User user=(User)request.getSession().getAttribute("user");
+        if(user.getUsername()==null||user.getUsername().equals("")){ // 如果为空 拦截  跳转登录
+            System.out.println("登录拦截");
+            response.sendRedirect(request.getContextPath()+"/view/login");
             return false;
+        }else{
+            // 如果用户 ID 不为空
+            // 利用用户的id查找用户的 groupid
+            // 获取前台传来的 limitID
+            // 通过 limitid and groupid 查找 up_g_group_limit 表
+            // 如果可以找到返回true，否则返回false
+            return true;
         }
-        // 如果用户 ID 不为空
-        // 利用用户的id查找用户的 groupid
-        // 获取前台传来的 limitID
-        // 通过 limitid and groupid 查找 up_g_group_limit 表
-        // 如果可以找到返回true，否则返回false
-        return true;
     }
 
     /**

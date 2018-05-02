@@ -37,7 +37,7 @@
         <button class="layui-btn" id="add">添加</button>
         <%--<div class="layui-inline" style="float: right">--%>
         <%--<div class="layui-input-inline">--%>
-        <%--<input name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input" type="tel">--%>
+        <%--<input name="selectbysid" lay-verify="required|phone" autocomplete="off" class="layui-input" type="tel">--%>
         <%--</div>--%>
         <%--<button class="layui-btn layui-btn-primary">搜索</button>--%>
         <%--</div>--%>
@@ -78,32 +78,22 @@
                     <%--<td>15664161151</td>--%>
                     <%--<td>179111651161@qq.com</td>--%>
                     <td>
-                        <button class="layui-btn layui-btn-sm layui-btn-warm" onClick="look(this)"><i class="layui-icon">&#xe621;</i>查看</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-warm" onClick="look(this,'1')"><i class="layui-icon">&#xe621;</i>查看</button>
                     <button class="layui-btn layui-btn-sm layui-btn-normal" onClick="update(this)"><i class="layui-icon">&#xe642;</i> 编辑</button>
-                    <button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this)"><i class="layui-icon">&#xe640;</i> 删除</button>
+                    <button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this,'1')"><i class="layui-icon">&#xe640;</i> 删除</button>
                     </td>
                 </tr>
-                <%--<tr>--%>
-                    <%--<td>B20140304689</td>--%>
-                    <%--<td>老王</td>--%>
-                    <%--<td>男</td>--%>
-                    <%--<td>计算机工程与应用数学学院</td>--%>
-                    <%--<td>软件工程</td>--%>
-                    <%--<td>14级</td>--%>
-                    <%--<td>软件开发1班</td>--%>
-                    <%--<td>15664161151</td>--%>
-                    <%--<td>179111651161@qq.com</td>--%>
-                    <%--<td>--%>
-                        <%--<button class="layui-btn layui-btn-sm layui-btn-normal" onClick="update(this,'')"><i class="layui-icon">&#xe642;</i> 编辑</button>--%>
-                        <%--<button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this,'')"><i class="layui-icon">&#xe640;</i> 删除</button>--%>
-                    <%--</td>--%>
-                <%--</tr>--%>
         </tbody>
     </table>
     <!--这里写页面的代码-->
 </div>
 
 <script>
+
+    layui.config({
+        base: '<%=basePath%>templates/style/build/js/'
+    })
+
     layui.use(['jquery', 'layer', 'table'], function () {
 
         var table = layui.table;
@@ -113,7 +103,7 @@
             var index = layer.open({
                 type: 2,
                 title:'添加学生',
-                content: '<%=basePath%>user/addstudent',
+                content: '<%=basePath%>user/addStudent',
                 area: ['600px', '450px'],
                 maxmin: true,
                 end: function () {
@@ -134,7 +124,7 @@
                 location.reload();
             }
         }, function(){
-            $.post("<%=basePath%>gLimit/del",{'id':id},function(data){
+            $.post("<%=basePath%>user/delStudent",{'id':id},function(data){
                 // 获取 session
                 if(data.code!=200){
                     layer.msg(data.msg, {icon: 5});
@@ -149,11 +139,12 @@
     };
 
     // 修改
-    function update(obj,id){
+    function update(obj){
         var index = layer.open({
             type: 2,
-            content: '<%=basePath%>gLimit/goUpdate?id='+id,
-            area: ['800px', '600px'],
+            title:'修改学生信息',
+            content: '<%=basePath%>user/updatestudent',
+            area: ['600px', '450px'],
             maxmin: true,
             end: function () {
                 location.reload();
@@ -161,6 +152,21 @@
         });
         parent.layer.iframeAuto(index);
     };
+
+    function look(obj,sid){
+        var index = layer.open({
+            type: 2,
+            title:'查看学生信息',
+            content: '<%=basePath%>user/lookstudent?sid='+sid,
+            area: ['600px', '450px'],
+            maxmin: true,
+            end: function () {
+                location.reload();
+            }
+        });
+        parent.layer.iframeAuto(index);
+    };
+
 
 </script>
 
