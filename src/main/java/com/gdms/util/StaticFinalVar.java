@@ -7,7 +7,7 @@ public class StaticFinalVar {
 //    public static final String WEB_URL = "http://admin.openkit.cc";  // 在线测试地址
     public static final String WEB_URL = "http://localhost:8080";  // 本地测试地址
     public static final String YAN = "kit20180205";  // 这里是密码加密，混淆密文，这个我们尽量不要去修改
-    public static final String IMG_FILES = "uplodefiles/";  // 这里是保存图片的根目录，必须保证有读写权限
+    public static final String IMG_FILES = "uplodefiles/image/";  // 这里是保存图片的根目录，必须保证有读写权限
 
     /**
      * APP 验证类参数

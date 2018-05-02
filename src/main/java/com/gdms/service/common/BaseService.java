@@ -52,4 +52,6 @@ public interface BaseService<T> {
 
     // 根据条件模糊查询总条数
     Integer queryCountWhereLike(Class<T> clazz,T param);
+
+
 }

@@ -26,6 +26,24 @@
     select * from kit_admin where kit_admin_username = #{username,jdbcType=VARCHAR}
   </select>
 
+  <!--查询全部管理员-->
+  <select id="getAlladmin" resultMap="BaseResultMap">
+    select
+    <include  refid="Base_Column_List"/>
+    from kit_admin
+  </select>
+
+    <select id="selectAdminById" resultType="Admin" parameterType="String">
+  select
+  <include  refid="Base_Column_List"/>
+  from kit_admin where kit_admin_id = #{adminId,jdbcType=VARCHAR}
+</select>
+
+  <select id="findAdminIdByAdminUsername" resultType="String" parameterType="String">
+    select
+    kit_admin_id
+    from kit_admin where kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR}
+  </select>
   <!-- 使用了mapper通用方法，所以以下基本的增删改查不需要写 -->
 
   <update id="updateByAdminId" parameterType="com.gdms.model.Admin" >
@@ -70,37 +88,49 @@
     <!--values (#{kitAdminId,jdbcType=VARCHAR}, #{kitAdminUsername,jdbcType=VARCHAR}, #{kitAdminPassword,jdbcType=VARCHAR}, -->
       <!--#{kitAdminName,jdbcType=VARCHAR})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="cc.openkit.user.model.Admin" >-->
-    <!--insert into kit_admin-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="kitAdminId != null" >-->
-        <!--kit_admin_id,-->
-      <!--</if>-->
-      <!--<if test="kitAdminUsername != null" >-->
-        <!--kit_admin_username,-->
-      <!--</if>-->
-      <!--<if test="kitAdminPassword != null" >-->
-        <!--kit_admin_password,-->
-      <!--</if>-->
-      <!--<if test="kitAdminName != null" >-->
-        <!--kit_admin_name,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="kitAdminId != null" >-->
-        <!--#{kitAdminId,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="kitAdminUsername != null" >-->
-        <!--#{kitAdminUsername,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="kitAdminPassword != null" >-->
-        <!--#{kitAdminPassword,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="kitAdminName != null" >-->
-        <!--#{kitAdminName,jdbcType=VARCHAR},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertAdmin" parameterType="Admin" >
+    insert into kit_admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="kitAdminId != null" >
+        kit_admin_id,
+      </if>
+      <if test="kitAdminUsername != null" >
+        kit_admin_username,
+      </if>
+      <if test="kitAdminPassword != null" >
+        kit_admin_password,
+      </if>
+      <if test="kitAdminName != null" >
+        kit_admin_name,
+      </if>
+      <if test="kitAdminImgUrl != null" >
+        kit_admin_img_url,
+    </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="kitAdminId != null" >
+        #{kitAdminId,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminUsername != null" >
+        #{kitAdminUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminPassword != null" >
+        #{kitAdminPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminName != null" >
+        #{kitAdminName,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminImgUrl != null" >
+        #{kitAdminImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null" >
+        #{groupId ,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
   <!--<update id="updateByPrimaryKeySelective" parameterType="cc.openkit.user.model.Admin" >-->
     <!--update kit_admin-->
     <!--<set >-->

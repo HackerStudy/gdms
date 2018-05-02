@@ -46,43 +46,44 @@
     <table class="layui-table" lay-filter="kittable">
         <colgroup>
             <col width="40">
-            <col width="80">
-            <col width="60">
-            <col width="200">
+            <col width="100">
+            <col width="120">
+            <col width="70">
             <col>
             <col width="70">
         </colgroup>
         <thead>
         <tr>
-            <th>学号</th>
+            <th>编号</th>
+            <th>管理员账号</th>
+            <th>密码</th>
             <th>姓名</th>
-            <th>性别</th>
-            <th>院部</th>
-            <th>专业</th>
-            <th>年级</th>
-            <th>班级</th>
-            <%--<th>联系电话</th>--%>
-            <%--<th>邮箱</th>--%>
+            <th>头像</th>
+            <th>权限编号</th>
             <th>操作</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>B20140304689</td>
-            <td>老王</td>
-            <td>男</td>
-            <td>计算机工程与应用数学学院</td>
-            <td>软件工程</td>
-            <td>14级</td>
-            <td>软件开发1班</td>
-            <%--<td>15664161151</td>--%>
-            <%--<td>179111651161@qq.com</td>--%>
-            <td>
-                <button class="layui-btn layui-btn-sm layui-btn-warm" onClick="look(this,'1')"><i class="layui-icon">&#xe621;</i>查看</button>
-                <button class="layui-btn layui-btn-sm layui-btn-normal" onClick="update(this)"><i class="layui-icon">&#xe642;</i> 编辑</button>
-                <button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this,'1')"><i class="layui-icon">&#xe640;</i> 删除</button>
-            </td>
-        </tr>
+            <% int number=1;%>
+            <c:forEach items="${adminlist}" var="adminlist">
+                <tr>
+                    <td><%=number%></td>
+                    <td>${adminlist.kitAdminUsername}</td>
+                    <td>${adminlist.kitAdminPassword}</td>
+                    <td>${adminlist.kitAdminName}</td>
+                    <td>${adminlist.kitAdminImgUrl}</td>
+                    <td>${adminlist.groupId}</td>
+                    <c:choose><c:when test="${adminlist.kitAdminUsername.equals(user.username)}">
+                    <td>
+                       此处不可对自身进行操作
+                    </td></c:when><c:otherwise>
+                        <td>
+                            <button class="layui-btn layui-btn-sm layui-btn-normal" onClick="update(this,'${adminlist.kitAdminId}')"><i class="layui-icon">&#xe642;</i> 编辑</button>
+                            <button class="layui-btn layui-btn-sm layui-btn-danger" onClick="del(this,'1')"><i class="layui-icon">&#xe640;</i> 删除</button>
+                        </td></c:otherwise></c:choose>
+                </tr>
+                <% number++;%>
+            </c:forEach>
         </tbody>
     </table>
     <!--这里写页面的代码-->
@@ -102,8 +103,8 @@
         $('#add').on('click', function(){
             var index = layer.open({
                 type: 2,
-                title:'添加学生',
-                content: '<%=basePath%>user/addStudent',
+                title:'添加管理员',
+                content: '<%=basePath%>templates/view/admin/add.jsp',
                 area: ['600px', '450px'],
                 maxmin: true,
                 end: function () {
@@ -139,12 +140,12 @@
     };
 
     // 修改
-    function update(obj){
+    function update(obj,kitAdminId){
         var index = layer.open({
             type: 2,
-            title:'修改学生信息',
-            content: '<%=basePath%>user/updatestudent',
-            area: ['600px', '450px'],
+            title:'修改管理员信息',
+            content: '<%=basePath%>admin/goUpdate?kitAdminId='+kitAdminId,
+            area: ['600px','450px'],
             maxmin: true,
             end: function () {
                 location.reload();
@@ -153,21 +154,19 @@
         parent.layer.iframeAuto(index);
     };
 
-    function look(obj,sid){
-        var index = layer.open({
-            type: 2,
-            title:'查看学生信息',
-            content: '<%=basePath%>user/lookstudent?sid='+sid,
-            area: ['600px', '450px'],
-            maxmin: true,
-            end: function () {
-                location.reload();
-            }
-        });
-        parent.layer.iframeAuto(index);
-    };
-
-
+    <%--function look(obj,sid){--%>
+        <%--var index = layer.open({--%>
+            <%--type: 2,--%>
+            <%--title:'查看学生信息',--%>
+            <%--content: '<%=basePath%>user/lookstudent?sid='+sid,--%>
+            <%--area: ['600px', '450px'],--%>
+            <%--maxmin: true,--%>
+            <%--end: function () {--%>
+                <%--location.reload();--%>
+            <%--}--%>
+        <%--});--%>
+        <%--parent.layer.iframeAuto(index);--%>
+    <%--};--%>
 </script>
 
 </body>

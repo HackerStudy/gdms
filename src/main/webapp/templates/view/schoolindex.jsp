@@ -60,7 +60,7 @@
         }
 
         .major {
-            font-weight: 10px;
+            font-weight:10px;
             color: #01AAED;
         }
 
@@ -148,10 +148,10 @@
     </div>
 </div>
 <script>
-    layui.use('layer', function(){
-        var layer = layui.layer;
-        layer.message('Hello');
-    });
+    // layui.use('layer', function(){
+    //     var layer = layui.layer;
+    //     layer.message('Hello');
+    // });
 
     layui.use('jquery', function() {
         var $ = layui.jquery;

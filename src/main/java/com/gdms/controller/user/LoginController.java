@@ -47,9 +47,6 @@ public class LoginController {
                 session.setAttribute("user",user);
                 session.setAttribute("admin",returnAdmin);
                 List<LimitVo> limitVoList=userService.limitgrouplogin(identityid);
-                for (LimitVo list:limitVoList) {
-                    System.out.println(list);
-                }
                 session.setAttribute("limitList",limitVoList);
 //                System.out.println("现在开始跳转到主页面");
                 modelAndView.setViewName("/view/index");

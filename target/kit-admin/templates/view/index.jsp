@@ -37,7 +37,7 @@
 <body class="kit-theme">
 <div class="layui-layout layui-layout-admin kit-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">长大本科毕业设计过程管理系统</div>
+        <div class="layui-logo">长大本科毕设过程管理系统</div>
         <div class="layui-logo kit-logo-mobile">系统</div>
         <%--<ul class="layui-nav layui-layout-left kit-nav" kit-one-level>--%>
             <%--<li class="layui-nav-item"><a href="javascript:;">控制台</a></li>--%>

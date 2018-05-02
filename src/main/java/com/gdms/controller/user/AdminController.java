@@ -4,7 +4,6 @@ import cc.openkit.common.KitUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.gdms.model.Admin;
 import com.gdms.model.GGroup;
-import com.gdms.model.GGroupLimit;
 import com.gdms.model.WebSetting;
 import com.gdms.service.admin.AdminService;
 import com.gdms.service.g.GGroupLimitService;
@@ -130,23 +129,16 @@ public class AdminController {
     /**
      * 获取所有管理员用户
      *
-     * @param request
+     * @param
      * @return
      */
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ModelAndView getAll(HttpServletRequest request){
-        // 权限验证
-        GGroupLimit gGroupLimit = gGroupLimitService.testGroup(request, 5);
-        ModelAndView mv = new ModelAndView();
-        // 没有权限，返回错误页面
-        if(gGroupLimit==null){
-            mv.setViewName("/user/err/no_group_err");
-            mv.addObject("msg", StaticFinalVar.NO_GROUP_MSG+StaticFinalVar.CALL_GROUP);
-            return mv;
-        }
+    public ModelAndView getAll(HttpSession session){
+        ModelAndView mv=new ModelAndView();
+        List<Admin> adminList=adminService.getAlladmin();
         // 取值
         mv.setViewName("/view/admin/list");
-        mv.addObject("kitG",gGroupLimit);
+        mv.addObject("adminlist",adminList);
         return mv;
     }
 
@@ -232,22 +224,25 @@ public class AdminController {
         String imgurl = request.getParameter("imgurl");
         String kitAdminUsername = request.getParameter("kitAdminUsername");
         String kitAdminPassword = request.getParameter("kitAdminPassword");
-        String kitAdminPasswordAgen = request.getParameter("kitAdminPasswordAgen");
+//        String kitAdminPasswordAgen = request.getParameter("kitAdminPasswordAgen");
         String groupId = request.getParameter("groupId");
-
-        if(!kitAdminPassword.equals(kitAdminPasswordAgen)){
-            return KitUtil.returnMap("200",StaticFinalVar.PWD_NOT_EQUERY);
-        }
-
+//        if(!kitAdminPassword.equals(kitAdminPasswordAgen)){
+//            return KitUtil.returnMap("200",StaticFinalVar.PWD_NOT_EQUERY);
+//        }
         Admin admin = new Admin();
         admin.setKitAdminId(KitUtil.uuid());
         admin.setKitAdminName(kitAdminName);
         admin.setKitAdminUsername(kitAdminUsername);
         admin.setKitAdminImgUrl(imgurl);
-//        user.setKitAdminPassword(AppUtil.md5pwd(kitAdminPassword));
+        admin.setKitAdminPassword(kitAdminPassword);
         admin.setGroupId(Integer.valueOf(groupId));
-
-        return JSONObject.toJSON(adminService.save(admin)==1 ? KitUtil.returnMap("200",StaticFinalVar.ADD_OK) : KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+        System.out.println("admin:"+admin.toString());
+        Boolean b=adminService.insertAdmin(admin);
+        if(b){
+            return JSONObject.toJSON(KitUtil.returnMap("200",StaticFinalVar.ADD_OK));
+        }else {
+            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+        }
     }
 
     /**
@@ -285,51 +280,44 @@ public class AdminController {
     public ModelAndView goUpdate(HttpServletRequest request){
         log.info("用户 》 修改 》 跳转");
         ModelAndView mv = new ModelAndView();
-        String id = request.getParameter("id");
-        Admin admin = adminService.queryByUUID(id);
-        List<GGroup> groups = gGroupService.queryAll();
-        mv.setViewName("/view/group/update");
-        mv.addObject("kitList",groups);
-        mv.addObject("kitModel",admin);
+        String kitAdminId = request.getParameter("kitAdminId");
+        Admin admin = adminService.selectAdminById(kitAdminId);
+        mv.setViewName("/view/admin/update");
+        mv.addObject("updateAdmin",admin);
         return mv;
     }
 
-//    /**
-//     * 修改
-//     *
-//     * @param request
-//     * @return
-//     */
-//    @RequestMapping(value = "/update", method = RequestMethod.POST)
-//    @ResponseBody
-//    public Object update(HttpServletRequest request){
-//        log.info("用户 》 修改 》 保存");
-//        String kitAdminId = request.getParameter("kitAdminId");
-//        String kitAdminName = request.getParameter("kitAdminName");
-//        String imgurl = request.getParameter("imgurl");
-//        String kitAdminUsername = request.getParameter("kitAdminUsername");
-//        String kitAdminPassword = request.getParameter("kitAdminPassword");
-//        String kitAdminPasswordAgen = request.getParameter("kitAdminPasswordAgen");
-//        String groupId = request.getParameter("groupId");
-//
-//        if(!kitAdminPassword.equals(kitAdminPasswordAgen)){
-//            return KitUtil.returnMap("200",StaticFinalVar.PWD_NOT_EQUERY);
-//        }
-//
-//        Admin user = new Admin();
-//        user.setKitAdminId(kitAdminId);
-//        user.setKitAdminName(kitAdminName);
-//        user.setKitAdminUsername(kitAdminUsername);
-//        user.setKitAdminImgUrl(imgurl);
-//        if(kitAdminPassword!=null && !"".equals(kitAdminPassword)) {
-//            user.setKitAdminPassword(AppUtil.md5pwd(kitAdminPassword));
-//        }
-//        user.setGroupId(Integer.valueOf(groupId));
-//
-//        int i = adminService.updateByAdminId(user);
-////        int i = adminService.save(user);
+    /**
+     * 修改
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @ResponseBody
+    public Object update(HttpServletRequest request){
+        log.info("用户 》 修改 》 保存");
+        String kitAdminId = request.getParameter("kitAdminId");
+        String kitAdminName = request.getParameter("kitAdminName");
+        String kitAdminUsername = request.getParameter("kitAdminUsername");
+        String groupId = request.getParameter("groupId");
+//        String data = request.getParameter("data");
+//        JSONObject jsonObj = JSONObject.parseObject(data);
+//        String id=jsonObj.getString("kitAdminId");
+        System.out.println("username:"+kitAdminUsername);
+        System.out.println("name:"+kitAdminName);
+        Admin user = new Admin();
+//        String kitAdminId=adminService.findAdminIdByAdminUsername(kitAdminUsername);
+        user.setKitAdminId(kitAdminId);
+        user.setKitAdminName(kitAdminName);
+        user.setKitAdminUsername(kitAdminUsername);
+//        user.setKitAdminImgUrl(jsonObj.getString("imgurl"));
+        user.setGroupId(Integer.valueOf(groupId));
+//          int i=1;
+        int i = adminService.updateByAdminId(user);
+//        int i = adminService.save(user);
 //        System.out.println(i);
-//
-//        return JSONObject.toJSON(i==1 ? KitUtil.returnMap("200",StaticFinalVar.UPDATE_OK) : KitUtil.returnMap("101",StaticFinalVar.UPDATE_ERR));
-//    }
+
+        return JSONObject.toJSON(i==1 ? KitUtil.returnMap("200",StaticFinalVar.UPDATE_OK) : KitUtil.returnMap("101",StaticFinalVar.UPDATE_ERR));
+    }
 }

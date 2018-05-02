@@ -32,10 +32,18 @@ public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminSer
         return retuenAdmin;
     }
 
+    public List<Admin> getAlladmin() {
+        return adminMapper.getAlladmin();
+    }
+
     public Admin selectUserByUsername(String username) {
         Admin admin=adminMapper.selectUserByUsername(username);
         System.out.println("当前的管理员为："+admin);
         return admin;
+    }
+
+    public Admin selectAdminById(String adminId) {
+        return adminMapper.selectAdminById(adminId);
     }
 
     public int updateByAdminId(Admin admin) {
@@ -44,5 +52,15 @@ public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminSer
         System.out.println(admin.getKitAdminPassword());
 
         return adminMapper.updateByAdminId(admin);
+    }
+
+    public Boolean insertAdmin(Admin admin) {
+        Boolean b=true;
+        adminMapper.insertAdmin(admin);
+        return b;
+    }
+
+    public String findAdminIdByAdminUsername(String kitAdminUsername) {
+        return adminMapper.findAdminIdByAdminUsername(kitAdminUsername);
     }
 }
