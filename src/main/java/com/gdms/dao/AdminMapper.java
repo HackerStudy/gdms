@@ -22,4 +22,6 @@ public interface AdminMapper extends Mapper<Admin>{
     void insertAdmin(Admin admin);
 
     String findAdminIdByAdminUsername(@Param("kitAdminUsername") String kitAdminUsername);
+
+    List<Admin> searchAdminByAdminUsername(@Param("kitAdminUsername") String kitAdminUsername);
 }

@@ -88,7 +88,10 @@
                 $.post("<%=basePath%>gGroup/add",data.field,function(data){
                     // 获取 session
                     if(data.code!=200){
-                        layer.alert(data.msg, {offset: 't',icon: 5});
+                        layer.alert(data.msg, {
+                            offset:[,],
+                            icon: 5
+                        });
                     }
                     if(data.code==200){
                         layer.alert(data.msg, {offset: 't',icon: 6});

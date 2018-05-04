@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gdms.dao.GGroupMapper" >
-  <resultMap id="BaseResultMap" type="com.gdms.model.GGroup" >
+  <resultMap id="BaseResultMap" type="GGroup" >
     <id column="group_id" property="groupId" jdbcType="INTEGER" />
     <result column="group_name" property="groupName" jdbcType="VARCHAR" />
   </resultMap>
@@ -10,10 +10,23 @@
   </sql>
 
   <select id="getListByGroupName" resultMap="BaseResultMap" parameterType="com.gdms.model.GGroup" >
+  select
+  <include refid="Base_Column_List" />
+  from kit_g_group
+  where group_name = #{groupName,jdbcType=VARCHAR}
+</select>
+
+  <select id="queryAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from kit_g_group
-    where group_name = #{groupName,jdbcType=VARCHAR}
   </select>
+
+  <select id="queryAllAdminGroup" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from kit_g_group where group_id=1 or group_id=5
+  </select>
+
 
 </mapper>

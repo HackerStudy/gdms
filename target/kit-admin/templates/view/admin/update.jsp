@@ -74,9 +74,24 @@
         <%--</div>--%>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">权限编号</label>
+            <label class="layui-form-label">权限</label>
             <div class="layui-input-block">
-                <input id="groupId" name="groupId" value=${updateAdmin.groupId} lay-verify="required" placeholder="请输入该管理员的权限" autocomplete="off" class="layui-input" type="text">
+                <select name="权限" lay-verify="">
+                    <option value="">请选择要添加的权限</option>
+                    <% Boolean b=false;%>
+                    <c:forEach items="${groupList}" var="gList">
+                        <c:choose>
+                            <c:when test="${gList.groupId==updateAdmin.groupId}">
+                                <% b=true;%>
+                                <option selected="<%=b%>" value="${gList.groupId}">${gList.groupName}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <% b=false;%>
+                                <option selected="<%=b%>" value="${gList.groupId}">${gList.groupName}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </select>
             </div>
         </div>
 
@@ -132,11 +147,8 @@
             var kitAdminId=document.getElementById("kitAdminId").value;
             var kitAdminUsername=document.getElementById("kitAdminUsername").value;
             var kitAdminName=document.getElementById("kitAdminName").value;
-            // var imgurl=document.getElementsByName("imgurl")[0].value;
             var groupId=document.getElementById("groupId").value;
-            console.log(kitAdminUsername);
-            console.log(kitAdminName);
-            console.log(groupId);
+
             // var name=document.getElementById('name').value;
             // var hp=document.getElementById('hp').value;
             // var hero={"name":name,"hp":hp};

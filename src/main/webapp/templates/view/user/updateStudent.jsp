@@ -27,17 +27,17 @@
 
 <div class="kit-doc">
     <form class="layui-form layui-form-pane" action="">
-
+        <input name="id" value=${student.id} type="hidden" />
         <div class="layui-form-item">
             <label class="layui-form-label">学号</label>
             <div class="layui-input-block">
-                <input name="kitAdminName" value="B20140304689" lay-verify="required" placeholder="请输入学生的学号" autocomplete="off" class="layui-input" type="text">
+                <input name="sid" value=${student.sid} lay-verify="required" placeholder="请输入学生的学号" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">姓名</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="老王" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="name" value=${student.name} lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
@@ -51,9 +51,18 @@
         <div class="layui-form-item">
             <label class="layui-form-label">性别</label>
             <div class="layui-input-block">
-                <select name="groupId" lay-verify="required" lay-search="">
-                    <option value="1" selected="selected">男</option>
-                    <option value="2">女</option>
+                <select name="sex" lay-verify="required" lay-search="">
+                    <option value="">请输入学生的性别</option>
+                    <c:choose>
+                        <c:when test="${student.sex==1}">
+                            <option value="1" selected >男</option>
+                            <option value="2">女</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="1">男</option>
+                            <option value="2" selected>女</option>
+                        </c:otherwise>
+                    </c:choose>
                 </select>
             </div>
         </div>
@@ -61,42 +70,42 @@
         <div class="layui-form-item">
             <label class="layui-form-label">院部</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="计算机工程与应用数学学院" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="did" value=${student.did} lay-verify="required" placeholder="请输入学生所在的院部" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">专业</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="软件工程" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="mid" value=${student.mid} lay-verify="required" placeholder="请输入学生所属专业" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">年级</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="14级" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="grade" value=${student.grade} lay-verify="required" placeholder="请输入学生的年级" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">班级</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="软件开发1班" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="sclass" value=${student.sclass} lay-verify="required" placeholder="请输入学生的班级" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">联系电话</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="15664161151" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="phone" value=${student.phone} lay-verify="required" placeholder="请输入学生的联系电话" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">邮箱</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" value="179111651161@qq.com" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="email" value=${student.email} lay-verify="required" placeholder="请输入学生的邮箱" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
@@ -117,11 +126,7 @@
 
         //监听提交，发送请求
         form.on('submit(add)', function(data){
-            if(data.field.kitAdminPassword!=data.field.kitAdminPasswordAgen){
-                layer.alert('两次密码输入不一致');
-                return false;
-            }
-            $.post("<%=basePath%>user/add",data.field,function(data){
+            $.post("<%=basePath%>user/updateStudent",data.field,function(data){
                 // 获取 session
                 if(data.code!=200){
                     layer.alert(data.msg, {offset: 't',icon: 5});

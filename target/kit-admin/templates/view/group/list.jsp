@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>分组列表</title>
+    <title>角色权限分配</title>
     <link rel="stylesheet" href="<%=basePath%>templates/style/plugins/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>templates/style/build/css/doc.css" media="all">
     <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
@@ -22,10 +22,10 @@
 <body>
     <div class="kit-doc">
         <!--这里写页面的代码-->
-        <blockquote class="layui-elem-quote">这里是对我们的后台进行权限管理，你可以自由设置</blockquote>
+        <blockquote class="layui-elem-quote">这里是对用户的角色进行权限管理，你可以自由设置</blockquote>
         <div class="kit-doc-title">
             <fieldset>
-                <legend><a name="blockquote">分组列表</a></legend>
+                <legend><a name="blockquote">角色列表</a></legend>
             </fieldset>
         </div>
         <div>
@@ -59,7 +59,7 @@
                 var index = layer.open({
                     type: 2,
                     content: '<%=basePath%>gGroup/goAdd',
-                    area: ['800px', '600px'],
+                    area: ['800px', '450px'],
                     maxmin: true,
                     end: function () {
                         location.reload();
@@ -96,7 +96,7 @@
                     var index = layer.open({
                         type: 2,
                         content: '<%=basePath%>gGroup/goUpdate?id='+data.groupId,
-                        area: ['800px', '600px'],
+                        area: ['800px', '450px'],
                         maxmin: true,
                         end: function () {
                             location.reload();

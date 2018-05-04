@@ -9,16 +9,6 @@ public class StaticFinalVar {
     public static final String YAN = "kit20180205";  // 这里是密码加密，混淆密文，这个我们尽量不要去修改
     public static final String IMG_FILES = "uplodefiles/image/";  // 这里是保存图片的根目录，必须保证有读写权限
 
-    /**
-     * APP 验证类参数
-     */
-    public static final String APP_ID = "appid";
-    public static final String APP_KEY = "appkey";
-    public static final String APP_YAN = "openkit";
-    public static final String APP_ERR = "你的APP没有访问权限";
-    public static final String PARAMETER_ERR = "缺少参数";
-    public static final String SERVICE_ERR = "服务器端错误";
-
     public static final String USERNAME_OR_PWD_ERR = "用户名、密码或者身份错误";
     public static final String ADD_OK = "添加成功";
     public static final String ADD_ERR = "添加失败，请稍后再试";
@@ -49,13 +39,7 @@ public class StaticFinalVar {
     public static final String REGISTER_OK = "用户注册成功";
     public static final String REGISTER_ERR = "用户注册成功";
 
-    /**
-     * 修改短信条数
-     */
-    public static final int SIGN_ONE_MIN_SIZE = 1; // 1 分钟条数
-    public static final int SIGN_ONE_HOUR_SIZE = 4; // 1 小时条数
-    public static final int SIGN_ONE_DAY_SIZE = 8; // 1 天条数
-    public static final int RECOMMEND_LENGTH = 6; // 推荐码位数，自己修改
-
+    public static final String SEARCH_ERR = "查询失败";
+    public static final String SEARCH_OK = "查询成功";
 
 }

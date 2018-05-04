@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gdms.dao.AdminMapper" >
-  <resultMap id="BaseResultMap" type="com.gdms.model.Admin" >
+  <resultMap id="BaseResultMap" type="Admin" >
     <id column="kit_admin_id" property="kitAdminId" jdbcType="VARCHAR" />
     <result column="kit_admin_username" property="kitAdminUsername" jdbcType="VARCHAR" />
     <result column="kit_admin_password" property="kitAdminPassword" jdbcType="VARCHAR" />
@@ -43,6 +43,12 @@
     select
     kit_admin_id
     from kit_admin where kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR}
+  </select>
+
+  <select id="searchAdminByAdminUsername" resultMap="BaseResultMap" parameterType="String">
+    select
+      <include  refid="Base_Column_List"/>
+    from kit_admin where kit_admin_username like concat(concat("%",#{kitAdminUsername}),"%")
   </select>
   <!-- 使用了mapper通用方法，所以以下基本的增删改查不需要写 -->
 

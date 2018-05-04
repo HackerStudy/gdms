@@ -1,6 +1,8 @@
 package com.gdms.vo;
 
-public class LimitVo {
+import java.io.Serializable;
+
+public class LimitVo implements Serializable {
     private Integer limitId;
 
     private Integer limitSequence;

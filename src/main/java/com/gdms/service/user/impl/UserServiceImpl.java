@@ -9,12 +9,13 @@ import com.gdms.vo.LimitVo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 @Service("userService")
-//@Transactional(rollbackFor = Exception.class)
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService{
     private Logger log = Logger.getLogger(UserServiceImpl.class);
 

@@ -1,19 +1,21 @@
 package com.gdms.controller.user;
 
 import cc.openkit.common.KitUtil;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.gdms.model.Admin;
-import com.gdms.model.GGroup;
-import com.gdms.model.WebSetting;
+import com.gdms.model.*;
 import com.gdms.service.admin.AdminService;
 import com.gdms.service.g.GGroupLimitService;
 import com.gdms.service.g.GGroupService;
 import com.gdms.service.web.WebSettingService;
+import com.gdms.util.InData;
+import com.gdms.util.OutData;
 import com.gdms.util.StaticFinalVar;
 import com.gdms.vo.LimitVo;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,7 +24,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 后台管理员类的方法
@@ -136,8 +140,10 @@ public class AdminController {
     public ModelAndView getAll(HttpSession session){
         ModelAndView mv=new ModelAndView();
         List<Admin> adminList=adminService.getAlladmin();
+        List<GGroup> groupList=gGroupService.queryAllAdminGroup();
         // 取值
         mv.setViewName("/view/admin/list");
+        mv.addObject("groupList",groupList);
         mv.addObject("adminlist",adminList);
         return mv;
     }
@@ -192,6 +198,23 @@ public class AdminController {
 //
 //        return JSONObject.toJSON(map);
 //    }
+
+    /**
+     * 跳转到添加管理员页面
+     * @param request
+     * @return
+     */
+
+    @RequestMapping(value = "/toAdd", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView toAdd(HttpServletRequest request){
+        log.info("用户 》 添加 》 跳转");
+        ModelAndView mv = new ModelAndView();
+        List<GGroup> groupList= gGroupService.queryAllAdminGroup();
+        mv.setViewName("/view/admin/add");
+        mv.addObject("groupList",groupList);
+        return mv;
+    }
 
     /**
      * 去添加页面
@@ -256,17 +279,8 @@ public class AdminController {
     public Object del(HttpServletRequest request){
         log.info("用户 》 删除");
         String id = request.getParameter("id");
-        // 获取session
-        HttpSession session = request.getSession();
-        Admin admin = (Admin) session.getAttribute("admin");
-        // 如果被删除的 是当前登录的用户
-        if(admin.getGroupId().equals(id)){
-            return KitUtil.returnMap("101",StaticFinalVar.DEL_ADMIN_BUT_IS_LOGIN);
-        }
-
         int i = adminService.deleteByUUId(id);
         return i==1?KitUtil.returnMap("200",StaticFinalVar.DEL_OK):KitUtil.returnMap("101",StaticFinalVar.DEL_ERR);
-
     }
 
     /**
@@ -282,9 +296,37 @@ public class AdminController {
         ModelAndView mv = new ModelAndView();
         String kitAdminId = request.getParameter("kitAdminId");
         Admin admin = adminService.selectAdminById(kitAdminId);
+        List<GGroup> groupList=gGroupService.queryAllAdminGroup();
         mv.setViewName("/view/admin/update");
+        mv.addObject("groupList",groupList);
         mv.addObject("updateAdmin",admin);
         return mv;
+    }
+
+    /**
+     * 查询管理员
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    @ResponseBody
+    public Object search(@RequestBody InData inData,HttpSession session){
+        log.info("用户 》查询 》 保存");
+        Map<String, Object> map = inData.getInmap();
+        String kitAdminUserName=(String) map.get("searchContent");
+        List<GGroup> groupList=gGroupService.queryAllAdminGroup();
+        User user =(User) session.getAttribute("user");
+        List<Admin> adminList=adminService.searchAdminByAdminUsername(kitAdminUserName);
+        Map<String,Object> smap=new HashMap<String, Object>();
+        smap.put("adminList",adminList);
+        smap.put("groupList",groupList);
+        smap.put("user",user);
+//        String data = JSON.toJSONString(adminList);
+        if(adminList.size()>0) {
+            return JSONObject.toJSON(OutData.outData(StaticFinalVar.SEARCH_OK,smap,200));
+        }else{
+            return JSON.toJSONString(OutData.outData(StaticFinalVar.SEARCH_ERR,"",101));
+        }
     }
 
     /**

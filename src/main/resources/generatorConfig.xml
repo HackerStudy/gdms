@@ -20,6 +20,7 @@
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="${driverClasss}" connectionURL="${jdbcUrl}" userId="${username}" password="${password}">
         </jdbcConnection>
+
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>

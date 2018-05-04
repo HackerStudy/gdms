@@ -66,9 +66,14 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">权限编号</label>
+            <label class="layui-form-label">权限</label>
             <div class="layui-input-block">
-                <input name="groupId" lay-verify="required" placeholder="请输入该管理员的权限" autocomplete="off" class="layui-input" type="text">
+                <select name="权限" lay-verify="">
+                    <option value="">请选择要添加的权限</option>
+                    <c:forEach items="${groupList}" var="gList">
+                        <option value="${gList.groupId}">${gList.groupName}</option>
+                    </c:forEach>
+                </select>
             </div>
         </div>
 

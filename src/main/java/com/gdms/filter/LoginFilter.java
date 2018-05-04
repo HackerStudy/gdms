@@ -45,7 +45,7 @@ public class LoginFilter implements Filter{
         }else{//如果不是login.jsp进行过滤
             if ( user== null) {
                 // 跳转到登陆页面
-                System.out.println("拦截了未登录的请求");
+//                System.out.println("拦截了未登录的请求");
                 req.getRequestDispatcher("/templates/view/login.jsp").forward(req,resp);
             } else {
                 // 已经登陆,继续此次请求

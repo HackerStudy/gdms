@@ -1,49 +1,42 @@
 package com.gdms.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name="identity")
 public class Identity {
-    private int identity_id;
-    private int userid;
-    private int user_identity;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
 
-    public Identity(int identity_id, int userid, int user_identity) {
-        this.identity_id = identity_id;
-        this.userid = userid;
-        this.user_identity = user_identity;
+    private Integer identityId;
+
+    private String identityname;
+
+    private Integer groupId;
+
+    public Identity(Integer id, Integer identityId, String identityname, Integer groupId) {
+        this.id = id;
+        this.identityId = identityId;
+        this.identityname = identityname;
+        this.groupId = groupId;
     }
 
-    public Identity() {
+    public Integer getId() {
+        return id;
     }
 
-    public int getIdentity_id() {
-        return identity_id;
+    public Integer getIdentityId() {
+        return identityId;
     }
 
-    public void setIdentity_id(int identity_id) {
-        this.identity_id = identity_id;
+    public String getIdentityname() {
+        return identityname;
     }
 
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
-
-    public int getUser_identity() {
-        return user_identity;
-    }
-
-    public void setUser_identity(int user_identity) {
-        this.user_identity = user_identity;
-    }
-
-    @Override
-    public String toString() {
-        return "Identity{" +
-                "identity_id=" + identity_id +
-                ", userid=" + userid +
-                ", user_identity=" + user_identity +
-                '}';
+    public Integer getGroupId() {
+        return groupId;
     }
 }

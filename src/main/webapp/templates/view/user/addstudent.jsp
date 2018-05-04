@@ -31,13 +31,13 @@
         <div class="layui-form-item">
             <label class="layui-form-label">学号</label>
             <div class="layui-input-block">
-                <input name="kitAdminName" lay-verify="required" placeholder="请输入学生的学号" autocomplete="off" class="layui-input" type="text">
+                <input name="sid" lay-verify="required" placeholder="请输入学生的学号" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">姓名</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="name" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
@@ -51,9 +51,10 @@
         <div class="layui-form-item">
             <label class="layui-form-label">性别</label>
             <div class="layui-input-block">
-                <select name="groupId" lay-verify="required" lay-search="">
-                    <option value="">男</option>
-                    <option value="">女</option>
+                <select name="sex" lay-verify="required" lay-search="">
+                    <option value="">请选择学生的性别</option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
                 </select>
             </div>
         </div>
@@ -61,42 +62,42 @@
         <div class="layui-form-item">
             <label class="layui-form-label">院部</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="did" lay-verify="required" placeholder="请输入学生的院部" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">专业</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="mid" lay-verify="required" placeholder="请输入学生的专业" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">年级</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="grade" lay-verify="required" placeholder="请输入学生的年级" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">班级</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="sclass" lay-verify="required" placeholder="请输入学生的班级" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">联系电话</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="phone" lay-verify="required" placeholder="请输入学生的联系电话" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">邮箱</label>
             <div class="layui-input-block">
-                <input name="kitAdminUsername" lay-verify="required" placeholder="请输入学生的姓名" autocomplete="off" class="layui-input" type="text">
+                <input name="email" lay-verify="required" placeholder="请输入学生的邮箱" autocomplete="off" class="layui-input" type="text">
             </div>
         </div>
 
@@ -121,7 +122,7 @@
                 layer.alert('两次密码输入不一致');
                 return false;
             }
-            $.post("<%=basePath%>user/add",data.field,function(data){
+            $.post("<%=basePath%>user/addStudent",data.field,function(data){
                 // 获取 session
                 if(data.code!=200){
                     layer.alert(data.msg, {offset: 't',icon: 5});

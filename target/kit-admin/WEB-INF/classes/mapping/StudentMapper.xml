@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gdms.dao.StudentMapper" >
+  <resultMap id="BaseResultMap" type="Student" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="did" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="mid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="icon" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="adviserid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="replygroupid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sid, name, password, sex, did, mid, grade, sclass, phone, email, icon, adviserid, 
+    replygroupid
+  </sql>
+
+  <insert id="insertStudent" parameterType="Student" >
+  insert into student
+  <trim prefix="(" suffix=")" suffixOverrides="," >
+  <if test="id != null" >
+  id,
+  </if>
+  <if test="sid != null" >
+  sid,
+  </if>
+  <if test="name != null" >
+  name,
+  </if>
+  <if test="password != null" >
+  password,
+  </if>
+  <if test="sex != null" >
+  sex,
+  </if>
+  <if test="did != null" >
+  did,
+  </if>
+  <if test="mid != null" >
+  mid,
+  </if>
+  <if test="grade != null" >
+  grade,
+  </if>
+  <if test="sclass != null" >
+  sclass,
+  </if>
+  <if test="phone != null" >
+  phone,
+  </if>
+  <if test="email != null" >
+  email,
+  </if>
+  <if test="icon != null" >
+  icon,
+  </if>
+  <if test="adviserid != null" >
+  adviserid,
+  </if>
+  <if test="replygroupid != null" >
+  replygroupid,
+  </if>
+  </trim>
+  <trim prefix="values (" suffix=")" suffixOverrides="," >
+  <if test="id != null" >
+  #{id,jdbcType=INTEGER},
+  </if>
+  <if test="sid != null" >
+  #{sid,jdbcType=VARCHAR},
+  </if>
+  <if test="name != null" >
+  #{name,jdbcType=VARCHAR},
+  </if>
+  <if test="password != null" >
+  #{password,jdbcType=VARCHAR},
+  </if>
+  <if test="sex != null" >
+  #{sex,jdbcType=INTEGER},
+  </if>
+  <if test="did != null" >
+  #{did,jdbcType=INTEGER},
+  </if>
+  <if test="mid != null" >
+  #{mid,jdbcType=INTEGER},
+  </if>
+  <if test="grade != null" >
+  #{grade,jdbcType=VARCHAR},
+  </if>
+  <if test="sclass != null" >
+  #{sclass,jdbcType=VARCHAR},
+  </if>
+  <if test="phone != null" >
+  #{phone,jdbcType=VARCHAR},
+  </if>
+  <if test="email != null" >
+  #{email,jdbcType=VARCHAR},
+  </if>
+  <if test="icon != null" >
+  #{icon,jdbcType=VARCHAR},
+  </if>
+  <if test="adviserid != null" >
+  #{adviserid,jdbcType=INTEGER},
+  </if>
+  <if test="replygroupid != null" >
+  #{replygroupid,jdbcType=INTEGER},
+  </if>
+  </trim>
+  </insert>
+
+  <select id="searchStudentListBySid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  select
+  <include refid="Base_Column_List" />
+  from student
+  where sid like concat(concat("%",#{sid}),"%")
+  </select>
+
+  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
+    <!--select -->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from student-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</select>-->
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
+    <!--delete from student-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</delete>-->
+  <!--<insert id="insert" parameterType="com.gdms.model.Student" >-->
+    <!--insert into student (id, sid, name, -->
+      <!--password, sex, did, -->
+      <!--mid, grade, sclass, -->
+      <!--phone, email, icon, -->
+      <!--adviserid, replygroupid)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, -->
+      <!--#{password,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{did,jdbcType=INTEGER}, -->
+      <!--#{mid,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR}, #{sclass,jdbcType=VARCHAR}, -->
+      <!--#{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, -->
+      <!--#{adviserid,jdbcType=INTEGER}, #{replygroupid,jdbcType=INTEGER})-->
+  <!--</insert>-->
+  <!--<insert id="insertSelective" parameterType="com.gdms.model.Student" >-->
+    <!--insert into student-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--id,-->
+      <!--</if>-->
+      <!--<if test="sid != null" >-->
+        <!--sid,-->
+      <!--</if>-->
+      <!--<if test="name != null" >-->
+        <!--name,-->
+      <!--</if>-->
+      <!--<if test="password != null" >-->
+        <!--password,-->
+      <!--</if>-->
+      <!--<if test="sex != null" >-->
+        <!--sex,-->
+      <!--</if>-->
+      <!--<if test="did != null" >-->
+        <!--did,-->
+      <!--</if>-->
+      <!--<if test="mid != null" >-->
+        <!--mid,-->
+      <!--</if>-->
+      <!--<if test="grade != null" >-->
+        <!--grade,-->
+      <!--</if>-->
+      <!--<if test="sclass != null" >-->
+        <!--sclass,-->
+      <!--</if>-->
+      <!--<if test="phone != null" >-->
+        <!--phone,-->
+      <!--</if>-->
+      <!--<if test="email != null" >-->
+        <!--email,-->
+      <!--</if>-->
+      <!--<if test="icon != null" >-->
+        <!--icon,-->
+      <!--</if>-->
+      <!--<if test="adviserid != null" >-->
+        <!--adviserid,-->
+      <!--</if>-->
+      <!--<if test="replygroupid != null" >-->
+        <!--replygroupid,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--#{id,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="sid != null" >-->
+        <!--#{sid,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="name != null" >-->
+        <!--#{name,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="password != null" >-->
+        <!--#{password,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="sex != null" >-->
+        <!--#{sex,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="did != null" >-->
+        <!--#{did,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="mid != null" >-->
+        <!--#{mid,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="grade != null" >-->
+        <!--#{grade,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="sclass != null" >-->
+        <!--#{sclass,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="phone != null" >-->
+        <!--#{phone,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="email != null" >-->
+        <!--#{email,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="icon != null" >-->
+        <!--#{icon,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="adviserid != null" >-->
+        <!--#{adviserid,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="replygroupid != null" >-->
+        <!--#{replygroupid,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+
+  <update id="updateStudent" parameterType="Student" >
+    update student
+    <set >
+      <if test="sid != null" >
+        sid = #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="did != null" >
+        did = #{did,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="sclass != null" >
+        sclass = #{sclass,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="adviserid != null" >
+        adviserid = #{adviserid,jdbcType=INTEGER},
+      </if>
+      <if test="replygroupid != null" >
+        replygroupid = #{replygroupid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.Student" >-->
+    <!--update student-->
+    <!--set sid = #{sid,jdbcType=VARCHAR},-->
+      <!--name = #{name,jdbcType=VARCHAR},-->
+      <!--password = #{password,jdbcType=VARCHAR},-->
+      <!--sex = #{sex,jdbcType=INTEGER},-->
+      <!--did = #{did,jdbcType=INTEGER},-->
+      <!--mid = #{mid,jdbcType=INTEGER},-->
+      <!--grade = #{grade,jdbcType=VARCHAR},-->
+      <!--sclass = #{sclass,jdbcType=VARCHAR},-->
+      <!--phone = #{phone,jdbcType=VARCHAR},-->
+      <!--email = #{email,jdbcType=VARCHAR},-->
+      <!--icon = #{icon,jdbcType=VARCHAR},-->
+      <!--adviserid = #{adviserid,jdbcType=INTEGER},-->
+      <!--replygroupid = #{replygroupid,jdbcType=INTEGER}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+</mapper>

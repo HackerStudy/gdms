@@ -22,4 +22,13 @@ public class GGroupServiceImpl  extends BaseServiceImpl<GGroup> implements GGrou
     public List<GGroup> getListByGroupName(GGroup gGroup) {
         return gGroupMapper.getListByGroupName(gGroup);
     }
+
+    @Override
+    public List<GGroup> queryAll() {
+        return gGroupMapper.queryAll();
+    }
+
+    public List<GGroup> queryAllAdminGroup() {
+        return  gGroupMapper.queryAllAdminGroup();
+    }
 }
