@@ -10,12 +10,11 @@
   <sql id="Base_Column_List" >
     did, department_name
   </sql>
-  <!--&lt;!&ndash;<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >&ndash;&gt;-->
-    <!--&lt;!&ndash;select &ndash;&gt;-->
-    <!--&lt;!&ndash;<include refid="Base_Column_List" />&ndash;&gt;-->
-    <!--&lt;!&ndash;from department&ndash;&gt;-->
-    <!--&lt;!&ndash;where did = #{did,jdbcType=INTEGER}&ndash;&gt;-->
-  <!--&lt;!&ndash;</select>&ndash;&gt;-->
+  <select id="queryAllList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from department
+  </select>
   <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
     <!--delete from department-->
     <!--where did = #{did,jdbcType=INTEGER}-->

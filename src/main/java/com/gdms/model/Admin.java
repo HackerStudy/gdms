@@ -65,4 +65,16 @@ public class Admin {
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "kitAdminId='" + kitAdminId + '\'' +
+                ", kitAdminUsername='" + kitAdminUsername + '\'' +
+                ", kitAdminPassword='" + kitAdminPassword + '\'' +
+                ", kitAdminName='" + kitAdminName + '\'' +
+                ", kitAdminImgUrl='" + kitAdminImgUrl + '\'' +
+                ", groupId=" + groupId +
+                '}';
+    }
 }

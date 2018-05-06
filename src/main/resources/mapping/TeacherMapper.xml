@@ -22,6 +22,14 @@
     id, tid, tname, password, sex, work_time, hdegree, teaching_direction, position, 
     icon, did, mid, identity_id
   </sql>
+
+  <select id="searchTeacherListByTid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+    where tid like concat(concat("%",#{tid}),"%")
+  </select>
+
   <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
     <!--select -->
     <!--<include refid="Base_Column_List" />-->
@@ -44,133 +52,135 @@
       <!--#{icon,jdbcType=VARCHAR}, #{did,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{identityId,jdbcType=INTEGER}-->
       <!--)-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.Teacher" >-->
-    <!--insert into teacher-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--tid,-->
-      <!--</if>-->
-      <!--<if test="tname != null" >-->
-        <!--tname,-->
-      <!--</if>-->
-      <!--<if test="password != null" >-->
-        <!--password,-->
-      <!--</if>-->
-      <!--<if test="sex != null" >-->
-        <!--sex,-->
-      <!--</if>-->
-      <!--<if test="workTime != null" >-->
-        <!--work_time,-->
-      <!--</if>-->
-      <!--<if test="hdegree != null" >-->
-        <!--hdegree,-->
-      <!--</if>-->
-      <!--<if test="teachingDirection != null" >-->
-        <!--teaching_direction,-->
-      <!--</if>-->
-      <!--<if test="position != null" >-->
-        <!--position,-->
-      <!--</if>-->
-      <!--<if test="icon != null" >-->
-        <!--icon,-->
-      <!--</if>-->
-      <!--<if test="did != null" >-->
-        <!--did,-->
-      <!--</if>-->
-      <!--<if test="mid != null" >-->
-        <!--mid,-->
-      <!--</if>-->
-      <!--<if test="identityId != null" >-->
-        <!--identity_id,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--#{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="tname != null" >-->
-        <!--#{tname,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="password != null" >-->
-        <!--#{password,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="sex != null" >-->
-        <!--#{sex,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="workTime != null" >-->
-        <!--#{workTime,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="hdegree != null" >-->
-        <!--#{hdegree,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="teachingDirection != null" >-->
-        <!--#{teachingDirection,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="position != null" >-->
-        <!--#{position,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="icon != null" >-->
-        <!--#{icon,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="did != null" >-->
-        <!--#{did,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="mid != null" >-->
-        <!--#{mid,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="identityId != null" >-->
-        <!--#{identityId,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
-  <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.Teacher" >-->
-    <!--update teacher-->
-    <!--<set >-->
-      <!--<if test="tid != null" >-->
-        <!--tid = #{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="tname != null" >-->
-        <!--tname = #{tname,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="password != null" >-->
-        <!--password = #{password,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="sex != null" >-->
-        <!--sex = #{sex,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="workTime != null" >-->
-        <!--work_time = #{workTime,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="hdegree != null" >-->
-        <!--hdegree = #{hdegree,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="teachingDirection != null" >-->
-        <!--teaching_direction = #{teachingDirection,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="position != null" >-->
-        <!--position = #{position,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="icon != null" >-->
-        <!--icon = #{icon,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="did != null" >-->
-        <!--did = #{did,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="mid != null" >-->
-        <!--mid = #{mid,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="identityId != null" >-->
-        <!--identity_id = #{identityId,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</set>-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</update>-->
+  <insert id="insertTeacher" parameterType="Teacher" >
+    insert into teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="tname != null" >
+        tname,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="workTime != null" >
+        work_time,
+      </if>
+      <if test="hdegree != null" >
+        hdegree,
+      </if>
+      <if test="teachingDirection != null" >
+        teaching_direction,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="did != null" >
+        did,
+      </if>
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="identityId != null" >
+        identity_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="tname != null" >
+        #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="workTime != null" >
+        #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="hdegree != null" >
+        #{hdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="teachingDirection != null" >
+        #{teachingDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="did != null" >
+        #{did,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="identityId != null" >
+        #{identityId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateTeacher" parameterType="Teacher" >
+    update teacher
+    <set >
+      <if test="tid != null" >
+        tid = #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="tname != null" >
+        tname = #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="workTime != null" >
+        work_time = #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="hdegree != null" >
+        hdegree = #{hdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="teachingDirection != null" >
+        teaching_direction = #{teachingDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="did != null" >
+        did = #{did,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="identityId != null" >
+        identity_id = #{identityId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
   <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.Teacher" >-->
     <!--update teacher-->
     <!--set tid = #{tid,jdbcType=VARCHAR},-->

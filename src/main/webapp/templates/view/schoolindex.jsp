@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../templates/style/plugins/font-awesome/css/font-awesome.min.css" media="all">
     <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
     <script src="<%=basePath%>templates/style/plugins/layui/jquery-3.3.1.min.js"></script>
+    <script src="../../templates/style/build/js/navbar.js"></script>
     <style>
         .info-box {
             height: 85px;
@@ -85,7 +86,7 @@
                         <h3 class="layui-timeline-title">毕设公告</h3>
                         <ul>
                             <li>
-                                <a href="javascript:;" onClick="openA('毕设公告','http://www.baidu.com')">长沙学院大四毕业生毕业设计选题通知</a>
+                                <a href="javascript:;" onclick=openA("毕设公告","http://www.baidu.com")>长沙学院大四毕业生毕业设计选题通知</a>
                             </li>
                             <li>
                                 <a href="http://www.baidu.com" target="_blank">长沙学院大四毕业生毕业设计指导老师选择通知</a>
@@ -153,14 +154,23 @@
     //     layer.message('Hello');
     // });
 
-    layui.use('jquery', function() {
-        var $ = layui.jquery;
-        $('#test').on('click', function() {
-            parent.message.show({
-                skin: 'cyan'
-            });
-        });
-    });
+    // layui.use('jquery', function() {
+    //     var $ = layui.jquery;
+    //     $('#test').on('click', function() {
+    //         parent.message.show({
+    //             skin: 'cyan'
+    //         });
+    //     });
+    // });
+
+    // layui.use('jquery', function() {
+    //     var $ = layui.jquery;
+    //     $(".layui-col-md12 a").on("click",function(){
+    //         parent.layer;
+    //     });
+    // });
+
+
 
     layui.use('layer', function() { //独立版的layer无需执行这一句
         var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
@@ -184,7 +194,6 @@
         //弹出即全屏
        active.aOpen(title,url);
     }
-
 </script>
 </body>
 

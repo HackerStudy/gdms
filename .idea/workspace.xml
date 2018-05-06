@@ -7,210 +7,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d5a3c0b-ac95-4cfe-b452-3e1cea058c59" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_8_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_8_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_unknown.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/SQL/gdms.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/DepartmentMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/IdentityMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Department.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Major.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/test/TestLog4j.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/util/InData.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/util/OutData.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/IdentityMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/datas/listInMap.json" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/gdms_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/gdms_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/DepartmentService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/MajorService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/DepartmentServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/MajorServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/addteacher.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/updateTeacher.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/gdms.iml" afterPath="$PROJECT_DIR$/gdms.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/AdminController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/GGroupMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/GGroupMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/filter/LoginFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/filter/LoginFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/model/Identity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Identity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/DepartmentMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/DepartmentMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/model/Teacher.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Teacher.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/g/GGroupService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/g/GGroupService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/vo/LimitVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/LimitVo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupLimitServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupLimitServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/test/TestLog4j.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/test/TestLog4j.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/GGroupMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/GGroupMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap-theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/css/button.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/bootstrap/js/npm.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/build/js/tab.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/build/js/tab.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/kindeditor/plugins/media/media.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/kindeditor/plugins/media/media.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/layui.css" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/layui.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/layui.mobile.css" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/layui.mobile.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/modules/code.css" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/modules/code.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/modules/laydate/default/laydate.css" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/modules/laydate/default/laydate.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/modules/layer/default/layer.css" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/css/modules/layer/default/layer.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.eot" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.eot" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.svg" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.ttf" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.woff" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/font/iconfont.woff" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/carousel.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/carousel.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/code.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/code.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/element.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/flow.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/flow.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/form.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/laydate.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/laydate.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/layedit.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/layer.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/layer.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/laypage.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/laypage.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/laytpl.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/laytpl.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/mobile.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/mobile.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/table.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/table.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/tree.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/tree.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/upload.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/upload.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/util.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/lay/modules/util.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/layui.all.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/layui.all.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/layui.js" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/layui/layui.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/update.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/group/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/group/add.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/group/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/group/list.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/addstudent.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/addstudent.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/updateStudent.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/updateStudent.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/AdminController.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/menugroup/GroupController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/menugroup/GroupController.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/AdminMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/AdminMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/GGroupMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/GGroupMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/filter/LoginFilter.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/filter/LoginFilter.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/model/Identity.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/model/Identity.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/model/Student.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/model/Student.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/DepartmentMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/DepartmentMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/MajorMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/MajorMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/StudentMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/StudentMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/TeacherMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/TeacherMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/model/Admin.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/model/Admin.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/model/Teacher.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/model/Teacher.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/AdminService.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/AdminService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/g/GGroupService.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/g/GGroupService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/g/impl/GGroupServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/g/impl/GGroupServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/UserServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/util/StaticFinalVar.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/util/StaticFinalVar.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/vo/LimitVo.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/vo/LimitVo.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/g/impl/GGroupLimitServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/g/impl/GGroupLimitServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/StudentService.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/StudentService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/StudentServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/test/TestLog4j.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/test/TestLog4j.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" />
       <change beforePath="$PROJECT_DIR$/target/classes/log4j.xml" afterPath="$PROJECT_DIR$/target/classes/log4j.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdminMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/AdminMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/GGroupMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/GGroupMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/DepartmentMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/DepartmentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/MajorMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/MajorMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/StudentMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/StudentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/TeacherMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/TeacherMapper.xml" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin.war" afterPath="$PROJECT_DIR$/target/kit-admin.war" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/AdminController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/AdminController.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/menugroup/GroupController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/menugroup/GroupController.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/AdminMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/AdminMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/GGroupMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/GGroupMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/filter/LoginFilter.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/filter/LoginFilter.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Identity.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Identity.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Student.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Student.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/DepartmentMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/DepartmentMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/MajorMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/MajorMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/StudentMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/StudentMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/TeacherMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/TeacherMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Admin.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Admin.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Teacher.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/model/Teacher.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/AdminService.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/AdminService.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/g/GGroupService.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/g/GGroupService.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/g/impl/GGroupServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/g/impl/GGroupServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/UserServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/util/StaticFinalVar.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/util/StaticFinalVar.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/vo/LimitVo.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/vo/LimitVo.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/jdbc.properties" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/g/impl/GGroupLimitServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/g/impl/GGroupLimitServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/StudentService.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/StudentService.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/StudentServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/test/TestLog4j.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/test/TestLog4j.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/log4j.properties" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/log4j.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/log4j.xml" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/AdminMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/AdminMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/GGroupMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/GGroupMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap-theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/css/button.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/bootstrap/js/npm.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/build/js/tab.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/build/js/tab.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/kindeditor/plugins/media/media.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/kindeditor/plugins/media/media.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/layui.css" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/layui.css" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/layui.mobile.css" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/layui.mobile.css" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/modules/code.css" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/modules/code.css" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/modules/laydate/default/laydate.css" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/modules/laydate/default/laydate.css" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/modules/layer/default/layer.css" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/css/modules/layer/default/layer.css" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.eot" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.eot" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.svg" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.svg" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.ttf" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.ttf" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.woff" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/font/iconfont.woff" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/carousel.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/carousel.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/code.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/code.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/element.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/flow.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/flow.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/form.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/jquery.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/laydate.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/laydate.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/layedit.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/layer.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/layer.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/laypage.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/laypage.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/laytpl.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/laytpl.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/mobile.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/mobile.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/table.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/table.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/tree.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/tree.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/upload.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/upload.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/util.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/lay/modules/util.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/layui.all.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/layui.all.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/layui.js" afterPath="$PROJECT_DIR$/target/kit-admin/templates/style/plugins/layui/layui.js" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/add.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/add.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/list.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/list.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/update.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/update.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/group/add.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/group/add.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/group/list.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/group/list.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/index.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/login.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/addstudent.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/user/addstudent.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/DepartmentMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/DepartmentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/MajorMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/MajorMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/StudentMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/StudentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/TeacherMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/TeacherMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/student.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/user/student.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/updateStudent.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/user/updateStudent.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/teacher.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/user/teacher.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -221,63 +88,51 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/gdms$TestLog4j.coverage" NAME="TestLog4j Coverage Results" MODIFIED="1525500460740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.gdms.test.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="202" column="38" lean-forward="false" selection-start-line="202" selection-start-column="38" selection-end-line="202" selection-end-column="38" />
+            <state relative-caret-position="-1232">
+              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="student.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp">
+      <file leaf-file-name="schoolindex.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="117" column="38" lean-forward="false" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
+            <state relative-caret-position="262">
+              <caret line="88" column="76" lean-forward="false" selection-start-line="88" selection-start-column="76" selection-end-line="88" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
+      <file leaf-file-name="navbar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/style/build/js/navbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11661">
-              <caret line="299" column="49" lean-forward="false" selection-start-line="299" selection-start-column="49" selection-end-line="299" selection-end-column="49" />
+            <state relative-caret-position="5616">
+              <caret line="144" column="35" lean-forward="false" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
               <folding>
-                <marker date="1525466392608" expanded="true" signature="3421:3481" ph="select from student" />
-                <marker date="1525466392608" expanded="true" signature="3421:3529" ph="select from student" />
-                <marker date="1525466392608" expanded="true" signature="3481:3529" ph="select from kit_admin" />
-                <marker date="1525466392608" expanded="true" signature="3654:3778" ph="select from student" />
-                <marker date="1525466392608" expanded="true" signature="3886:3950" ph="delete from student... " />
-                <marker date="1525466392608" expanded="true" signature="4051:4682" ph="insert into student... " />
-                <marker date="1525466392608" expanded="true" signature="7617:8850" ph="update student... " />
-                <marker date="1525466392608" expanded="true" signature="8954:9648" ph="update student... " />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-78">
+              <caret line="121" column="9" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -287,6 +142,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -301,6 +157,12 @@
       <find>queryListByWhere</find>
       <find>log</find>
       <find>kit</find>
+      <find>getCheckData</find>
+      <find>didScreen</find>
+      <find>dScreen</find>
+      <find>getModelByGroupIdAndLimitId</find>
+      <find>navbar</find>
+      <find>test</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -314,45 +176,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/style/kindeditor/plugins/media/media.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/style/build/js/tab.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/filter/LoginFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/InData.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/style/datas/listInMap.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/common/impl/BaseServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Department.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/DepartmentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/IdentityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Identity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Major.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/IdentityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/test/TestLog4j.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/addstudent.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/view/group/list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/updateStudent.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/test/TestLog4j.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/teacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/addteacher.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/updateTeacher.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/updateStudent.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/DepartmentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/DepartmentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/DepartmentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/MajorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/MajorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupLimitServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/MenuGroupLimitController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/OutData.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" />
       </list>
     </option>
   </component>
@@ -407,9 +281,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -467,137 +342,7 @@
               <item name="gdms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="menugroup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -614,7 +359,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -623,8 +368,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -633,8 +378,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -648,7 +394,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -882,51 +627,53 @@
       <updated>1525353731157</updated>
       <workItem from="1525353733545" duration="17427000" />
       <workItem from="1525403167565" duration="51095000" />
-      <workItem from="1525466609782" duration="519000" />
+      <workItem from="1525466609782" duration="2479000" />
+      <workItem from="1525498838168" duration="29950000" />
+      <workItem from="1525589875928" duration="30273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69041000" />
+    <option name="totallyTimeSpent" value="131224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37484434" sideWeight="0.50215983" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34744707" sideWeight="0.50431967" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34869242" sideWeight="0.49784017" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985056" sideWeight="0.49568033" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49676025" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34744707" sideWeight="0.49568033" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33001244" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18142548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2462203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -937,7 +684,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -945,339 +692,155 @@
       </configuration>
     </watches-manager>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/IdentityMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/updateTeacher.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="82" column="15" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="82" selection-end-column="15" />
+        <state relative-caret-position="-405">
+          <caret line="128" column="51" lean-forward="false" selection-start-line="128" selection-start-column="51" selection-end-line="128" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding>
-            <marker date="1525444250789" expanded="true" signature="834:959" ph="select from identity" />
-            <marker date="1525444250789" expanded="true" signature="1067:1132" ph="delete from identity... " />
-            <marker date="1525444250789" expanded="true" signature="1234:1462" ph="insert into identity... " />
-            <marker date="1525444250789" expanded="true" signature="2657:3124" ph="update identity... " />
-            <marker date="1525444250789" expanded="true" signature="3238:3473" ph="update identity... " />
+            <marker date="1525505318656" expanded="true" signature="1591:1705" ph="select from student" />
+            <marker date="1525505318656" expanded="true" signature="5055:6245" ph="update teacher... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Major.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="-618">
+          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/IdentityMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="7" column="55" lean-forward="true" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1535">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state relative-caret-position="39">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <marker date="1525444182608" expanded="true" signature="680:878" ph="select from department" />
-            <marker date="1525444182608" expanded="true" signature="1020:1089" ph="delete from department... " />
-            <marker date="1525444182608" expanded="true" signature="1193:1318" ph="insert into department... " />
-            <marker date="1525444182608" expanded="true" signature="2138:2375" ph="update department... " />
-            <marker date="1525444182608" expanded="true" signature="2491:2623" ph="update department... " />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="780">
+          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding>
-            <marker date="1525445320090" expanded="true" signature="720:843" ph="select from major" />
-            <marker date="1525445320090" expanded="true" signature="951:1015" ph="delete from major... " />
-            <marker date="1525445320090" expanded="true" signature="1114:1282" ph="insert into major... " />
-            <marker date="1525445320090" expanded="true" signature="2241:2561" ph="update major... " />
-            <marker date="1525445320090" expanded="true" signature="2672:2833" ph="update major... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-devtools.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2417">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="4134">
+          <caret line="161" column="30" lean-forward="true" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Configuration.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/addteacher.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="52" column="14" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="52" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="148" column="36" lean-forward="false" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+        <state relative-caret-position="2598">
+          <caret line="150" column="42" lean-forward="true" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/test/TestLog4j.java">
+    <entry file="jar://$USER_HOME$/.m2/repository/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar!/com/alibaba/fastjson/JSON.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/group/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3057">
-          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="71" column="55" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="55" />
-          <folding>
-            <marker date="1525326679154" expanded="true" signature="5041:5056" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/addstudent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="121" column="41" lean-forward="false" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="93" column="58" lean-forward="true" selection-start-line="93" selection-start-column="58" selection-end-line="93" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="24" column="48" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3861">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1525421598599" expanded="true" signature="6957:6965" ph="&amp;##xe642;" />
-            <marker date="1525421598599" expanded="true" signature="7135:7143" ph="&amp;##xe640;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6153">
-          <caret line="120" column="9" lean-forward="false" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        <state relative-caret-position="-305">
+          <caret line="119" column="5" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/tk/mybatis/mapper/3.5.2/mapper-3.5.2.jar!/tk/mybatis/mapper/common/base/select/SelectMapper.class">
+    <entry file="jar://$USER_HOME$/.m2/repository/cc/openkit/open_kit/1.1.16/open_kit-1.1.16.jar!/cc/openkit/common/KitUtil.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="127" column="38" lean-forward="false" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/common/BaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="50" column="92" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="50" selection-end-column="92" />
-          <folding>
-            <marker date="1525369346373" expanded="true" signature="1033:1229" ph="select from kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="1378:1457" ph="select * fro... kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="1546:1612" ph="select from kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="1704:1815" ph="select from kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="1917:2023" ph="select kit_a... kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="2133:2183" ph="select from kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="2133:2275" ph="select from kit_admin" />
-            <marker date="1525369346373" expanded="true" signature="2402:3064" ph="update kit_admin... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="69" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="69" />
+        <state relative-caret-position="192">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/common/impl/BaseServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        <state relative-caret-position="796">
+          <caret line="50" column="66" lean-forward="false" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/util/InData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2028">
+          <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
           <folding>
-            <element signature="e#920#921#0" expanded="false" />
-            <element signature="e#968#969#0" expanded="false" />
+            <marker date="1525593975043" expanded="true" signature="3421:3481" ph="select from student" />
+            <marker date="1525593975043" expanded="true" signature="3421:3529" ph="select from student" />
+            <marker date="1525593975043" expanded="true" signature="3481:3529" ph="select from kit_admin" />
+            <marker date="1525593975043" expanded="true" signature="3629:3977" ph="select from student" />
+            <marker date="1525593975043" expanded="true" signature="4102:4226" ph="select from student" />
+            <marker date="1525593975043" expanded="true" signature="4334:4398" ph="delete from student... " />
+            <marker date="1525593975043" expanded="true" signature="4499:5130" ph="insert into student... " />
+            <marker date="1525593975043" expanded="true" signature="8065:9298" ph="update student... " />
+            <marker date="1525593975043" expanded="true" signature="9402:10096" ph="update student... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/common/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="63" lean-forward="true" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/filter/LoginFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="102" column="8" lean-forward="false" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/group/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2549">
-          <caret line="40" column="59" lean-forward="false" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="358" column="35" lean-forward="false" selection-start-line="358" selection-start-column="35" selection-end-line="358" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        <state relative-caret-position="429">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1285,102 +848,313 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/updateStudent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="128" column="44" lean-forward="false" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="29" column="97" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="97" />
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <marker date="1525330660984" expanded="true" signature="6348:6363" ph="..." />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="202" column="38" lean-forward="false" selection-start-line="202" selection-start-column="38" selection-end-line="202" selection-end-column="38" />
+        <state relative-caret-position="624">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Major.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="195">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Department.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11661">
-          <caret line="299" column="49" lean-forward="false" selection-start-line="299" selection-start-column="49" selection-end-line="299" selection-end-column="49" />
+        <state relative-caret-position="-164">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/g/GGroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <marker date="1525466392608" expanded="true" signature="3421:3481" ph="select from student" />
-            <marker date="1525466392608" expanded="true" signature="3421:3529" ph="select from student" />
-            <marker date="1525466392608" expanded="true" signature="3481:3529" ph="select from kit_admin" />
-            <marker date="1525466392608" expanded="true" signature="3654:3778" ph="select from student" />
-            <marker date="1525466392608" expanded="true" signature="3886:3950" ph="delete from student... " />
-            <marker date="1525466392608" expanded="true" signature="4051:4682" ph="insert into student... " />
-            <marker date="1525466392608" expanded="true" signature="7617:8850" ph="update student... " />
-            <marker date="1525466392608" expanded="true" signature="8954:9648" ph="update student... " />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/logs/common-default.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/MajorMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/logs/controller/logistics-component.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/DepartmentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/logs/controller/info-log.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/DepartmentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding>
+            <element signature="e#888#889#0" expanded="false" />
+            <element signature="e#942#943#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/logs/controller/debug-log.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/MajorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/MajorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="e#884#885#0" expanded="false" />
+            <element signature="e#933#934#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/DepartmentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <marker date="1525602781857" expanded="true" signature="593:660" ph="select from department" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-507">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding>
+            <marker date="1525602831497" expanded="true" signature="668:730" ph="select from major" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="117" column="38" lean-forward="false" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
+        <state relative-caret-position="216">
+          <caret line="275" column="38" lean-forward="false" selection-start-line="275" selection-start-column="38" selection-end-line="275" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/GGroupLimit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="546">
+          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1914#1929#0" expanded="false" />
+            <element signature="e#6054#6070#0" expanded="false" />
+            <element signature="e#9639#9655#0" expanded="false" />
+            <element signature="e#10186#10202#0" expanded="false" />
+            <element signature="e#11111#11126#0" expanded="false" />
+            <element signature="e#12676#12692#0" expanded="false" />
+            <element signature="e#16624#16640#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="194" column="40" lean-forward="false" selection-start-line="194" selection-start-column="40" selection-end-line="194" selection-end-column="40" />
+          <folding>
+            <marker date="1525421598599" expanded="true" signature="6957:6965" ph="&amp;##xe642;" />
+            <marker date="1525421598599" expanded="true" signature="7135:7143" ph="&amp;##xe640;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/web/WebSettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="66" column="73" lean-forward="true" selection-start-line="66" selection-start-column="73" selection-end-line="66" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/util/OutData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#1582#1583#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9594">
+          <caret line="272" column="6" lean-forward="true" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/g/GGroupLimitService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="56" column="73" lean-forward="false" selection-start-line="56" selection-start-column="73" selection-end-line="56" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/MenuGroupLimitController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="49" column="57" lean-forward="false" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/GGroupLimitMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupLimitServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="44" column="86" lean-forward="false" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/GGroupLimitMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <marker date="1525191300635" expanded="true" signature="1841:2058" ph="select from kit_g_group_limit" />
+            <marker date="1525191300635" expanded="true" signature="2181:2342" ph="select from kit_g_group_limit" />
+            <marker date="1525191300635" expanded="true" signature="2423:2499" ph="delete from kit_g_group_limit... " />
+            <marker date="1525191300635" expanded="true" signature="2611:2734" ph="select from kit_g_group_limit" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/style/benstyle/bootstrap-3.3.0/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="4" column="2758" lean-forward="true" selection-start-line="4" selection-start-column="2758" selection-end-line="4" selection-end-column="2764" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1232">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/style/build/js/navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5616">
+          <caret line="144" column="35" lean-forward="false" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="121" column="9" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="88" column="76" lean-forward="false" selection-start-line="88" selection-start-column="76" selection-end-line="88" selection-end-column="76" />
           <folding />
         </state>
       </provider>

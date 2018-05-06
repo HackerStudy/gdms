@@ -10,4 +10,6 @@ public interface StudentService extends BaseService<Student> {
     List<Student> searchStudentListBySid(String sid,Integer page,Integer rows);
 
     int updateStudent(Student student);
+
+    List<Student> getStudentList(Student student,Integer page,Integer rows);
 }

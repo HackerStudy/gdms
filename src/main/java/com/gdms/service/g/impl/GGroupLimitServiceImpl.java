@@ -41,6 +41,7 @@ public class GGroupLimitServiceImpl  extends BaseServiceImpl<GGroupLimit> implem
     public GGroupLimit testGroup(HttpServletRequest request, int i) {
         HttpSession session = request.getSession();
         Admin admin = (Admin) session.getAttribute("admin");
+        System.out.println("admin:"+admin.toString());
         List<GGroupLimit> gGroupLimits = gGroupLimitMapper.getModelByGroupIdAndLimitId(admin.getGroupId(), i);
         GGroupLimit gGroupLimit = null;
         if(gGroupLimits.size()>0){

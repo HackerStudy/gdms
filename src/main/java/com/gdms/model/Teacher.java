@@ -51,6 +51,9 @@ public class Teacher {
         this.identityId = identityId;
     }
 
+    public Teacher() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -101,5 +104,76 @@ public class Teacher {
 
     public Integer getIdentityId() {
         return identityId;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setTid(String tid) {
+        this.tid = tid;
+    }
+
+    public void setTname(String tname) {
+        this.tname = tname;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
+
+    public void setWorkTime(String workTime) {
+        this.workTime = workTime;
+    }
+
+    public void setHdegree(String hdegree) {
+        this.hdegree = hdegree;
+    }
+
+    public void setTeachingDirection(String teachingDirection) {
+        this.teachingDirection = teachingDirection;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public void setDid(Integer did) {
+        this.did = did;
+    }
+
+    public void setMid(Integer mid) {
+        this.mid = mid;
+    }
+
+    public void setIdentityId(Integer identityId) {
+        this.identityId = identityId;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", tid='" + tid + '\'' +
+                ", tname='" + tname + '\'' +
+                ", password='" + password + '\'' +
+                ", sex=" + sex +
+                ", workTime='" + workTime + '\'' +
+                ", hdegree='" + hdegree + '\'' +
+                ", teachingDirection='" + teachingDirection + '\'' +
+                ", position='" + position + '\'' +
+                ", icon='" + icon + '\'' +
+                ", did=" + did +
+                ", mid=" + mid +
+                ", identityId=" + identityId +
+                '}';
     }
 }

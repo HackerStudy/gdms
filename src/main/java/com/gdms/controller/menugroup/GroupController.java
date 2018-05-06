@@ -54,7 +54,7 @@ public class GroupController {
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public ModelAndView getAll(HttpServletRequest request){
         // 权限验证
-        GGroupLimit gGroupLimit = gGroupLimitService.testGroup(request, 4);
+        GGroupLimit gGroupLimit = gGroupLimitService.testGroup(request, 3);
         ModelAndView mv = new ModelAndView();
         // 没有权限，返回错误页面
         if(gGroupLimit==null){

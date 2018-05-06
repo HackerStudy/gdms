@@ -123,6 +123,23 @@
   where sid like concat(concat("%",#{sid}),"%")
   </select>
 
+  <select id="getStudentList" resultMap="BaseResultMap" parameterType="student" >
+    select
+    <include refid="Base_Column_List" />
+    from student
+    <where>
+        <if test="sid!=null">
+          sid= #{sid,jdbcType=VARCHAR}
+        </if>
+        <if  test="did!=null" >
+          and did=#{did,jdbcType=INTEGER}
+        </if>
+        <if  test="mid!=null" >
+          and mid=#{mid,jdbcType=INTEGER}
+        </if>
+    </where>
+  </select>
+
   <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
     <!--select -->
     <!--<include refid="Base_Column_List" />-->

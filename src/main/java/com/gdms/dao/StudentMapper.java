@@ -26,4 +26,6 @@ public interface StudentMapper extends Mapper<Student> {
     Integer insertStudent(Student student);
 
     List<Student> searchStudentListBySid(@Param("sid") String sid);
+
+    List<Student> getStudentList(Student student);
 }
