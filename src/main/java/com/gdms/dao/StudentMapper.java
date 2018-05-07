@@ -28,4 +28,8 @@ public interface StudentMapper extends Mapper<Student> {
     List<Student> searchStudentListBySid(@Param("sid") String sid);
 
     List<Student> getStudentList(Student student);
+
+    Student queryStudentBySid(@Param("sid") String sid);
+
+    int queryIdBySid(@Param("sid") String sid);
 }

@@ -48,22 +48,22 @@
                                     <img src="<%=basePath%>${admin.kitAdminImgUrl}" class="layui-nav-img"> ${admin.kitAdminName}
                                 </a>
                                 <dl class="layui-nav-child">
-                                    <dd><a href="javascript:;">查看个人资料</a></dd>
-                                    <dd><a href="javascript:;">修改个人资料</a></dd>
+                                    <dd><a href="javascript:;" onclick="personalInfo('个人资料','/person/goPensonalInfo')">个人资料</a></dd>
+                                    <dd><a href="javascript:;" onclick="modify_password('修改密码','/person/goModifyPassword')">修改密码</a></dd>
                                 </dl></c:when><c:when test="${user.identity==2}">
                                 <a href="javascript:;">
                                     <img src="<%=basePath%>${student.icon}" class="layui-nav-img"> ${student.name}
                                 </a>
                                 <dl class="layui-nav-child">
-                                    <dd><a href="javascript:;">查看个人资料</a></dd>
-                                    <dd><a href="javascript:;">修改个人资料</a></dd>
+                                    <dd><a href="javascript:;" onclick="personalInfo('个人资料','/person/goPensonalInfo')">个人资料</a></dd>
+                                    <dd><a href="javascript:;" onclick="modify_password('修改密码','/person/goModifyPassword')">修改密码</a></dd>
                                 </dl></c:when><c:otherwise>
                                 <a href="javascript:;">
                                     <img src="<%=basePath%>${teacher.icon}" class="layui-nav-img"> ${teacher.tname}
                                 </a>
                                 <dl class="layui-nav-child">
-                                    <dd><a href="javascript:;">查看个人资料</a></dd>
-                                    <dd><a href="javascript:;">修改个人资料</a></dd>
+                                    <dd><a href="javascript:;" onclick="personalInfo('个人资料','/person/goPensonalInfo')">个人资料</a></dd>
+                                    <dd><a href="javascript:;" onclick="modify_password('修改密码','/person/goModifyPassword')">修改密码</a></dd>
                                 </dl></c:otherwise></c:choose>
             </li>
             <li class="layui-nav-item"><a href="<%=basePath%>uplogin"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
@@ -114,13 +114,6 @@
 <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
 <script src="<%=basePath%>admin/js/getGroup.js"></script>
 <script>
-    // 数据存 Cookie
-    <%--var adminid = '${admin.kitAdminId}';--%>
-    <%--var kitWeb = '${kitWeb.kitWebName}';--%>
-    <%--setCookie("adminid",adminid,'m15');--%>
-    <%--setCookie("kitWeb",kitWeb,'m15');--%>
-</script>
-<script>
     var message;
     layui.config({
         base: '<%=basePath%>templates/style/build/js/'
@@ -144,6 +137,32 @@
             });
         });
     });
+
+    layui.use('layer', function() { //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        //触发事件
+        window.active = {
+            aOpen: function (title,url) {
+                var index = layer.open({
+                    type: 2,
+                    title:title,
+                    content: url,
+                    area: ['600px','450px'],
+                    maxmin: true
+                });
+                layer.auto(index);
+            }
+        }
+    });
+
+    function personalInfo(title,url) {
+        active.aOpen(title,url);
+    }
+
+    function modify_password(title,url) {
+        active.aOpen(title,url);
+    }
+
 </script>
 </body>
 

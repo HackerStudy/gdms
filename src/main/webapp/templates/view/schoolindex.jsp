@@ -85,27 +85,14 @@
                     <div class="layui-timeline-content layui-text">
                         <h3 class="layui-timeline-title">毕设公告</h3>
                         <ul>
+                            <c:forEach items="${noticeVoList}" var="list">
                             <li>
-                                <a href="javascript:;" onclick=openA("毕设公告","http://www.baidu.com")>长沙学院大四毕业生毕业设计选题通知</a>
+                                <div>
+                                <a href="http://www.ccsu.cn/info/1046/21323.htm") target="_blank">关于组织申报2019年度湖南省自然科学基金项目的通知</a>
+                                    <span>     ${list.time}</span>
+                                </div>
                             </li>
-                            <li>
-                                <a href="http://www.baidu.com" target="_blank">长沙学院大四毕业生毕业设计指导老师选择通知</a>
-                            </li>
-                            <li>
-                                <a href="http://www.baidu.com" target="_blank">长大学院开题答辩通知</a>
-                            </li>
-                            <li>
-                                <a href="http://www.baidu.com" target="_blank">长大学院中期答辩通知</a>
-                            </li>
-                            <li>
-                                <a href="http://www.baidu.com" target="_blank">长大学院毕业论文通知</a>
-                            </li>
-                            <li>
-                                <a href="http://www.baidu.com" target="_blank">长大学院终极答辩通知</a>
-                            </li>
-                            <li>
-                                <a href="http://www.baidu.com" target="_blank">长大学院成绩查询通知</a>
-                            </li>
+                            </c:forEach>
                         </ul>
                     </div>
                 </li>
@@ -115,35 +102,29 @@
                         <h3 class="layui-timeline-title">毕业生优秀论文</h3>
                         <ul>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/jsj/10447.html")>【计算机网络安全论文】计算机病毒的危害与防范研究</a>
                             </li>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/jsj/10211.html")>【计算机网络技术论文】试述计算机网络故障管理智能化</a>
                             </li>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/jjxlw/10533.html")>【经济学论文】浅谈中国对外投资的现状以及应对措施</a>
                             </li>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/jjxlw/10395.html")>【经济学论文】浅谈优化电力调度实现电网经济运行的策略研究</a>
                             </li>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/keji/8600.html")>【科技论文】浅谈电能表校验相关问题</a>
                             </li>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/keji/8498.html")>【科技论文】汽车维修行业的现状及对策研究</a>
                             </li>
                             <li>
-                                <a href="http://www.lunwen361.com/html/2015/gongyejishu_1121/2.html" target="_blank">探析一种矿用本安型人员报警探测器</a>
+                                <a href="javascript:;" onclick=openA("优秀毕业论文","http://www.diyilunwen.com/lwfw/gsgl/5966.html")>【工商管理毕业论文范文】浅谈民营企业的金融体系</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <%--<li class="layui-timeline-item">--%>
-                    <%--<i class="layui-icon layui-timeline-axis">&#xe63f;</i>--%>
-                    <%--<div class="layui-timeline-content layui-text">--%>
-                        <%--<div class="layui-timeline-title">更新日志</div>--%>
-                    <%--</div>--%>
-                <%--</li>--%>
             </ul>
         </div>
     </div>

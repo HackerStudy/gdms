@@ -35,6 +35,7 @@ public class StaticFinalVar {
     public static final String HAVE_NOT_RECOMMEND = "不存在该推荐人";
     public static final String LOGIN_ERR = "登录失败";
     public static final String SEEK_PWD_ERR = "修改密码失败";
+    public static  final String  SEEK_PWD_OK="修改密码成功";
 
     public static final String REGISTER_OK = "用户注册成功";
     public static final String REGISTER_ERR = "用户注册成功";

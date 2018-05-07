@@ -23,4 +23,6 @@ public interface AdminService extends BaseService<Admin> {
     String findAdminIdByAdminUsername(String kitAdminUsername);
 
     List<Admin> searchAdminByAdminUsername(String kitAdminUsername);
+
+    int updateAdmin(Admin admin);
 }

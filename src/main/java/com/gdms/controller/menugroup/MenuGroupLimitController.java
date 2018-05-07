@@ -47,11 +47,11 @@ public class MenuGroupLimitController {
     @ResponseBody
     public Object getGroup(HttpServletRequest request){
         // 权限验证
-        GGroupLimit gGroupLimit = gGroupLimitService.testGroup(request, 2);
+        GGroupLimit gGroupLimit = gGroupLimitService.testGroup(request, 3);
         ModelAndView mv = new ModelAndView();
         // 没有权限，返回错误页面
         if(gGroupLimit==null){
-            mv.setViewName("/user/err/no_group_err");
+            mv.setViewName("/view/err/no_group_err");
             mv.addObject("msg", StaticFinalVar.NO_GROUP_MSG+StaticFinalVar.CALL_GROUP);
             return mv;
         }

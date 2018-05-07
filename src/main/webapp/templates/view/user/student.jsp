@@ -305,41 +305,6 @@
         });
     });
 
-        function MidScreen(value) {
-            var table = layui.table;
-            var search = $('#search').val();
-            var did = $('#did').val();
-            var mid = $('#mid').val();
-            table.render({
-                elem: '#test'
-                , url: '<%=basePath%>user/studentGetAllJson'
-                , where: {
-                    search: search,
-                    did: did,
-                    mid: mid
-                }
-                , method: 'post'
-                // ,page: {layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']}
-                , cols: [[
-                    {type: 'checkbox', fixed: 'left'},
-                    {field: 'id', align: 'center', width: 80, title: '序号', sort: true, fixed: true}
-                    , {field: 'sid', title: '学号', width: 150, sort: true}
-                    , {field: 'name', title: '姓名', width: 80,}
-                    , {field: 'sex', title: '性别', width: 80, sort: true}
-                    , {field: 'did', title: '院部', width: 150}
-                    , {field: 'mid', title: '专业', width: 120}
-                    , {field: 'grade', title: '年级', width: 80}
-                    , {field: 'sclass', title: '班级', width: 120, sort: true}
-                    , {field: 'phone', title: '联系电话', width: 150}
-                    , {field: 'email', title: '邮箱', width: 190}
-                    , {field: 'adviserid', title: '指导老师', width: 100}
-                    , {field: 'replygroupid', title: '所属答辩组', width: 120, sort: true}
-                    , {field: 'right', align: 'center', width: 180, toolbar: '#barDemo', title: '操作', fixed: 'right'}
-                ]]
-                , page: true
-            });
-        }
-
         function search() {
             var table = layui.table;
             var search = $('#search').val();

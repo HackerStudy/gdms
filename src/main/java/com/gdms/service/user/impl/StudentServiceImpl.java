@@ -36,4 +36,12 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements Stud
         PageHelper.startPage(page, rows);
         return studentMapper.getStudentList(student);
     }
+
+    public Student queryStudentBySid(String sid) {
+        return studentMapper.queryStudentBySid(sid);
+    }
+
+    public int queryIdBySid(String sid) {
+        return studentMapper.queryIdBySid(sid);
+    }
 }

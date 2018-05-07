@@ -67,4 +67,8 @@ public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminSer
     public List<Admin> searchAdminByAdminUsername(String kitAdminUsername) {
         return adminMapper.searchAdminByAdminUsername(kitAdminUsername);
     }
+
+    public int updateAdmin(Admin admin) {
+        return adminMapper.updateAdmin(admin);
+    }
 }

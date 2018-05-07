@@ -278,11 +278,15 @@ public class UserController {
     @ResponseBody
     public ModelAndView teacherinfo(HttpSession session){
         ModelAndView mv = new ModelAndView();
+        List<Department> departmentList= departmentService.queryAllList();
+        List<Major> majorList= majorService.queryAllList();
+        mv.addObject("departmentList",departmentList);
+        mv.addObject("majorList",majorList);
         mv.setViewName("/view/user/teacher");
         return mv;
     }
 
-    @RequestMapping(value = "/teacherGetAllJson", method = RequestMethod.POST)
+    @RequestMapping(value = "/teacherGetAllJson")
     @ResponseBody
     public Object TeacherGetAllJson(HttpServletRequest request){
         log.info("返回关于老师信息的json");
@@ -290,19 +294,66 @@ public class UserController {
         String page = request.getParameter("page");// 获得页数
         String limit = request.getParameter("limit");// 获得每页显示条数
         String search = request.getParameter("search");// 获取搜索条件
-        Teacher teacher;
-        List<Teacher> teacherList;
-        if(search.equals("")){
+        String did =request.getParameter("did");
+        String mid= request.getParameter("mid");
+        Teacher teacher =new Teacher();
+        List<Teacher> teacherList =null;
+        if(search.equals("")&&did.equals("")&&mid.equals("")){
             search=null;
+            did=null;
+            mid=null;
             //封装数据
-            teacher = new Teacher();
             teacher.setTid(search);
             // 分页查询
             teacherList = teacherService.queryPageListByWhere(teacher, Integer.valueOf(page), Integer.valueOf(limit));
-        }else{
-            teacher = new Teacher();
+        }else if(search.equals("")&&(!did.equals(""))&&mid.equals("")){
+            search=null;
+            mid=null;
             teacher.setTid(search);
-            teacherList = teacherService.searchTeacherListByTid(search, Integer.valueOf(page), Integer.valueOf(limit));
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
+        }else if(search.equals("")&&did.equals("")&&(!mid.equals(""))){
+            search=null;
+            did=null;
+            teacher.setTid(search);
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
+        }else if(search.equals("")&&(!did.equals(""))&&(!mid.equals(""))){
+            search=null;
+            teacher.setTid(search);
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
+        }else if((!search.equals(""))&&did.equals("")&&mid.equals("")){
+            did=null;
+            mid=null;
+            //封装数据
+            teacher.setTid(search);
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
+        }else if((!search.equals(""))&&(!did.equals(""))&&mid.equals("")){
+            mid=null;
+            //封装数据
+            teacher.setTid(search);
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
+        }else if((!search.equals(""))&&did.equals("")&&(!mid.equals(""))){
+            did=null;
+            //封装数据
+            teacher.setTid(search);
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
+        }else if((!search.equals(""))&&(!did.equals(""))&&(!mid.equals(""))){
+            //封装数据
+            teacher.setTid(search);
+            teacher.setDid(Integer.valueOf(did));
+            teacher.setMid(Integer.valueOf(mid));
+            teacherList = teacherService.getTeacherList(teacher, Integer.valueOf(page), Integer.valueOf(limit));
         }
         // 分页查询
         int size = teacherService.queryCount(teacher);
@@ -409,6 +460,7 @@ public class UserController {
         String position=request.getParameter("position");
         Integer identityId=Integer.valueOf(request.getParameter("identityId"));
         Teacher teacher=new Teacher();
+        teacher.setId(id);
         teacher.setTid(tid);
         teacher.setTname(tname);
         teacher.setSex(sex);
@@ -434,7 +486,36 @@ public class UserController {
         return JSONObject.toJSON(map);
     }
 
+    @RequestMapping(value = "/deleteAllTeacher", method = RequestMethod.POST)
+    @ResponseBody
+    public Object delAllTeacher(@RequestBody Teacher[] teachers, HttpServletRequest request){
+        Map<String, Object> map1 = new HashMap<String, Object>();
+        int j;
+        for(Teacher list:teachers){
+            j=teacherService.deleteById(list.getId());
+            if(j>0){
+            }else{
+                map1=KitUtil.returnMap("200",StaticFinalVar.DEL_ERR);
+            }
+        }
+        if(map1.size()>0){
+        }else{
+            map1=KitUtil.returnMap("101",StaticFinalVar.DEL_OK);
+        }
+        return JSONObject.toJSON(map1);
+    }
 
+    @RequestMapping(value = "/goTeacherIdentity", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView teacherIdentityInfo(HttpSession session){
+        ModelAndView mv = new ModelAndView();
+        List<Department> departmentList= departmentService.queryAllList();
+        List<Major> majorList= majorService.queryAllList();
+        mv.addObject("departmentList",departmentList);
+        mv.addObject("majorList",majorList);
+        mv.setViewName("/view/user/teacherIdentity");
+        return mv;
+    }
 
 
 }

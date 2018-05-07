@@ -27,7 +27,6 @@
 
 <div class="kit-doc">
     <form class="layui-form layui-form-pane" action="">
-
         <div class="layui-form-item">
             <label class="layui-form-label">管理员账号</label>
             <div class="layui-input-block">

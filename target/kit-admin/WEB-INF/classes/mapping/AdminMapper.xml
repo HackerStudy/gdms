@@ -137,21 +137,27 @@
       </if>
     </trim>
   </insert>
-  <!--<update id="updateByPrimaryKeySelective" parameterType="cc.openkit.user.model.Admin" >-->
-    <!--update kit_admin-->
-    <!--<set >-->
-      <!--<if test="kitAdminUsername != null" >-->
-        <!--kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="kitAdminPassword != null" >-->
-        <!--kit_admin_password = #{kitAdminPassword,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="kitAdminName != null" >-->
-        <!--kit_admin_name = #{kitAdminName,jdbcType=VARCHAR},-->
-      <!--</if>-->
-    <!--</set>-->
-    <!--where kit_admin_id = #{kitAdminId,jdbcType=VARCHAR}-->
-  <!--</update>-->
+  <update id="updateAdmin" parameterType="admin" >
+    update kit_admin
+    <set >
+      <if test="kitAdminUsername != null" >
+        kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminPassword != null" >
+        kit_admin_password = #{kitAdminPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminName != null" >
+        kit_admin_name = #{kitAdminName,jdbcType=VARCHAR},
+      </if>
+      <if test="kitAdminImgUrl != null" >
+        kit_admin_name = #{kitAdminImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where kit_admin_id = #{kitAdminId,jdbcType=VARCHAR}
+  </update>
   <!--<update id="updateByPrimaryKey" parameterType="cc.openkit.user.model.Admin" >-->
     <!--update kit_admin-->
     <!--set kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR},-->

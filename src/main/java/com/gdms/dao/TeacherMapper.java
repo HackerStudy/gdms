@@ -1,5 +1,6 @@
 package com.gdms.dao;
 
+import com.gdms.model.Student;
 import com.gdms.model.Teacher;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -26,4 +27,10 @@ public interface TeacherMapper extends Mapper<Teacher> {
     List<Teacher> searchTeacherListByTid(@Param("tid") String tid);
 
     int updateTeacher(Teacher teacher);
+
+    List<Teacher> getTeacherList(Teacher teacher);
+
+    Teacher queryTeacherByTid(@Param("tid") String tid);
+
+    int queryidByTid(@Param("tid") String tid);
 }
