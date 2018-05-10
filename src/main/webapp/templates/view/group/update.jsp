@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>添加分组</title>
+    <title>修改角色权限</title>
     <link rel="stylesheet" href="<%=basePath%>templates/style/plugins/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>templates/style/build/css/doc.css" media="all">
     <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
@@ -29,9 +29,9 @@
         <form class="layui-form layui-form-pane" action="">
             <input name="groupId" lay-verify="required" value="${kitModel.groupId}" autocomplete="off" class="layui-input" type="hidden">
             <div class="layui-form-item">
-                <label class="layui-form-label">组名</label>
+                <label class="layui-form-label">角色名</label>
                 <div class="layui-input-block">
-                    <input name="groupName" lay-verify="required" value="${kitModel.groupName}" placeholder="请输入菜单标题" autocomplete="off" class="layui-input" type="text">
+                    <input name="groupName" lay-verify="required" value="${kitModel.groupName}" placeholder="请输入角色名" autocomplete="off" class="layui-input" type="text">
                 </div>
             </div>
             <div class="layui-form-item" pane="">

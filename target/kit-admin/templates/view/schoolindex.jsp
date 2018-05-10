@@ -88,8 +88,8 @@
                             <c:forEach items="${noticeVoList}" var="list">
                             <li>
                                 <div>
-                                <a href="http://www.ccsu.cn/info/1046/21323.htm") target="_blank">关于组织申报2019年度湖南省自然科学基金项目的通知</a>
-                                    <span>     ${list.time}</span>
+                                    <a href="http://www.ccsu.cn/info/1046/21323.htm") target="_blank">关于组织申报2019年度湖南省自然科学基金项目的通知</a>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${list.time}</span>
                                 </div>
                             </li>
                             </c:forEach>

@@ -91,12 +91,15 @@ public class ApiCommon {
                 String type = type1.substring(6);
 //                String path2=getClass().getResource(".").getFile().toString();
                 String gdmspath="E:/IDEA/WorkSpace/gdms/src/main/webapp/";
+                String tomcatpath="E:/工具软件/apache-tomcat-8.0.41/webapps/gdms/";
                 String path =  gdmspath+ StaticFinalVar.IMG_FILES + name + "." + type;
+                String tpath=  tomcatpath+ StaticFinalVar.IMG_FILES + name + "." + type;
                 System.out.println("path:"+path);
 //                System.out.println("path2"+path2);
 //                System.getProperty("user.dir");
 //                System.out.println("file:"+file);
                 FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(path));
+//                FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(tpath));
                 String imgurl = StaticFinalVar.IMG_FILES + name + "." + type;
                 System.out.println("file>>>>>>>>>>>>>" + name + "." + type);
                 System.out.println(imgurl);

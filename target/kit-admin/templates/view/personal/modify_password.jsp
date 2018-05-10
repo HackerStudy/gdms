@@ -35,29 +35,28 @@
         <div class="layui-card-header">修改密码</div>
         <div class="layui-card-body">
             <form class="layui-form" action="">
-                <input id="username" name="username" value=${user.username} type="hidden" />
-                <%--<input type="hidden" id="altId" name="id" value="2">--%>
+                <input id="oldpassword1" name="oldpassword1" value=${user.password} type="hidden" />
                 <div class="layui-form-item">
                     <label class="layui-form-label">旧密码</label>
-                    <div class="layui-input-inline">
-                        <input id="oldpassword" type="password" name="oldpassword" lay-verify="required" lay-vertype="tips" placeholder="请输入老密码" autocomplete="off" class="layui-input">
+                    <div class="layui-input-inline" style="height: 40px;">
+                        <input id="oldpassword" type="password" name="oldpassword" lay-verify="required" lay-vertype="tips" placeholder="请输入老密码" autocomplete="off" class="layui-input" onblur="verifyOldPassword()"><div style="position: relative;left: 200px;top: -32px;"><span id="old"></span></div>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">密码</label>
                     <div class="layui-input-inline">
-                        <input id="password" type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input" onblur="checkoldPassword(this)">
+                        <input id="password" type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">新密码</label>
-                    <div class="layui-input-inline">
-                        <input id="passwordAgain" type="password" name="passwordAgain" placeholder="请确认密码" autocomplete="off" class="layui-input">
+                    <div class="layui-input-inline" style="height: 40px;">
+                        <input id="passwordAgain" type="password" name="passwordAgain" placeholder="请确认密码" autocomplete="off" class="layui-input" onblur="verifyPasswordAgain()"><div style="position: relative;left: 200px;top: -32px;"><span id="new"></span></div>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="add">修改</button>
+                        <button id="button" class="layui-btn" lay-submit lay-filter="add">修改</button>
                     </div>
                 </div>
             </form>
@@ -65,18 +64,37 @@
     </div>
 </div>
 <script type="text/javascript">
+
+    function verifyOldPassword(){
+        var oldpwd=document.getElementById("oldpassword").value;
+        var oldpwd1=document.getElementById("oldpassword1").value;
+        if(oldpwd==oldpwd1){
+            document.getElementById("old").innerHTML="<font color='green'>旧密码输入正确</font>";
+        }else{
+            document.getElementById("old").innerHTML="<font color='red'>旧密码输入错误</font>";
+            document.getElementById("button").disabled = true;
+        }
+    }
+
+    function verifyPasswordAgain() {
+        var pwd1 = document.getElementById("password").value;
+        var pwd2 = document.getElementById("passwordAgain").value;
+        <!-- 对比两次输入的密码 -->
+        if(pwd1 == pwd2)
+        {
+            document.getElementById("new").innerHTML="<font color='green'>两次密码相同</font>";
+            document.getElementById("button").disabled = false;
+        }
+        else {
+            document.getElementById("new").innerHTML="<font color='red'>两次密码不相同</font>";
+            document.getElementById("button").disabled = true;
+        }
+    };
+
     layui.use(['element','form'], function(){
         var form = layui.form;
         //监听提交，发送请求
         form.on('submit(add)', function(data){
-            <%--var oldpassword=$('#oldpassword').val();--%>
-            <%--var password=$('#password').val();--%>
-            <%--var passwordAgain=$('#passwordAgain').val();--%>
-            <%--if(oldpassword!=${user.password}){--%>
-                <%--layer.alert('你的旧密码输入错误', {offset: 'auto',icon: 5});--%>
-            <%--}else if(password!=passwordAgain) {--%>
-                <%--layer.alert('两次密码输入不对应', {offset: 'auto', icon: 5});--%>
-            <%--}--%>
             $.post("<%=basePath%>person/updatePassword",data.field,function(data){
                 // 获取 session
                 if(data.code!=200){

@@ -43,4 +43,20 @@ public class StaticFinalVar {
     public static final String SEARCH_ERR = "查询失败";
     public static final String SEARCH_OK = "查询成功";
 
+    public static final String APPLYTTEACHER_OK_ = "已申请";
+    public static final String APPLY_OK_ = "申请成功";
+    public static final String APPLY_ERR_ = "申请失败";
+    public static final String APPLYTNUMBER_ERR ="该教师申请人数已达到上限";
+
+    public static final String RETREAT_EOR ="退选失败";
+    public static final String RETREAT_OK ="退选成功";
+
+    public static final String COEEECT_OK ="批准";
+    public static final String COEEECT_ERR ="不批准";
+
+    public static final String OOPTION_OK ="操作成功";
+    public static final String OOPTION_ERR ="操作失败";
+
+    public static final String LimitNumber_ERR ="限制人数小于现有人数,请从新设置";
+    public static final String APPROVAL_ERR ="人数已超过限制";
 }

@@ -1,8 +1,11 @@
 package com.gdms.service.user;
 import com.gdms.model.Student;
 import com.gdms.service.common.BaseService;
+import com.gdms.vo.AdviseStudentVo;
+import com.gdms.vo.StudentInfoVo;
 import org.apache.ibatis.annotations.Param;
 
+import javax.persistence.Id;
 import java.util.List;
 
 public interface StudentService extends BaseService<Student> {
@@ -17,4 +20,14 @@ public interface StudentService extends BaseService<Student> {
     Student queryStudentBySid(String sid);
 
     int queryIdBySid(String sid);
+
+    int updateNewStudent(Integer adviserid,Integer id);
+
+    List<AdviseStudentVo> queryPageAdviseStudent(String tid, Integer page, Integer rows);
+
+    List<AdviseStudentVo> queryAdviseStudent(String tid);
+
+    Integer queryCountAdviseStudent(String tid);
+
+    StudentInfoVo queryStudentInfoVoBySid(String sid);
 }

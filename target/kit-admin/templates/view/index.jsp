@@ -43,7 +43,7 @@
         <%--</ul>--%>
         <ul class="layui-nav layui-layout-right kit-nav">
             <li class="layui-nav-item">
-                    <c:choose><c:when test="${user.identity==1}">
+                    <c:choose><c:when test="${user.identity==1||user.identity==5}">
                                 <a href="javascript:;">
                                     <img src="<%=basePath%>${admin.kitAdminImgUrl}" class="layui-nav-img"> ${admin.kitAdminName}
                                 </a>

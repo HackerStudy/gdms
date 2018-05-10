@@ -35,83 +35,70 @@
         <div class="layui-card-header">学生资料</div>
         <div class="layui-card-body">
             <form class="layui-form" action="">
-                <input id="id" name="id" value=${student.id} type="hidden" />
-                <%--<input type="hidden" id="altId" name="id" value="2">--%>
+                <input id="id" name="id" value=${studentInfoVo.id} type="hidden" />
                 <div class="layui-form-item">
-                    <label class="layui-form-label">账号</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.sid}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">姓名</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.name}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">性别</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.sex}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">所属院部</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.did}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">所属专业</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.mid}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">年级</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.grade}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">班级</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.sclass}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">联系电话</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.phone}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">邮箱</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.email}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">头像</label>
-                    <input name="icon" id="imgurl" lay-verify="required" value="${student.icon}" autocomplete="off" class="layui-input" type="hidden">
+                    <label class="layui-form-label">头像:</label>
+                    <input name="icon" id="imgurl" lay-verify="required" value="${studentInfoVo.icon}" autocomplete="off" class="layui-input" type="hidden">
                     <div class="layui-upload">
                         <div class="layui-upload-list" style="float:left;">
-                            <img id="demo1" class="layui-upload-img" style="max-width: 120px;max-height: 120px" src="<%=basePath%>${student.icon}">
+                            <img id="demo1" class="layui-upload-img" style="max-width: 120px;max-height: 120px" src="<%=basePath%>${studentInfoVo.icon}">
                             <p id="demoText"></p>
                         </div>
                         <button type="button" class="layui-btn" id="avatar"  style="margin-top: 30px;margin-left: 20px;"><i class="layui-icon">&#xe681;</i>上传图片</button>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">指导老师</label>
-                    <div class="layui-input-block">
-                        <label class="layui-form-label">${student.adviserid}</label>
+                    <label class="layui-form-label">账号:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.sid}</label>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">所属答辩组</label>
-                    <div class="layui-input-block">
-                        <label class="layui-form-label">${student.replygroupid}</label>
+                    <label class="layui-form-label">姓名:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.name}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性别:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.sex}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属院部:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.department}</label >
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属专业:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.major}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">年级:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.grade}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">班级:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${studentInfoVo.sclass}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                <label class="layui-form-label">联系电话:</label>
+                <div class="layui-input-inline">
+                    <input name="phone" value="${studentInfoVo.phone}" lay-verify="phone" autocomplete="off" class="layui-input" type="text" style="width: 200px">
+                </div>
+            </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">邮箱:</label>
+                    <div class="layui-input-inline">
+                        <input name="email" value="${studentInfoVo.email}" lay-verify="email" autocomplete="off" class="layui-input" type="text" style="width: 200px">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -160,6 +147,22 @@
                     uploadInst.upload();
                 });
             }
+        });
+
+        //自定义验证规则
+        form.verify({
+            // phone: function(value,item){
+            //     if(/^1[3|4|5|7|8]\d{9}$/.test(value)){
+            //         return '手机必须11位，只能是数字！';
+            //     }
+            // },
+            // email: function(value,item){
+            //     if(/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/.test(value)){
+            //         return '邮箱格式不对';
+            //     }
+            // }
+            phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位，只能是数字！']
+            ,email: [/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/, '邮箱格式不对']
         });
 
         //监听提交，发送请求

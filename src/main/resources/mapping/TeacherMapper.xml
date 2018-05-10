@@ -18,6 +18,45 @@
       <arg column="identity_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
+
+  <resultMap id="AdviseTeacherVoMap" type="AdviseTeacherVo" >
+  <constructor >
+    <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="work_time" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="hdegree" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="teaching_direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="position" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="have_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="limit_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+  </constructor>
+</resultMap>
+
+  <resultMap id="TeacherInfoVoMap" type="TeacherInfoVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="work_time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="hdegree" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teaching_direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="position" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="icon" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="identityname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, tid, tname, password, sex, work_time, hdegree, teaching_direction, position, 
     icon, did, mid, identity_id
@@ -28,6 +67,12 @@
     <include refid="Base_Column_List" />
     from teacher
     where tid like concat(concat("%",#{tid}),"%")
+  </select>
+
+  <select id="queryTeacherList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from teacher
   </select>
 
   <select id="getTeacherList" resultMap="BaseResultMap" parameterType="teacher" >
@@ -221,4 +266,65 @@
       <!--identity_id = #{identityId,jdbcType=INTEGER}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <select id="queryAdviseTeacherVoByIdentity" resultMap="AdviseTeacherVoMap">
+    select
+    a.id,a.tid,a.tname,e.sex_name,a.work_time,a.hdegree,a.teaching_direction,a.position,c.department_name,d.major_name,b.phone,b.email,f.have_number,f.limit_number
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join advise_teacher f on a.tid=f.tid
+    where a.identity_id= 3
+  </select>
+
+  <select id="queryCountAdviseTeacherVo" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join advise_teacher f on a.tid=f.tid
+    where a.identity_id= 3
+  </select>
+
+
+  <select id="queryAdviseTeacherVoByDid" resultMap="AdviseTeacherVoMap">
+    select
+    a.id,a.tid,a.tname,e.sex_name,a.work_time,a.hdegree,a.teaching_direction,a.position,c.department_name,d.major_name,b.phone,b.email,f.have_number,f.limit_number
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join advise_teacher f on a.tid=f.tid
+    where a.identity_id= #{identity} and a.did=#{did}
+  </select>
+
+  <select id="queryCountAdviseTeacherVoByDid" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join advise_teacher f on a.tid=f.tid
+    where a.identity_id= #{identity} and a.did=#{did}
+  </select>
+
+  <select id="queryTeacherInfoVoByTid" resultMap="TeacherInfoVoMap">
+    select
+    a.id,a.tid,a.tname,e.sex_name,a.work_time,a.hdegree,a.teaching_direction,a.position,a.icon,c.department_name,d.major_name,f.identityname,b.phone,b.email
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join identity f on a.identity_id=f.identity_id
+    where a.tid= #{tid}
+  </select>
 </mapper>

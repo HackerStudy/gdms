@@ -3,15 +3,15 @@ package com.gdms.controller.person;
 import cc.openkit.common.KitUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.gdms.controller.user.UserController;
-import com.gdms.model.Admin;
-import com.gdms.model.Student;
-import com.gdms.model.Teacher;
-import com.gdms.model.User;
+import com.gdms.model.*;
+import com.gdms.service.TeacherContact.TeacherContactService;
 import com.gdms.service.admin.AdminService;
 import com.gdms.service.user.StudentService;
 import com.gdms.service.user.TeacherService;
 import com.gdms.service.user.UserService;
 import com.gdms.util.StaticFinalVar;
+import com.gdms.vo.StudentInfoVo;
+import com.gdms.vo.TeacherInfoVo;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -41,6 +41,9 @@ public class PersonController {
     @Resource
     TeacherService teacherService;
 
+    @Resource
+    TeacherContactService teacherContactService;
+
     @RequestMapping(value = "/goPensonalInfo", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView goPensonalInfo(HttpSession session){
@@ -51,12 +54,12 @@ public class PersonController {
             mv.addObject("admin",admin);
             mv.setViewName("/view/personal/personalInfo");
         }else if(user.getIdentity()==2){
-            Student student= studentService.queryStudentBySid(user.getUsername());
-            mv.addObject("student",student);
+            StudentInfoVo studentInfoVo= studentService.queryStudentInfoVoBySid(user.getUsername());
+            mv.addObject("studentInfoVo",studentInfoVo);
             mv.setViewName("/view/personal/pensonalStudentInfo");
         }else{
-            Teacher teacher= teacherService.queryTeacherByTid(user.getUsername());
-            mv.addObject("teacher",teacher);
+            TeacherInfoVo teacherInfoVo= teacherService.queryTeacherInfoVoByTid(user.getUsername());
+            mv.addObject("teacherInfoVo",teacherInfoVo);
             mv.setViewName("/view/personal/pensonalTeacherInfo");
         }
         return mv;
@@ -64,7 +67,7 @@ public class PersonController {
 
     @RequestMapping(value = "/updateAdmin", method = RequestMethod.POST)
     @ResponseBody
-    public Object add(HttpServletRequest request){
+    public Object add(HttpServletRequest request,HttpSession session){
         log.info("用户 》 添加 》 保存");
         String kitAdminId=request.getParameter("kitAdminId");
         String kitAdminName = request.getParameter("kitAdminName");
@@ -77,6 +80,8 @@ public class PersonController {
         admin.setKitAdminImgUrl(imgurl);
         int i=adminService.updateByAdminId(admin);
         if(i>0){
+            Admin admin1=adminService.queryByUUID(kitAdminId);
+            session.setAttribute("admin",admin1);
             return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
         }else {
             return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
@@ -85,18 +90,24 @@ public class PersonController {
 
     @RequestMapping(value = "/updateStudent", method = RequestMethod.POST)
     @ResponseBody
-    public Object updateStudent(HttpServletRequest request){
+    public Object updateStudent(HttpServletRequest request,HttpSession session){
         log.info("用户 》 添加 》 保存");
         int id=Integer.valueOf(request.getParameter("id"));
         String icon = request.getParameter("icon");
+        String phone=request.getParameter("phone");
+        String email=request.getParameter("email");
         Student student=new Student();
         student.setId(id);
         student.setIcon(icon);
+        student.setPhone(phone);
+        student.setEmail(email);
         int i=studentService.updateStudent(student);
         if(i>0){
-            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
+            Student student1=studentService.queryById(id);
+            session.setAttribute("student",student1);
+            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.UPDATE_OK));
         }else {
-            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.UPDATE_ERR));
         }
     }
 
@@ -106,10 +117,18 @@ public class PersonController {
         log.info("用户 》 添加 》 保存");
         int id=Integer.valueOf(request.getParameter("id"));
         String icon = request.getParameter("icon");
+        String phone =request.getParameter("phone");
+        String email =request.getParameter("email");
+        String tid=request.getParameter("tid");
         Teacher teacher=new Teacher();
         teacher.setId(id);
         teacher.setIcon(icon);
+        TeacherContact teacherContact=new TeacherContact();
+        teacherContact.setTid(tid);
+        teacherContact.setPhone(phone);
+        teacherContact.setEmail(email);
         int i=teacherService.updateTeacher(teacher);
+        int j=teacherContactService.updateTeacherContactByTid(teacherContact);
         if(i>0){
             return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
         }else {

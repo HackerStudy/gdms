@@ -11,6 +11,7 @@ import com.gdms.vo.NoticeVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -29,6 +30,15 @@ public class LoginController {
     @Resource
     NoticeService noticeService;
 
+
+    @RequestMapping(value ="/goLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView goLogin(HttpSession session){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/view/login");
+        return mv;
+    }
+
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public ModelAndView login(HttpServletRequest request, HttpSession session){
         ModelAndView modelAndView=new ModelAndView();
@@ -43,7 +53,7 @@ public class LoginController {
         session.setAttribute("noticeVoList",noticeVoList);
         int identityid=Integer.valueOf(request.getParameter("identityid"));
 //        System.out.println("现在开始登录");
-        if(identityid==1){
+        if(identityid==1||identityid==5){
             Admin admin = new Admin();
             admin.setKitAdminUsername(username);
             admin.setKitAdminPassword(password);

@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="<%=basePath%>templates/style/build/css/doc.css" media="all">
     <link rel="stylesheet" href="../../css/user.css" media="all" />
     <script src="<%=basePath%>templates/style/plugins/layui/layui.js"></script>
+    <script src="<%=basePath%>templates/style/plugins/layui/layui.all.js"></script>
     <script src="<%=basePath%>templates/style/plugins/layui/jquery-3.3.1.min.js"></script>
-    <script src="<%=basePath%>templates/admin/js/getGroup.js"></script>
 </head>
 <body class="childrenBody">
 <div class="layui-col-md12">
@@ -35,83 +35,89 @@
         <div class="layui-card-header">老师资料</div>
         <div class="layui-card-body">
             <form class="layui-form" action="">
-                <input id="id" name="id" value=${teacher.id} type="hidden" />
-                <%--<input type="hidden" id="altId" name="id" value="2">--%>
+                <input id="id" name="id" value=${teacherInfoVo.id} type="hidden" />
+                <input name="tid" value="${teacherInfoVo.tid}" type="hidden">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">账号</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.tid}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">姓名</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.tname}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">性别</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.sex}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">所属院部</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${student.did}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">参加工作的时间</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.workTime}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">最高学历</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.hdegree}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">教学方向</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.teachingDirection}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">职称</label>
-                    <div class="layui-input-inline">
-                        <label class="layui-form-label">${teacher.position}</label>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">头像</label>
-                    <input name="icon" id="imgurl" lay-verify="required" value="${teacher.icon}" autocomplete="off" class="layui-input" type="hidden">
+                    <label class="layui-form-label">头像:</label>
+                    <input name="icon" id="imgurl" lay-verify="required" value="${teacherInfoVo.icon}" autocomplete="off" class="layui-input" type="hidden">
                     <div class="layui-upload">
                         <div class="layui-upload-list" style="float:left;">
-                            <img id="demo1" class="layui-upload-img" style="max-width: 120px;max-height: 120px" src="<%=basePath%>${teacher.icon}">
+                            <img id="demo1" class="layui-upload-img" style="max-width: 120px;max-height: 120px" src="<%=basePath%>${teacherInfoVo.icon}">
                             <p id="demoText"></p>
                         </div>
                         <button type="button" class="layui-btn" id="avatar"  style="margin-top: 30px;margin-left: 20px;"><i class="layui-icon">&#xe681;</i>上传图片</button>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">所属院部</label>
-                    <div class="layui-input-block">
-                        <label class="layui-form-label">${teacher.did}</label>
+                    <label class="layui-form-label">账号:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.tid}</label>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">所属专业</label>
-                    <div class="layui-input-block">
-                        <label class="layui-form-label">${teacher.mid}</label>
+                    <label class="layui-form-label">姓名:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.tname}</label>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">身份</label>
-                    <div class="layui-input-block">
-                        <label class="layui-form-label">${teacher.identityId}</label>
+                    <label class="layui-form-label">性别:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.sex}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">参加工作的时间:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.workTime}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">最高学历:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.hdegree}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">教学方向:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.teachingDirection}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">职称:</label>
+                    <div class="layui-input-inline" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.position}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属院部:</label>
+                    <div class="layui-input-block" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.department}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属专业:</label>
+                    <div class="layui-input-block" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.major}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">身份:</label>
+                    <div class="layui-input-block" style="padding: 7px 0px;">
+                        <label>${teacherInfoVo.identity}</label>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系电话:</label>
+                    <div class="layui-input-inline">
+                        <input name="phone" value="${teacherInfoVo.phone}" lay-verify="phone" autocomplete="off" class="layui-input" type="text" style="width: 200px">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">邮箱:</label>
+                    <div class="layui-input-inline">
+                        <input name="email" value="${teacherInfoVo.email}" lay-verify="email" autocomplete="off" class="layui-input" type="text" style="width: 200px">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -160,6 +166,22 @@
                     uploadInst.upload();
                 });
             }
+        });
+
+        //自定义验证规则
+        form.verify({
+            // phone: function(value,item){
+            //     if(/^1[3|4|5|7|8]\d{9}$/.test(value)){
+            //         return '手机必须11位，只能是数字！';
+            //     }
+            // },
+            // email: function(value,item){
+            //     if(/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/.test(value)){
+            //         return '邮箱格式不对';
+            //     }
+            // }
+            phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位，只能是数字！']
+            ,email: [/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/, '邮箱格式不对']
         });
 
         //监听提交，发送请求

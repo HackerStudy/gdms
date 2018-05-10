@@ -1,6 +1,8 @@
 package com.gdms.dao;
 
 import com.gdms.model.Student;
+import com.gdms.vo.AdviseStudentVo;
+import com.gdms.vo.StudentInfoVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.common.Mapper;
@@ -32,4 +34,12 @@ public interface StudentMapper extends Mapper<Student> {
     Student queryStudentBySid(@Param("sid") String sid);
 
     int queryIdBySid(@Param("sid") String sid);
+
+    int updateNewStudent(@Param("adviserid") Integer adviserid,@Param("id") Integer id);
+
+    List<AdviseStudentVo> queryAdviseStudent(String tid);
+
+    Integer queryCountAdviseStudent(String tid);
+
+    StudentInfoVo queryStudentInfoVoBySid(String sid);
 }

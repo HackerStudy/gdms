@@ -7,89 +7,96 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d5a3c0b-ac95-4cfe-b452-3e1cea058c59" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/notice/NoticeController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/NoticeMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Notice.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/notice/NoticeService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/notice/impl/NoticeServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/util/StringAndDate.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/NoticeVo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/NoticeMapper.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/laydate/laydate.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/laydate/theme/default/font/iconfont.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/laydate/theme/default/font/iconfont.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/laydate/theme/default/font/iconfont.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/laydate/theme/default/font/iconfont.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/style/plugins/laydate/theme/default/laydate.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/notice/editNoticeInfo.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/notice/notice.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/notice/releaseNotice.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/modify_password.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/personalInfo.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacherIdentity.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/advise/AdviseController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdviseMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdviseTAndSMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdviseTeacherMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherContactMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/Advise.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/AdviseTAndS.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/AdviseTeacher.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/model/TeacherContact.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/TeacherContact/TeacherContactService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/TeacherContact/impl/TeacherContactServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseTAndSService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseTeacherService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/impl/AdviseServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/impl/AdviseTAndSServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/impl/AdviseTeacherServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/AdviseStudentVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/AdviseTeacherVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/AdviseVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/StudentInfoVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/StudentVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/vo/TeacherInfoVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdviseMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdviseTAndSMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdviseTeacherMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TeacherContactMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/choiceAdvise.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/distribution.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/distributionAdvise.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookAdvise.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookApplyStudent.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookCarryStudent.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookChoiceResult.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/setLimitNumber.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/MenuGroupLimitController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/MenuGroupLimitController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/common/ApiCommon.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/common/ApiCommon.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UploginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UploginController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java" afterPath="$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/group/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/group/add.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/group/update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/group/update.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/menu/menu_set.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/menu/menu_set.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/modify_password.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/modify_password.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/lookStudent.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/menugroup/MenuGroupLimitController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/menugroup/MenuGroupLimitController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/person/PersonController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/person/PersonController.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/controller/user/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/AdminMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/AdminMapper.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/StudentMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/StudentMapper.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/dao/TeacherMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/dao/TeacherMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/AdminService.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/AdminService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/StudentService.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/StudentService.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/TeacherService.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/TeacherService.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/StudentServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/TeacherServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/service/user/impl/TeacherServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdminMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/AdminMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gdms/util/StaticFinalVar.class" afterPath="$PROJECT_DIR$/target/classes/com/gdms/util/StaticFinalVar.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapping/StudentMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/StudentMapper.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapping/TeacherMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/TeacherMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin.war" afterPath="$PROJECT_DIR$/target/kit-admin.war" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/menugroup/MenuGroupLimitController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/menugroup/MenuGroupLimitController.class" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin.war" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/person/PersonController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/person/PersonController.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/LoginController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/controller/user/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/AdminMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/AdminMapper.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/StudentMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/StudentMapper.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/TeacherMapper.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/dao/TeacherMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/AdminService.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/AdminService.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/admin/impl/AdminServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/StudentService.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/StudentService.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/TeacherService.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/TeacherService.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/StudentServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/StudentServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/TeacherServiceImpl.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/service/user/impl/TeacherServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/AdminMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/AdminMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/util/StaticFinalVar.class" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/com/gdms/util/StaticFinalVar.class" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/StudentMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/StudentMapper.xml" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/TeacherMapper.xml" afterPath="$PROJECT_DIR$/target/kit-admin/WEB-INF/classes/mapping/TeacherMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/add.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/admin/add.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/group/add.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/group/add.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/group/update.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/group/update.jsp" />
       <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/index.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/schoolindex.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/schoolindex.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/lookStudent.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/student.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/user/student.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/user/teacher.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/user/teacher.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/login.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/login.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/menu/menu_set.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/menu/menu_set.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/personal/pensonalStudentInfo.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/personal/pensonalStudentInfo.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/kit-admin/templates/view/personal/pensonalTeacherInfo.jsp" afterPath="$PROJECT_DIR$/target/kit-admin/templates/view/personal/pensonalTeacherInfo.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -105,47 +112,53 @@
       <FILTER>com.gdms.test.*</FILTER>
     </SUITE>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gdms@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gdms@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gdms@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="gdms: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="PersonController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java">
+      <file leaf-file-name="AdviseController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/advise/AdviseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="160" column="28" lean-forward="false" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="139">
+              <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personalInfo.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/personalInfo.jsp">
+      <file leaf-file-name="lookApplyStudent.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookApplyStudent.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1199">
-              <caret line="78" column="35" lean-forward="false" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
-              <folding>
-                <marker date="1525710848183" expanded="true" signature="5668:5683" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modify_password.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/modify_password.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="78" column="21" lean-forward="false" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+            <state relative-caret-position="585">
+              <caret line="78" column="51" lean-forward="false" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -157,8 +170,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -181,6 +194,7 @@
       <find>id</find>
       <find>res</find>
       <find>updateTeacher</find>
+      <find>AdviseTeacherVoMap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,57 +208,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/DepartmentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/MajorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/MajorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/DepartmentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/MajorMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/g/impl/GGroupLimitServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/GroupController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/OutData.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacherIdentity.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/teacher.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/notice/Notice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/menugroup/MenuGroupLimitController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/StingAndData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/StingAndDate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/Notice.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/notice/releaseNotice.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/vo/NoticeVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/StringAndDate.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/notice/notice.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/notice/editNoticeInfo.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/NoticeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/notice/NoticeController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/NoticeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/notice/NoticeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/notice/impl/NoticeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdviseMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/impl/AdviseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/model/AdviseTAndS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdviseTAndSMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdviseTAndSMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseTAndSService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/impl/AdviseTAndSServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/distribution.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/distributionAdvise.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/menu/menu_set.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/group/add.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/group/update.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/personal/personalInfo.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/vo/AdviseStudentVo.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookCarryStudent.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/AdviseTeacherMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/AdviseTeacherMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseTeacherService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/advise/impl/AdviseTeacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/vo/AdviseTeacherVo.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookAdvise.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/97b6e23c-a91c-4998-8e02-4b90dc4b840e/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/choiceAdvise.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/vo/StudentInfoVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/vo/TeacherInfoVo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/TeacherContact/TeacherContactService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherContactMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/service/TeacherContact/impl/TeacherContactServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/common/ApiCommon.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/templates/view/personal/modify_password.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/setLimitNumber.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookChoiceResult.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UploginController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherContactMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gdms/controller/advise/AdviseController.java" />
       </list>
     </option>
   </component>
@@ -300,7 +314,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,7 +375,18 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="gdms" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="notice" type="462c0819:PsiDirectoryNode" />
+              <item name="advise" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gdms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gdms" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -425,7 +449,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="gdms" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="advise" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -436,7 +460,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="gdms" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="advise" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -448,7 +472,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="gdms" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="notice" type="462c0819:PsiDirectoryNode" />
+              <item name="TeacherContact" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -459,7 +483,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="gdms" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="notice" type="462c0819:PsiDirectoryNode" />
+              <item name="TeacherContact" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -484,16 +508,6 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -542,25 +556,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -572,6 +567,26 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gdms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="adviser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gdms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="notice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
@@ -593,47 +608,42 @@
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gdms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gdms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="uplodefiles" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\resources\mapping" />
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\webapp\templates\style\plugins" />
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\java\com\gdms\model" />
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\java\com\gdms\dao" />
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\java\SQL" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\webapp\templates\style" />
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\webapp\templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gdms.model" />
       <recent name="com.gdms.dao" />
       <recent name="com.gdms.service.notice" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\webapp\templates\style" />
-      <recent name="E:\IDEA\WorkSpace\gdms\src\main\webapp\templates" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\java\com\gdms\model" />
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\resources\mapping" />
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\java\com\gdms\dao" />
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\webapp\templates\style\plugins" />
+      <recent name="E:\IDEA\WorkSpace\gdms\src\main\java\SQL" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -744,6 +754,7 @@
       <listeners />
     </configuration>
     <configuration name="gdms" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.41" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/goLogin" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="gdms:war">
@@ -850,39 +861,45 @@
       <workItem from="1525498838168" duration="29950000" />
       <workItem from="1525589875928" duration="30273000" />
       <workItem from="1525659370322" duration="52518000" />
+      <workItem from="1525745997075" duration="7634000" />
+      <workItem from="1525759153914" duration="13066000" />
+      <workItem from="1525775175407" duration="28180000" />
+      <workItem from="1525833813450" duration="14638000" />
+      <workItem from="1525922171202" duration="40862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183742000" />
+    <option name="totallyTimeSpent" value="288122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34744707" sideWeight="0.50863934" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985056" sideWeight="0.5151188" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775378" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985056" sideWeight="0.4924406" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985056" sideWeight="0.48488122" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49460045" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.48974082" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34744707" sideWeight="0.4913607" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.4886609" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39726028" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2462203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -912,13 +929,13 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java</url>
-          <line>131</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/gdms/controller/advise/AdviseController.java</url>
+          <line>231</line>
           <properties />
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -931,319 +948,212 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Notice.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/advise/AdviseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/97b6e23c-a91c-4998-8e02-4b90dc4b840e/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/teacherIdentity.jsp">
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.teacher">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/TeacherContact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+        <state relative-caret-position="148">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/updateStudent.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookAdvise.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="113" column="14" lean-forward="false" selection-start-line="111" selection-start-column="7" selection-end-line="113" selection-end-column="14" />
+        <state relative-caret-position="-546">
+          <caret line="47" column="11" lean-forward="true" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/NoticeMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/vo/AdviseTeacherVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/notice/impl/NoticeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-          <folding>
-            <element signature="e#1140#1141#0" expanded="false" />
-            <element signature="e#1192#1193#0" expanded="false" />
-            <element signature="e#1235#1236#0" expanded="false" />
-            <element signature="e#1291#1292#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/notice/NoticeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/NoticeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="74" column="11" lean-forward="true" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
-          <folding>
-            <marker date="1525690428587" expanded="true" signature="735:798" ph="select from notice" />
-            <marker date="1525690428587" expanded="true" signature="883:939" ph="delete from notice... " />
-            <marker date="1525690428587" expanded="true" signature="1029:1216" ph="insert into notice... " />
-            <marker date="1525690428587" expanded="true" signature="2086:2411" ph="update notice... " />
-            <marker date="1525690428587" expanded="true" signature="2513:2707" ph="update notice... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="254" column="5" lean-forward="false" selection-start-line="254" selection-start-column="5" selection-end-line="254" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/notice/releaseNotice.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/notice/notice.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="61" column="50" lean-forward="false" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="42" column="56" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-          <folding>
-            <element signature="e#1331#1341#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/notice/editNoticeInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-507">
-          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6698">
-          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1825">
-          <caret line="129" column="43" lean-forward="false" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="43" />
-          <folding>
-            <marker date="1525421598599" expanded="true" signature="6957:6965" ph="&amp;##xe642;" />
-            <marker date="1525421598599" expanded="true" signature="7135:7143" ph="&amp;##xe640;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/notice/NoticeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/addstudent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="68" column="56" lean-forward="false" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="56" />
-          <folding>
-            <marker date="1525330660984" expanded="true" signature="6348:6363" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/uplodefiles/image/0b4e4671058645dea8e803347f096b04.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/uplodefiles/image/b1cb00a96f344826a61bad412318e6f5.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="269" column="0" lean-forward="true" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/admin/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="79" column="51" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="51" />
-          <folding>
-            <marker date="1525700934142" expanded="true" signature="5040:5055" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3414">
-          <caret line="155" column="47" lean-forward="true" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
-          <folding>
-            <marker date="1525704281409" expanded="true" signature="1033:1229" ph="select from kit_admin" />
-            <marker date="1525704281409" expanded="true" signature="1378:1457" ph="select * fro... kit_admin" />
-            <marker date="1525704281409" expanded="true" signature="1546:1612" ph="select from kit_admin" />
-            <marker date="1525704281409" expanded="true" signature="1704:1815" ph="select from kit_admin" />
-            <marker date="1525704281409" expanded="true" signature="1917:2023" ph="select kit_a... kit_admin" />
-            <marker date="1525704281409" expanded="true" signature="2133:2275" ph="select from kit_admin" />
-            <marker date="1525704281409" expanded="true" signature="2402:3064" ph="update kit_admin... " />
-            <marker date="1525704281409" expanded="true" signature="5251:5912" ph="update kit_admin... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/admin/impl/AdminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/admin/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/uplodefiles/image/26e19c995d4344e7a900539196b3fcd8.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/uplodefiles/image/touxian.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1287">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="156">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/StudentUse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-536">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="117">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="16" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-710">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/vo/StudentVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="41" column="48" lean-forward="true" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/vo/StudentInfoVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3705">
+          <caret line="403" column="0" lean-forward="true" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
+          <folding>
+            <marker date="1525945022812" expanded="true" signature="5250:5358" ph="select from student" />
+            <marker date="1525945022812" expanded="true" signature="5465:5550" ph="select from student" />
+            <marker date="1525945022812" expanded="true" signature="5662:5713" ph="select id fr... student" />
+            <marker date="1525945022812" expanded="true" signature="10249:11482" ph="update student... " />
+            <marker date="1525945022812" expanded="true" signature="12375:12423" ph="update student... " />
+            <marker date="1525945022812" expanded="true" signature="12375:12444" ph="update student... " />
+            <marker date="1525945022812" expanded="true" signature="12561:12857" ph="select a.id,... student" />
+            <marker date="1525945022812" expanded="true" signature="12561:12863" ph="select a.id,... student" />
+            <marker date="1525945022812" expanded="true" signature="12986:13199" ph="select COUNT... student" />
+            <marker date="1525945022812" expanded="true" signature="12986:13205" ph="select COUNT... student" />
+            <marker date="1525945022812" expanded="true" signature="13326:13596" ph="select a.id,... student" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="351">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="118" column="89" lean-forward="false" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
-          <folding>
-            <marker date="1525710848203" expanded="true" signature="7440:7455" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="118" column="89" lean-forward="false" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
-          <folding>
-            <marker date="1525710848193" expanded="true" signature="7455:7470" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2067">
+          <caret line="53" column="31" lean-forward="false" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6201">
-          <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        <state relative-caret-position="218">
+          <caret line="87" column="56" lean-forward="false" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2964">
-          <caret line="94" column="40" lean-forward="false" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+        <state relative-caret-position="374">
+          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/vo/TeacherInfoVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/model/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.teacher_contact">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="37" column="68" lean-forward="false" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherContactMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="9" column="71" lean-forward="false" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/TeacherContact/impl/TeacherContactServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="38" column="76" lean-forward="false" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/TeacherContact/TeacherContactService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1251,129 +1161,234 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/user/student.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
-          <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/personalInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1199">
-          <caret line="78" column="35" lean-forward="false" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
+          <caret line="42" column="75" lean-forward="false" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="75" />
           <folding>
-            <marker date="1525710848183" expanded="true" signature="5668:5683" ph="..." />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/AdminMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uplodefiles/image/999a3335492a4396bd6dc30b054b307e.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/common/ApiCommon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="-1849">
+          <caret line="102" column="77" lean-forward="false" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/adviser/setLimitNumber.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="26" />
+        <state relative-caret-position="2223">
+          <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
           <folding>
-            <marker date="1525715444284" expanded="true" signature="1591:1705" ph="select from teacher" />
-            <marker date="1525715444284" expanded="true" signature="2242:2329" ph="select from teacher" />
-            <marker date="1525715444284" expanded="true" signature="2441:2494" ph="select from teacher" />
-            <marker date="1525715444284" expanded="true" signature="5585:6775" ph="update teacher... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="137" column="11" lean-forward="true" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="11" />
-          <folding>
-            <marker date="1525715404365" expanded="true" signature="3421:3529" ph="select from student" />
-            <marker date="1525715404365" expanded="true" signature="3636:3710" ph="select from student" />
-            <marker date="1525715404365" expanded="true" signature="3636:3721" ph="select from student" />
-            <marker date="1525715404365" expanded="true" signature="3833:3884" ph="select from student" />
-            <marker date="1525715404365" expanded="true" signature="8420:9653" ph="update student... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/TeacherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/TeacherMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="32" column="56" lean-forward="true" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/dao/StudentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/impl/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-          <folding>
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1542#1543#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/service/user/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="160" column="28" lean-forward="false" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/modify_password.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="78" column="21" lean-forward="false" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+        <state relative-caret-position="413">
+          <caret line="53" column="66" lean-forward="false" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookChoiceResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4017">
+          <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/UploginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.kit_g_group">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.identity">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/schoolindex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3274">
+          <caret line="91" column="78" lean-forward="false" selection-start-line="91" selection-start-column="78" selection-end-line="91" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/adviser/choiceAdvise.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="80" column="40" lean-forward="false" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherContactMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="83" column="11" lean-forward="false" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+          <folding>
+            <marker date="1525972262138" expanded="true" signature="774:854" ph="select from teacher_contact" />
+            <marker date="1525972262138" expanded="true" signature="3008:3268" ph="update teacher_contact... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/person/PersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="130" column="51" lean-forward="false" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/personalInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4524">
+          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <marker date="1525710848183" expanded="true" signature="5668:5683" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalStudentInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3508">
+          <caret line="88" column="30" lean-forward="false" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1525973277546" expanded="true" signature="7002:7017" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/user/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/personal/pensonalTeacherInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="122" column="40" lean-forward="false" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#9;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#10;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1525973359757" expanded="true" signature="8043:8058" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/view/adviser/lookApplyStudent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="78" column="51" lean-forward="false" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/util/StaticFinalVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="60" column="53" lean-forward="false" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.advise_teacherandstudent">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.advise_apply">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.student">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0755c28/97b6e23c-a91c-4998-8e02-4b90dc4b840e/gdms.advise_teacher">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gdms/controller/advise/AdviseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1437,6 +1452,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -19,6 +19,38 @@
       <arg column="replygroupid" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
+
+  <resultMap id="adviseStudentList" type="AdviseStudentVo" >
+  <constructor >
+    <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+  </constructor>
+</resultMap>
+
+  <resultMap id="studentInfoVoMap" type="StudentInfoVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="icon" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, sid, name, password, sex, did, mid, grade, sclass, phone, email, icon, adviserid, 
     replygroupid
@@ -331,4 +363,43 @@
       <!--replygroupid = #{replygroupid,jdbcType=INTEGER}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <update id="updateNewStudent" parameterType="java.lang.Integer">
+    update student
+    set  adviserid = #{adviserid}
+    where id = #{id}
+  </update>
+
+  <select id="queryAdviseStudent" resultMap="adviseStudentList" parameterType="java.lang.String" >
+    select
+a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email
+from student a
+  inner join advise_teacherandstudent b  ON  a.sid=b.sid
+  INNER  JOIN department c ON a.did=c.did
+  inner join major d on a.mid=d.mid
+  inner join sex e on a.sex=e.id
+where b.tid= #{tid}
+  </select>
+
+  <select id="queryCountAdviseStudent" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select
+  COUNT(*)
+from student a
+  inner join advise_teacherandstudent b  ON  a.sid=b.sid
+  INNER  JOIN department c ON a.did=c.did
+  inner join major d on a.mid=d.mid
+  inner join sex e on a.sex=e.id
+where b.tid=#{tid}
+  </select>
+
+  <select id="queryStudentInfoVoBySid" resultMap="studentInfoVoMap" parameterType="java.lang.String" >
+    select
+    a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email,a.icon
+    from student a
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where a.sid= #{sid}
+  </select>
+
 </mapper>

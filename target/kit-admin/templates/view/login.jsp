@@ -43,7 +43,9 @@
                     <option value='2' selected="selected">学生</option>
                     <option value='3'>指导老师</option>
                     <option value='4'>答辩老师</option>
-                    <option value='1'>管理员</option>
+                    <option value='6'>答辩组长</option>
+                    <option value='5'>管理员</option>
+                    <option value='1'>超级管理员</option>
                 </select>
             </div>
             <div class="button">
