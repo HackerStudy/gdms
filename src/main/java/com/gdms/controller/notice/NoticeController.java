@@ -3,12 +3,8 @@ package com.gdms.controller.notice;
 import cc.openkit.common.KitUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.gdms.controller.user.UserController;
-import com.gdms.model.Department;
-import com.gdms.model.Major;
 import com.gdms.model.Notice;
-import com.gdms.model.Student;
 import com.gdms.service.notice.NoticeService;
-import com.gdms.service.user.UserService;
 import com.gdms.util.StaticFinalVar;
 import com.gdms.util.StringAndDate;
 import com.gdms.vo.NoticeVo;
@@ -50,6 +46,8 @@ public class NoticeController {
         log.info("分组 》 添加 》 保存");
         // 获取分组名字
         String title = request.getParameter("title");
+//        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+//        String str=sdf.format(new Date());
         String theTime = request.getParameter("theTime");
         Date time= StringAndDate.stringToDate(theTime);
         String url=request.getParameter("url");

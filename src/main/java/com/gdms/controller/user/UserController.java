@@ -62,8 +62,8 @@ public class UserController {
         String page = request.getParameter("page");// 获得页数
         String limit = request.getParameter("limit");// 获得每页显示条数
         String search = request.getParameter("search");// 获取搜索条件
-        String did =request.getParameter("did");
-        String mid= request.getParameter("mid");
+        String did =request.getParameter("department");
+        String mid= request.getParameter("major");
         Student student=new Student();
         List<Student> studentList = null;
         if(search.equals("")&&did.equals("")&&mid.equals("")){
@@ -141,6 +141,10 @@ public class UserController {
     @ResponseBody
     public ModelAndView goAddStudent(HttpSession session){
         ModelAndView mv = new ModelAndView();
+        List<Department> departmentList= departmentService.queryAllList();
+        List<Major> majorList= majorService.queryAllList();
+        mv.addObject("departmentList",departmentList);
+        mv.addObject("majorList",majorList);
         mv.setViewName("/view/user/addstudent");
         return mv;
     }
@@ -154,16 +158,14 @@ public class UserController {
     @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
     @ResponseBody
     public Object addStudent(HttpServletRequest request){
-
         Map<String, Object> map = new HashMap<String, Object>();
-
         log.info("分组 》 添加 》 保存");
         // 获取分组名字
         String sid = request.getParameter("sid");
         String name = request.getParameter("name");
-        Integer sex =Integer.valueOf(request.getParameter("sex"));
-        Integer did =Integer.valueOf(request.getParameter("did"));
-        Integer mid =Integer.valueOf(request.getParameter("mid"));
+        int sex =Integer.valueOf(request.getParameter("sex"));
+        int did =Integer.valueOf(request.getParameter("did"));
+        int mid =Integer.valueOf(request.getParameter("mid"));
         String grade = request.getParameter("grade");
         String sclass = request.getParameter("sclass");
         String phone = request.getParameter("phone");
@@ -179,21 +181,27 @@ public class UserController {
         student.setSclass(sclass);
         student.setPhone(phone);
         student.setEmail(email);
-        // 查询是否有重复的分组
-        List<Student> studentList=studentService.queryListByWhere(student);
-        // 如果有重复
-        if(studentList.size()>0){
-            map = KitUtil.returnMap("101",StaticFinalVar.IS_NOT_NULL);
-            return JSONObject.toJSON(map);
-        }
+        Student student1=studentService.queryStudentBySid(sid);
         // 如果没有重复，先添加，然后查询这条数据
-        int i = studentService.insertStudent(student);
-        if(i!=1){
-            map = KitUtil.returnMap("101",StaticFinalVar.ADD_ERR);
+        if(student1==null) {
+            Major major=majorService.queryMajorByMid(mid);
+            if (did==major.getDid()) {
+                int i = studentService.insertStudent(student);
+                if (i > 0) {
+                    map = KitUtil.returnMap("200", StaticFinalVar.ADD_OK);
+                    return JSONObject.toJSON(map);
+                } else {
+                    map = KitUtil.returnMap("101", StaticFinalVar.ADD_ERR);
+                    return JSONObject.toJSON(map);
+                }
+            }else{
+                map = KitUtil.returnMap("101", StaticFinalVar.MAJOR_ERR);
+                return JSONObject.toJSON(map);
+            }
+        }else{
+            map = KitUtil.returnMap("101", StaticFinalVar.USERHAVE_ERR);
             return JSONObject.toJSON(map);
         }
-        map = KitUtil.returnMap("200",StaticFinalVar.ADD_OK);
-        return JSONObject.toJSON(map);
     }
 
     @RequestMapping(value = "/goUpdateStudent", method = RequestMethod.GET)

@@ -972,130 +972,193 @@
     <table id="249" parent="8" name="advise_teacherandstudent">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="250" parent="8" name="department">
+    <table id="250" parent="8" name="adviser_score">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="251" parent="8" name="identity">
+    <table id="251" parent="8" name="department">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="252" parent="8" name="kit_admin">
+    <table id="252" parent="8" name="identity">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="253" parent="8" name="kit_admin">
       <Engine>InnoDB</Engine>
       <Collation>utf8mb4_general_ci</Collation>
     </table>
-    <table id="253" parent="8" name="kit_g_group">
+    <table id="254" parent="8" name="kit_g_group">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="254" parent="8" name="kit_g_group_limit">
+    <table id="255" parent="8" name="kit_g_group_limit">
       <Comment>分组和权限关联表</Comment>
       <Engine>InnoDB</Engine>
     </table>
-    <table id="255" parent="8" name="kit_g_limit">
+    <table id="256" parent="8" name="kit_g_limit">
       <Comment>功能表</Comment>
       <Engine>InnoDB</Engine>
     </table>
-    <table id="256" parent="8" name="kit_web_setting">
+    <table id="257" parent="8" name="kit_web_setting">
       <Comment>项目配置表，有且仅有一条数据，不要删除</Comment>
       <Engine>InnoDB</Engine>
       <Collation>utf8mb4_general_ci</Collation>
     </table>
-    <table id="257" parent="8" name="major">
+    <table id="258" parent="8" name="major">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="258" parent="8" name="notice">
+    <table id="259" parent="8" name="notice">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="259" parent="8" name="sex">
+    <table id="260" parent="8" name="paper_score">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="260" parent="8" name="student">
+    <table id="261" parent="8" name="reply_group">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="261" parent="8" name="teacher">
+    <table id="262" parent="8" name="reply_group_student">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="262" parent="8" name="teacher_contact">
+    <table id="263" parent="8" name="reply_group_teacher">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="263" parent="247" name="id">
+    <table id="264" parent="8" name="reply_review">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="265" parent="8" name="reply_score">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="266" parent="8" name="review_status">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="267" parent="8" name="sex">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="268" parent="8" name="student">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="269" parent="8" name="student_reply_score">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="270" parent="8" name="student_score">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="271" parent="8" name="teacher">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="272" parent="8" name="teacher_contact">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="273" parent="8" name="teacher_topic">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="274" parent="8" name="topic_apply">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="275" parent="247" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="247" name="tid">
+    <column id="276" parent="247" name="tid">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="247" name="sid">
+    <column id="277" parent="247" name="sid">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="247" name="pass">
+    <column id="278" parent="247" name="pass">
       <Position>4</Position>
       <Comment> 0- 还在审核中， 1- 通过，2-未通过</Comment>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="267" parent="247" name="PRIMARY">
+    <key id="279" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="268" parent="248" name="id">
+    <column id="280" parent="248" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="248" name="tid">
+    <column id="281" parent="248" name="tid">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="248" name="have_number">
+    <column id="282" parent="248" name="have_number">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="248" name="limit_number">
+    <column id="283" parent="248" name="limit_number">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="272" parent="248" name="PRIMARY">
+    <key id="284" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="273" parent="249" name="id">
+    <column id="285" parent="249" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="249" name="tid">
+    <column id="286" parent="249" name="tid">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="249" name="sid">
+    <column id="287" parent="249" name="sid">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="276" parent="249" name="PRIMARY">
+    <key id="288" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="277" parent="250" name="did">
+    <column id="289" parent="250" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="290" parent="250" name="tid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="291" parent="250" name="adviser_score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="292" parent="250" name="sid">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="293" parent="250" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="294" parent="251" name="did">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0</DataType>
@@ -1103,94 +1166,94 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="250" name="department_name">
+    <column id="295" parent="251" name="department_name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="279" parent="250" name="PRIMARY">
+    <key id="296" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>did</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="280" parent="251" name="id">
+    <column id="297" parent="252" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="251" name="identity_id">
+    <column id="298" parent="252" name="identity_id">
       <Position>2</Position>
       <Comment>身份id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="251" name="identityname">
+    <column id="299" parent="252" name="identityname">
       <Position>3</Position>
       <Comment>身份姓名</Comment>
       <DataType>varchar(25)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="251" name="group_id">
+    <column id="300" parent="252" name="group_id">
       <Position>4</Position>
       <Comment>权限分组id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="284" parent="251" name="PRIMARY">
+    <key id="301" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="285" parent="252" name="kit_admin_id">
+    <column id="302" parent="253" name="kit_admin_id">
       <Position>1</Position>
       <Comment>用户id</Comment>
       <DataType>varchar(111)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="252" name="kit_admin_username">
+    <column id="303" parent="253" name="kit_admin_username">
       <Position>2</Position>
       <Comment>管理员账号</Comment>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="252" name="kit_admin_password">
+    <column id="304" parent="253" name="kit_admin_password">
       <Position>3</Position>
       <Comment>密码</Comment>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="252" name="kit_admin_name">
+    <column id="305" parent="253" name="kit_admin_name">
       <Position>4</Position>
       <Comment>名字</Comment>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="252" name="kit_admin_img_url">
+    <column id="306" parent="253" name="kit_admin_img_url">
       <Position>5</Position>
       <Comment>头像地址</Comment>
       <DataType>varchar(100)|0</DataType>
       <DefaultExpression>&apos;uplodefiles/touxian.jpg&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="252" name="group_id">
+    <column id="307" parent="253" name="group_id">
       <Position>6</Position>
       <Comment>用户所属分组</Comment>
       <DataType>int(2)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="291" parent="252" name="PRIMARY">
+    <key id="308" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>kit_admin_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="292" parent="253" name="group_id">
+    <column id="309" parent="254" name="group_id">
       <Position>1</Position>
       <Comment>分组id</Comment>
       <DataType>int(4)|0</DataType>
@@ -1198,37 +1261,37 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="253" name="group_name">
+    <column id="310" parent="254" name="group_name">
       <Position>2</Position>
       <Comment>分组名字</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="294" parent="253" name="PRIMARY">
+    <key id="311" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>group_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="295" parent="254" name="gl_id">
+    <column id="312" parent="255" name="gl_id">
       <Position>1</Position>
       <Comment>列表ID</Comment>
       <DataType>varchar(111)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="254" name="group_id">
+    <column id="313" parent="255" name="group_id">
       <Position>2</Position>
       <Comment>分组ID</Comment>
       <DataType>int(4)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="254" name="limit_id">
+    <column id="314" parent="255" name="limit_id">
       <Position>3</Position>
       <Comment>功能id</Comment>
       <DataType>int(5)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="254" name="group_c">
+    <column id="315" parent="255" name="group_c">
       <Position>4</Position>
       <Comment>是否有增加按钮，1 为 有，2 为没有</Comment>
       <DataType>int(1)|0</DataType>
@@ -1236,7 +1299,7 @@
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="254" name="group_r">
+    <column id="316" parent="255" name="group_r">
       <Position>5</Position>
       <Comment>是否有删除按钮，1 为 有，2 为没有</Comment>
       <DataType>int(1)|0</DataType>
@@ -1244,7 +1307,7 @@
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="254" name="group_u">
+    <column id="317" parent="255" name="group_u">
       <Position>6</Position>
       <Comment>是否有修改按钮，1 为 有，2 为没有</Comment>
       <DataType>int(1)|0</DataType>
@@ -1252,7 +1315,7 @@
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="254" name="group_d">
+    <column id="318" parent="255" name="group_d">
       <Position>7</Position>
       <Comment>是否有查询按钮，1 为 有，2 为没有</Comment>
       <DataType>int(1)|0</DataType>
@@ -1260,12 +1323,12 @@
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="302" parent="254" name="PRIMARY">
+    <key id="319" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>gl_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="303" parent="255" name="limit_id">
+    <column id="320" parent="256" name="limit_id">
       <Position>1</Position>
       <Comment>功能id</Comment>
       <DataType>int(5) unsigned|0</DataType>
@@ -1273,7 +1336,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="255" name="limit_sequence">
+    <column id="321" parent="256" name="limit_sequence">
       <Position>2</Position>
       <Comment>排序</Comment>
       <DataType>int(4)|0</DataType>
@@ -1281,28 +1344,28 @@
       <DefaultExpression>&apos;50&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="255" name="limit_ico">
+    <column id="322" parent="256" name="limit_ico">
       <Position>3</Position>
       <Comment>图标</Comment>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="255" name="limit_title">
+    <column id="323" parent="256" name="limit_title">
       <Position>4</Position>
       <Comment>标题</Comment>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="255" name="limit_action">
+    <column id="324" parent="256" name="limit_action">
       <Position>5</Position>
       <Comment>路径</Comment>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="255" name="limit_leaderid">
+    <column id="325" parent="256" name="limit_leaderid">
       <Position>6</Position>
       <Comment>上级ID</Comment>
       <DataType>int(5)|0</DataType>
@@ -1310,7 +1373,7 @@
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="255" name="limit_system">
+    <column id="326" parent="256" name="limit_system">
       <Position>7</Position>
       <Comment>是否允许编辑，1：允许修改，2：不允许修改</Comment>
       <DataType>int(2)|0</DataType>
@@ -1318,67 +1381,67 @@
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="310" parent="255" name="PRIMARY">
+    <key id="327" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>limit_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="311" parent="256" name="kit_web_id">
+    <column id="328" parent="257" name="kit_web_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="256" name="kit_web_name">
+    <column id="329" parent="257" name="kit_web_name">
       <Position>2</Position>
       <Comment>网站名称</Comment>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="256" name="kit_web_message">
+    <column id="330" parent="257" name="kit_web_message">
       <Position>3</Position>
       <Comment>短信设置（1：阿里大鱼，2：云之讯）</Comment>
       <DataType>int(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="314" parent="256" name="kit_web_push">
+    <column id="331" parent="257" name="kit_web_push">
       <Position>4</Position>
       <Comment>推送设置（1：极光，2：云之讯）</Comment>
       <DataType>int(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="315" parent="256" name="kit_web_file">
+    <column id="332" parent="257" name="kit_web_file">
       <Position>5</Position>
       <Comment>文件存储（1：本地，2：七牛云）</Comment>
       <DataType>int(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="256" name="kit_sige_size">
+    <column id="333" parent="257" name="kit_sige_size">
       <Position>6</Position>
       <Comment>验证码位数</Comment>
       <DataType>int(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="317" parent="256" name="kit_web_hellow_adv_size">
+    <column id="334" parent="257" name="kit_web_hellow_adv_size">
       <Position>7</Position>
       <Comment>首次登录欢迎界面的显示个数（0-10之间）</Comment>
       <DataType>int(2)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="256" name="kit_sign_active_time">
+    <column id="335" parent="257" name="kit_sign_active_time">
       <Position>8</Position>
       <Comment>验证码有效时间（单位分钟）</Comment>
       <DataType>int(2)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="319" parent="256" name="PRIMARY">
+    <key id="336" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>kit_web_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="320" parent="257" name="mid">
+    <column id="337" parent="258" name="mid">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0</DataType>
@@ -1386,70 +1449,288 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="257" name="major_name">
+    <column id="338" parent="258" name="major_name">
       <Position>2</Position>
       <Comment>专业</Comment>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="257" name="did">
+    <column id="339" parent="258" name="did">
       <Position>3</Position>
       <Comment>院部id</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="323" parent="257" name="PRIMARY">
+    <key id="340" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>mid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="324" parent="258" name="id">
+    <column id="341" parent="259" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="258" name="title">
+    <column id="342" parent="259" name="title">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="258" name="time">
+    <column id="343" parent="259" name="time">
       <Position>3</Position>
       <DataType>date|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="327" parent="258" name="url">
+    <column id="344" parent="259" name="url">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="328" parent="258" name="PRIMARY">
+    <key id="345" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="329" parent="259" name="id">
+    <column id="346" parent="260" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="259" name="sex_name">
+    <column id="347" parent="260" name="sid">
       <Position>2</Position>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="331" parent="259" name="PRIMARY">
+    <column id="348" parent="260" name="paper_score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="349" parent="260" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="332" parent="260" name="id">
+    <column id="350" parent="261" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="351" parent="261" name="group_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="352" parent="261" name="group_leader_tid">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="353" parent="261" name="group_teacher_number">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="354" parent="261" name="group_student_number">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="355" parent="261" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="356" parent="262" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="357" parent="262" name="sid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="358" parent="262" name="gid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="359" parent="262" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="360" parent="263" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="263" name="tid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="362" parent="263" name="gid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="363" parent="263" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="364" parent="264" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="365" parent="264" name="sid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="366" parent="264" name="open_topic_score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="367" parent="264" name="mid_score">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="368" parent="264" name="graduate_score">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="369" parent="264" name="tid">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="370" parent="264" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="371" parent="265" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="372" parent="265" name="sid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="373" parent="265" name="open_topic_score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="374" parent="265" name="mid_score">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="375" parent="265" name="graduate_score">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="376" parent="265" name="reply_score">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="377" parent="265" name="entry_status">
+      <Position>7</Position>
+      <Comment>0-未录入，1-录入，2-不录入</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="378" parent="265" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="379" parent="266" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="380" parent="266" name="sid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="381" parent="266" name="open_topic_status">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="382" parent="266" name="mid_status">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="383" parent="266" name="graduate_status">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="384" parent="266" name="tid">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="385" parent="266" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="386" parent="267" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="387" parent="267" name="sex_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="388" parent="267" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="389" parent="268" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0</DataType>
@@ -1457,93 +1738,167 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="260" name="sid">
+    <column id="390" parent="268" name="sid">
       <Position>2</Position>
       <Comment>学号</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="260" name="name">
+    <column id="391" parent="268" name="name">
       <Position>3</Position>
       <Comment>姓名</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="260" name="password">
+    <column id="392" parent="268" name="password">
       <Position>4</Position>
       <Comment>密码</Comment>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>&apos;123456&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="260" name="sex">
+    <column id="393" parent="268" name="sex">
       <Position>5</Position>
       <Comment>性别</Comment>
       <DataType>int(2)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="260" name="did">
+    <column id="394" parent="268" name="did">
       <Position>6</Position>
       <Comment>院部</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="260" name="mid">
+    <column id="395" parent="268" name="mid">
       <Position>7</Position>
       <Comment>专业</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="260" name="grade">
+    <column id="396" parent="268" name="grade">
       <Position>8</Position>
       <Comment>年级</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="260" name="sclass">
+    <column id="397" parent="268" name="sclass">
       <Position>9</Position>
       <Comment>班级</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="260" name="phone">
+    <column id="398" parent="268" name="phone">
       <Position>10</Position>
       <Comment>联系电话</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="260" name="email">
+    <column id="399" parent="268" name="email">
       <Position>11</Position>
       <Comment>邮箱</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="260" name="icon">
+    <column id="400" parent="268" name="icon">
       <Position>12</Position>
       <Comment>头像地址</Comment>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;uplodefiles/touxian.jpg&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="260" name="adviserid">
+    <column id="401" parent="268" name="adviserid">
       <Position>13</Position>
       <Comment>指导老师id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="260" name="replygroupid">
+    <column id="402" parent="268" name="replygroupid">
       <Position>14</Position>
       <Comment>答辩组的id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="346" parent="260" name="PRIMARY">
+    <key id="403" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="347" parent="261" name="id">
+    <column id="404" parent="269" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="405" parent="269" name="sid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="406" parent="269" name="open_topic_score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="407" parent="269" name="mid_score">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="408" parent="269" name="graduate_score">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="409" parent="269" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="410" parent="270" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="411" parent="270" name="sid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="412" parent="270" name="adviser_score">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="413" parent="270" name="reply_score">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="414" parent="270" name="paper_score">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="415" parent="270" name="total_score">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="416" parent="270" name="pass_status">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="417" parent="270" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="418" parent="271" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0</DataType>
@@ -1551,97 +1906,164 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="261" name="tid">
+    <column id="419" parent="271" name="tid">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="261" name="tname">
+    <column id="420" parent="271" name="tname">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="350" parent="261" name="password">
+    <column id="421" parent="271" name="password">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>&apos;123456&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="261" name="sex">
+    <column id="422" parent="271" name="sex">
       <Position>5</Position>
       <DataType>int(2)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="261" name="work_time">
+    <column id="423" parent="271" name="work_time">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="261" name="hdegree">
+    <column id="424" parent="271" name="hdegree">
       <Position>7</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="261" name="teaching_direction">
+    <column id="425" parent="271" name="teaching_direction">
       <Position>8</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="261" name="position">
+    <column id="426" parent="271" name="position">
       <Position>9</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="356" parent="261" name="icon">
+    <column id="427" parent="271" name="icon">
       <Position>10</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;uplodefiles/touxian.jpg&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="261" name="did">
+    <column id="428" parent="271" name="did">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="261" name="mid">
+    <column id="429" parent="271" name="mid">
       <Position>12</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="261" name="identity_id">
+    <column id="430" parent="271" name="identity_id">
       <Position>13</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="360" parent="261" name="PRIMARY">
+    <key id="431" parent="271" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="361" parent="262" name="id">
+    <column id="432" parent="272" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="262" name="tid">
+    <column id="433" parent="272" name="tid">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="262" name="phone">
+    <column id="434" parent="272" name="phone">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="262" name="email">
+    <column id="435" parent="272" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="365" parent="262" name="PRIMARY">
+    <key id="436" parent="272" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="437" parent="273" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="438" parent="273" name="topic_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="439" parent="273" name="tid">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="440" parent="273" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="441" parent="274" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="442" parent="274" name="topic_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="443" parent="274" name="type">
+      <Position>3</Position>
+      <Comment>0-自选,1-他选</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="444" parent="274" name="pass_situation">
+      <Position>4</Position>
+      <Comment>0-未审核，1-通过，2-未通过</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="445" parent="274" name="attachment_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="446" parent="274" name="attachment_url">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="447" parent="274" name="sid">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="448" parent="274" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

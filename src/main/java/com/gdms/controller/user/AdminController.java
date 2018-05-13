@@ -247,24 +247,23 @@ public class AdminController {
         String imgurl = request.getParameter("imgurl");
         String kitAdminUsername = request.getParameter("kitAdminUsername");
         String kitAdminPassword = request.getParameter("kitAdminPassword");
-//        String kitAdminPasswordAgen = request.getParameter("kitAdminPasswordAgen");
-        String groupId = request.getParameter("groupId");
-//        if(!kitAdminPassword.equals(kitAdminPasswordAgen)){
-//            return KitUtil.returnMap("200",StaticFinalVar.PWD_NOT_EQUERY);
-//        }
         Admin admin = new Admin();
         admin.setKitAdminId(KitUtil.uuid());
         admin.setKitAdminName(kitAdminName);
         admin.setKitAdminUsername(kitAdminUsername);
         admin.setKitAdminImgUrl(imgurl);
         admin.setKitAdminPassword(kitAdminPassword);
-        admin.setGroupId(Integer.valueOf(groupId));
-        System.out.println("admin:"+admin.toString());
-        Boolean b=adminService.insertAdmin(admin);
-        if(b){
-            return JSONObject.toJSON(KitUtil.returnMap("200",StaticFinalVar.ADD_OK));
-        }else {
-            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+        admin.setGroupId(5);
+        Admin admin1=adminService.queryAdminByKitAdminUsername(kitAdminUsername);
+        if(admin1==null) {
+            Boolean b = adminService.insertAdmin(admin);
+            if (b) {
+                return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
+            } else {
+                return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.ADD_ERR));
+            }
+        }else{
+            return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.USERHAVE_ERR));
         }
     }
 
@@ -296,9 +295,7 @@ public class AdminController {
         ModelAndView mv = new ModelAndView();
         String kitAdminId = request.getParameter("kitAdminId");
         Admin admin = adminService.selectAdminById(kitAdminId);
-        List<GGroup> groupList=gGroupService.queryAllAdminGroup();
         mv.setViewName("/view/admin/update");
-        mv.addObject("groupList",groupList);
         mv.addObject("updateAdmin",admin);
         return mv;
     }
@@ -342,24 +339,27 @@ public class AdminController {
         String kitAdminId = request.getParameter("kitAdminId");
         String kitAdminName = request.getParameter("kitAdminName");
         String kitAdminUsername = request.getParameter("kitAdminUsername");
-        String groupId = request.getParameter("groupId");
+//        String groupId = request.getParameter("groupId");
 //        String data = request.getParameter("data");
 //        JSONObject jsonObj = JSONObject.parseObject(data);
 //        String id=jsonObj.getString("kitAdminId");
-        System.out.println("username:"+kitAdminUsername);
-        System.out.println("name:"+kitAdminName);
         Admin user = new Admin();
-//        String kitAdminId=adminService.findAdminIdByAdminUsername(kitAdminUsername);
         user.setKitAdminId(kitAdminId);
         user.setKitAdminName(kitAdminName);
         user.setKitAdminUsername(kitAdminUsername);
-//        user.setKitAdminImgUrl(jsonObj.getString("imgurl"));
-        user.setGroupId(Integer.valueOf(groupId));
-//          int i=1;
-        int i = adminService.updateByAdminId(user);
-//        int i = adminService.save(user);
-//        System.out.println(i);
-
-        return JSONObject.toJSON(i==1 ? KitUtil.returnMap("200",StaticFinalVar.UPDATE_OK) : KitUtil.returnMap("101",StaticFinalVar.UPDATE_ERR));
+        user.setGroupId(5);
+        Admin admin2=adminService.queryByUUID(kitAdminId);
+        if(admin2.getKitAdminUsername().equals(kitAdminUsername)) {
+            int i = adminService.updateByAdminId(user);
+            return JSONObject.toJSON(i == 1 ? KitUtil.returnMap("200", StaticFinalVar.UPDATE_OK) : KitUtil.returnMap("101", StaticFinalVar.UPDATE_ERR));
+        }else{
+            Admin admin1 = adminService.queryAdminByKitAdminUsername(kitAdminUsername);
+            if (admin1 == null) {
+                int i = adminService.updateByAdminId(user);
+                return JSONObject.toJSON(i == 1 ? KitUtil.returnMap("200", StaticFinalVar.UPDATE_OK) : KitUtil.returnMap("101", StaticFinalVar.UPDATE_ERR));
+            } else {
+                return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.USERHAVE_ERR));
+            }
+        }
     }
 }

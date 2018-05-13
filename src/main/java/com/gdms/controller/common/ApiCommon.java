@@ -1,32 +1,25 @@
 package com.gdms.controller.common;
 
 import cc.openkit.common.KitUtil;
-import cc.openkit.kitMemory.qiniu.config.QiniuConfig;
-import cc.openkit.kitMemory.qiniu.service.QIniuService;
-import com.alibaba.fastjson.JSONObject;
-import com.gdms.model.WebSetting;
 import com.gdms.service.file.FileService;
 import com.gdms.service.web.WebSettingService;
 import com.gdms.util.StaticFinalVar;
-import com.qiniu.storage.model.DefaultPutRet;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.expression.TypeComparator;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -76,6 +69,65 @@ public class ApiCommon {
 
 
     /**
+     * 文件上传接口 -- 用于layui
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/setFile", method = RequestMethod.POST)
+    @ResponseBody
+    public Object setFile(@RequestParam("layuiFile") MultipartFile layuiFile) throws Exception {
+        log.info("这里是保存文件的公共接口，我准备保存文件啦");
+        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map1 = new HashMap<String, Object>();
+        // 获取内容
+        String fileUrl = saveTFile(layuiFile); // 获取文件地址
+        String fileName = layuiFile.getOriginalFilename();
+        map1.put("fileUrl",fileUrl);
+        map.put("code", 200);
+        map.put("msg", "");
+        map.put("fileName",fileName);
+        map.put("data", map1);
+        return map;
+    }
+
+    /**
+     * 把 HTTP 请求中的文件流保存到本地
+     *
+     * @param file MultipartFile 的对象
+     */
+    private String saveTFile(MultipartFile file) {
+        if (!file.isEmpty()) {
+            try {
+                // getRealPath() 取得 WEB-INF 所在文件夹路径
+                // 如果参数是 "/temp", 当 temp 存在时返回 temp 的本地路径, 不存在时返回 null/temp (无效路径)
+                String oldname=file.getOriginalFilename();
+                String suffixName = oldname.substring(oldname.lastIndexOf("."));
+                System.out.println("suffixName:"+suffixName);
+                String name = KitUtil.uuid();
+                // 截取文件格式
+//                String type1 = file.getContentType();
+//                String type = type1.substring(6);
+                System.out.println("oldname:"+oldname);
+                String gdmspath="E:/IDEA/WorkSpace/gdms/src/main/webapp/";
+                String path =  gdmspath+ StaticFinalVar.FILE + name + suffixName;
+                System.out.println("path:"+path);
+                String fileurl = StaticFinalVar.FILE + name + suffixName;
+                System.out.println("file>>>>>>>>>>>>>" + name + suffixName);
+                System.out.println(fileurl);
+//                File localFile = new File(path);
+//                file.transferTo(localFile);
+                FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(path));
+                return fileurl;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    /**
      * 把 HTTP 请求中的文件流保存到本地
      *
      * @param file MultipartFile 的对象
@@ -91,9 +143,9 @@ public class ApiCommon {
                 String type = type1.substring(6);
 //                String path2=getClass().getResource(".").getFile().toString();
                 String gdmspath="E:/IDEA/WorkSpace/gdms/src/main/webapp/";
-                String tomcatpath="E:/工具软件/apache-tomcat-8.0.41/webapps/gdms/";
+//                String tomcatpath="E:/工具软件/apache-tomcat-8.0.41/webapps/gdms/";
                 String path =  gdmspath+ StaticFinalVar.IMG_FILES + name + "." + type;
-                String tpath=  tomcatpath+ StaticFinalVar.IMG_FILES + name + "." + type;
+//                String tpath=  tomcatpath+ StaticFinalVar.IMG_FILES + name + "." + type;
                 System.out.println("path:"+path);
 //                System.out.println("path2"+path2);
 //                System.getProperty("user.dir");
@@ -101,8 +153,8 @@ public class ApiCommon {
                 FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(path));
 //                FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(tpath));
                 String imgurl = StaticFinalVar.IMG_FILES + name + "." + type;
-                System.out.println("file>>>>>>>>>>>>>" + name + "." + type);
-                System.out.println(imgurl);
+//                System.out.println("file>>>>>>>>>>>>>" + name + "." + type);
+//                System.out.println(imgurl);
                 return imgurl;
             } catch (IOException e) {
                 e.printStackTrace();
@@ -110,6 +162,76 @@ public class ApiCommon {
         }
         return null;
     }
+
+
+    /**
+     * 文件下载接口
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/download", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<byte[]> download(HttpServletRequest request,
+                                           @RequestParam(value = "fileName",required = false) String fileName,
+                                           Model model)throws Exception {
+        //下载文件路径
+//        String path = request.getServletContext().getRealPath("");
+        String path="E:/IDEA/WorkSpace/gdms/src/main/webapp/uplodefiles/file";
+        System.out.println("fileName:"+fileName);
+        File file = new File(path+File.separator+fileName);
+//        //下载显示的文件名，解决中文名称乱码问题
+//        String downloadFielName = new String(fileName.getBytes("UTF-8"),"iso-8859-1");
+        HttpHeaders headers = new HttpHeaders();
+        //application/octet-stream ： 二进制流数据（最常见的文件下载）。
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        //通知浏览器以attachment（下载方式）打开文件
+        headers.setContentDispositionFormData("attachment", fileName);
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),
+                headers, HttpStatus.CREATED);
+    }
+
+//    @RequestMapping("/download")
+//    public String download(String fileName, HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        response.setCharacterEncoding("utf-8");
+//        //返回的数据类型
+//        response.setContentType("multipart/form-data");
+//        //响应头
+//        response.setHeader("Content-Disposition", "attachment;fileName="
+//                + fileName);
+//        InputStream inputStream=null;
+//        OutputStream outputStream=null;
+//        //路径
+////        String path ="D:"+ File.separator+"imgs"+File.separator;
+//        String path= request.getServletContext().getRealPath("/uplodefiles/file");
+//        System.out.println("path:"+path);
+//        byte[] bytes = new byte[2048];
+//        try {
+//            File file=new File(path,fileName);
+//            inputStream = new FileInputStream(file);
+//            outputStream = response.getOutputStream();
+//            int length;
+//            //inputStream.read(bytes)从file中读取数据,-1是读取完的标志
+//            while ((length = inputStream.read(bytes)) > 0) {
+//                //写数据
+//                outputStream.write(bytes, 0, length);
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }finally {
+//            //关闭输入输出流
+//            if(outputStream!=null) {
+//                outputStream.close();
+//            }
+//            if(inputStream!=null) {
+//                inputStream.close();
+//            }
+//        }
+//        return null;
+//    }
 
 //    /**
 //     * 图片上传 -- 用于我们的wangEditor

@@ -165,4 +165,12 @@
       <!--kit_admin_name = #{kitAdminName,jdbcType=VARCHAR}-->
     <!--where kit_admin_id = #{kitAdminId,jdbcType=VARCHAR}-->
   <!--</update>-->
+
+  <!--根据用户名密码查询用户，用于登陆-->
+  <select id="queryAdminByKitAdminUsername" resultType="admin" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from kit_admin
+    where kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR}
+  </select>
 </mapper>

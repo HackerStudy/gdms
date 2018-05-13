@@ -1,14 +1,13 @@
 package com.gdms.model;
 
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name="major")
 public class Major {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
     private Integer mid;
 
     private String majorName;
@@ -21,6 +20,9 @@ public class Major {
         this.did = did;
     }
 
+    public Major() {
+    }
+
     public Integer getMid() {
         return mid;
     }
@@ -31,5 +33,26 @@ public class Major {
 
     public Integer getDid() {
         return did;
+    }
+
+    public void setMid(Integer mid) {
+        this.mid = mid;
+    }
+
+    public void setMajorName(String majorName) {
+        this.majorName = majorName;
+    }
+
+    public void setDid(Integer did) {
+        this.did = did;
+    }
+
+    @Override
+    public String toString() {
+        return "Major{" +
+                "mid=" + mid +
+                ", majorName='" + majorName + '\'' +
+                ", did=" + did +
+                '}';
     }
 }

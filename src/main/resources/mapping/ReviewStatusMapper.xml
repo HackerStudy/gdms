@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gdms.dao.ReviewStatusMapper" >
+  <resultMap id="BaseResultMap" type="com.gdms.model.ReviewStatus" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="open_topic_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="mid_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="graduate_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sid, open_topic_status, mid_status, graduate_status, tid
+  </sql>
+  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
+    <!--select -->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from review_status-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</select>-->
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
+    <!--delete from review_status-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</delete>-->
+  <!--<insert id="insert" parameterType="com.gdms.model.ReviewStatusService" >-->
+    <!--insert into review_status (id, sid, open_topic_status, -->
+      <!--mid_status, graduate_status, tid-->
+      <!--)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{openTopicStatus,jdbcType=INTEGER}, -->
+      <!--#{midStatus,jdbcType=INTEGER}, #{graduateStatus,jdbcType=INTEGER}, #{tid,jdbcType=VARCHAR}-->
+      <!--)-->
+  <!--</insert>-->
+  <!--<insert id="insertSelective" parameterType="com.gdms.model.ReviewStatusService" >-->
+    <!--insert into review_status-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--id,-->
+      <!--</if>-->
+      <!--<if test="sid != null" >-->
+        <!--sid,-->
+      <!--</if>-->
+      <!--<if test="openTopicStatus != null" >-->
+        <!--open_topic_status,-->
+      <!--</if>-->
+      <!--<if test="midStatus != null" >-->
+        <!--mid_status,-->
+      <!--</if>-->
+      <!--<if test="graduateStatus != null" >-->
+        <!--graduate_status,-->
+      <!--</if>-->
+      <!--<if test="tid != null" >-->
+        <!--tid,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--#{id,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="sid != null" >-->
+        <!--#{sid,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="openTopicStatus != null" >-->
+        <!--#{openTopicStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="midStatus != null" >-->
+        <!--#{midStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="graduateStatus != null" >-->
+        <!--#{graduateStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="tid != null" >-->
+        <!--#{tid,jdbcType=VARCHAR},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+  <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.ReviewStatusService" >-->
+    <!--update review_status-->
+    <!--<set >-->
+      <!--<if test="sid != null" >-->
+        <!--sid = #{sid,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="openTopicStatus != null" >-->
+        <!--open_topic_status = #{openTopicStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="midStatus != null" >-->
+        <!--mid_status = #{midStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="graduateStatus != null" >-->
+        <!--graduate_status = #{graduateStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="tid != null" >-->
+        <!--tid = #{tid,jdbcType=VARCHAR},-->
+      <!--</if>-->
+    <!--</set>-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+  <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.ReviewStatusService" >-->
+    <!--update review_status-->
+    <!--set sid = #{sid,jdbcType=VARCHAR},-->
+      <!--open_topic_status = #{openTopicStatus,jdbcType=INTEGER},-->
+      <!--mid_status = #{midStatus,jdbcType=INTEGER},-->
+      <!--graduate_status = #{graduateStatus,jdbcType=INTEGER},-->
+      <!--tid = #{tid,jdbcType=VARCHAR}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+</mapper>

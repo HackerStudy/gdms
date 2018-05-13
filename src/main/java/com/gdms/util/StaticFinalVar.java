@@ -8,7 +8,7 @@ public class StaticFinalVar {
     public static final String WEB_URL = "http://localhost:8080";  // 本地测试地址
     public static final String YAN = "kit20180205";  // 这里是密码加密，混淆密文，这个我们尽量不要去修改
     public static final String IMG_FILES = "uplodefiles/image/";  // 这里是保存图片的根目录，必须保证有读写权限
-
+    public static final String FILE = "uplodefiles/file/";
     public static final String USERNAME_OR_PWD_ERR = "用户名、密码或者身份错误";
     public static final String ADD_OK = "添加成功";
     public static final String ADD_ERR = "添加失败，请稍后再试";
@@ -59,4 +59,7 @@ public class StaticFinalVar {
 
     public static final String LimitNumber_ERR ="限制人数小于现有人数,请从新设置";
     public static final String APPROVAL_ERR ="人数已超过限制";
+    public static final String USERHAVE_ERR ="该用户已存在";
+
+    public static final String MAJOR_ERR ="请选择与院部相对应的专业";
 }
