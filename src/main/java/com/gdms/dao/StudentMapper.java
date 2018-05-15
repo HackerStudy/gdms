@@ -42,4 +42,8 @@ public interface StudentMapper extends Mapper<Student> {
     Integer queryCountAdviseStudent(String tid);
 
     StudentInfoVo queryStudentInfoVoBySid(String sid);
+
+    List<AdviseStudentVo> queryDistributionStudent();
+
+    Integer queryCountDistributionStudent();
 }

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("adviseTAndSService")
 @Transactional(rollbackFor = Exception.class)
@@ -28,5 +29,9 @@ public class AdviseTAndSServiceImpl extends BaseServiceImpl<AdviseTAndS> impleme
 
     public int insertAdviseTAndS(AdviseTAndS adviseTAndS) {
         return adviseTAndSMapper.insertAdviseTAndS(adviseTAndS);
+    }
+
+    public List<AdviseTAndS> queryAdviseTAndSByTid(String tid) {
+        return adviseTAndSMapper.queryAdviseTAndSByTid(tid);
     }
 }

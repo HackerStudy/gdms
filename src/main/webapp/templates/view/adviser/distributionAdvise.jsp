@@ -53,8 +53,8 @@
         var table = layui.table;
         table.render({
             elem: '#test'
-            <%--, url: '<%=basePath%>advise/CarryStudentGetAllJson'--%>
-            // , method: 'post'
+            , url: '<%=basePath%>advise/distributionAdviseGetAllJson'
+            , method: 'post'
             , cols: [[
                 {type: 'numbers', title: '序号', fixed:'left'},
                 {field:'id',align:'center', width:80, title: '编号'}
@@ -65,45 +65,14 @@
                 ,{field:'hdegree', title: '最高学历',width:100}
                 ,{field:'teachingDirection', title: '教学方向',width:120,sort:true}
                 ,{field:'position', title: '职称',width:120}
-                ,{field:'did', title: '所属院部',width:150}
-                ,{field:'mid', title: '所属专业',width:120}
+                ,{field:'department', title: '所属院部',width:200}
+                ,{field:'major', title: '所属专业',width:120}
                 ,{field:'phone', title: '联系电话',width:120}
                 ,{field:'email', title: '邮箱',width:180}
                 ,{field:'haveNumber', title: '已带人数',width:100}
                 ,{field:'limitNumber', title: '限制人数',width:100}
                 ,{field:'right',align:'center', width:100, toolbar: '#barDemo', title: '操作',fixed: 'right'}
             ]]
-            ,data: [{
-                "id": "1"
-                ,"tid":"20140304625"
-                ,"tname": "白展堂"
-                ,"workTime": "1年"
-                ,"hdegree": "硕士"
-                ,"teachingDirection": "java"
-                ,"position": "中级程序员"
-                ,"did": "计算机工程与应用数学学院"
-                ,"mid": "软件工程"
-                ,"phone": "15673331257"
-                ,"email": "1791133899@qq.com"
-                ,"haveNumber": "2"
-                ,"limitNumber": "10"
-            },
-                {
-                    "id": "2"
-                    ,"tid":"20140304626"
-                    ,"tname": "王晓燕"
-                    ,"workTime": "3年"
-                    ,"hdegree": "博士"
-                    ,"teachingDirection": "C语言"
-                    ,"position": "高级程序员"
-                    ,"did": "计算机工程与应用数学学院"
-                    ,"mid": "软件工程"
-                    ,"phone": "15673331257"
-                    ,"email": "1791133899@qq.com"
-                    ,"haveNumber": "3"
-                    ,"limitNumber": "10"
-                }
-            ]
             ,even: true
             , page: true
         });
@@ -115,7 +84,7 @@
                 // 编辑
                 var index = layer.open({
                     type: 2,
-                    content: '<%=basePath%>advise/goDistribution?id='+data.id,
+                    content: '<%=basePath%>advise/goDistribution?id='+data.id+'&tid='+data.tid,
                     area: ['800px', '450px'],
                     maxmin: true,
                     end: function () {

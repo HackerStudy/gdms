@@ -5,4 +5,5 @@ import com.gdms.model.TopicApply;
 import com.gdms.service.common.BaseService;
 
 public interface ReplyScoreService extends BaseService<ReplyScore> {
+    int insertReplyScore(ReplyScore replyScore);
 }

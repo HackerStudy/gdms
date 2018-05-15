@@ -11,6 +11,20 @@
       <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+
+  <resultMap id="ReviewVoMap" type="ReviewVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="open_topic_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="mid_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="graduate_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, sid, open_topic_score, mid_score, graduate_score, tid
   </sql>
@@ -32,49 +46,49 @@
       <!--#{midScore,jdbcType=INTEGER}, #{graduateScore,jdbcType=INTEGER}, #{tid,jdbcType=VARCHAR}-->
       <!--)-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.ReplyReview" >-->
-    <!--insert into reply_review-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="sid != null" >-->
-        <!--sid,-->
-      <!--</if>-->
-      <!--<if test="openTopicScore != null" >-->
-        <!--open_topic_score,-->
-      <!--</if>-->
-      <!--<if test="midScore != null" >-->
-        <!--mid_score,-->
-      <!--</if>-->
-      <!--<if test="graduateScore != null" >-->
-        <!--graduate_score,-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--tid,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="sid != null" >-->
-        <!--#{sid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="openTopicScore != null" >-->
-        <!--#{openTopicScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="midScore != null" >-->
-        <!--#{midScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="graduateScore != null" >-->
-        <!--#{graduateScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--#{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertReplyReview" parameterType="com.gdms.model.ReplyReview" >
+    insert into reply_review
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="openTopicScore != null" >
+        open_topic_score,
+      </if>
+      <if test="midScore != null" >
+        mid_score,
+      </if>
+      <if test="graduateScore != null" >
+        graduate_score,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null" >
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="openTopicScore != null" >
+        #{openTopicScore,jdbcType=INTEGER},
+      </if>
+      <if test="midScore != null" >
+        #{midScore,jdbcType=INTEGER},
+      </if>
+      <if test="graduateScore != null" >
+        #{graduateScore,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
   <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.ReplyReview" >-->
     <!--update reply_review-->
     <!--<set >-->
@@ -105,4 +119,26 @@
       <!--tid = #{tid,jdbcType=VARCHAR}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <select id="queryReviewVoByGid" resultMap="ReviewVoMap" parameterType="java.lang.Integer">
+    select
+    a.id,c.tid,c.tname,b.sid,b.name,a.open_topic_score,a.mid_score,a.graduate_score
+    from reply_review a
+    INNER  JOIN student b ON a.sid=b.sid
+    inner JOIN  teacher c on a.tid=c.tid
+    inner JOIN reply_group_student d on a.sid=d.sid
+    INNER JOIN reply_group_teacher e on a.tid=e.tid
+    where d.gid=#{gid,jdbcType=INTEGER} and e.gid=#{gid,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryCountReviewVoByGid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    select
+    COUNT(*)
+    from reply_review a
+    INNER  JOIN student b ON a.sid=b.sid
+    inner JOIN  teacher c on a.tid=c.tid
+    inner JOIN reply_group_student d on a.sid=d.sid
+    INNER JOIN reply_group_teacher e on a.tid=e.tid
+    where d.gid=#{gid,jdbcType=INTEGER} and e.gid=#{gid,jdbcType=INTEGER}
+  </select>
 </mapper>

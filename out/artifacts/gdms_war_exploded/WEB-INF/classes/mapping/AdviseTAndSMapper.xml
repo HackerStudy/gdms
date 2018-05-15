@@ -11,12 +11,13 @@
   <sql id="Base_Column_List" >
     id, tid, sid
   </sql>
-  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
-    <!--select -->
-    <!--<include refid="Base_Column_List" />-->
-    <!--from advise_teacherandstudent-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</select>-->
+
+  <select id="queryAdviseTAndSByTid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from advise_teacherandstudent
+    where tid = #{tid,jdbcType=VARCHAR}
+  </select>
   <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
     <!--delete from advise_teacherandstudent-->
     <!--where id = #{id,jdbcType=INTEGER}-->

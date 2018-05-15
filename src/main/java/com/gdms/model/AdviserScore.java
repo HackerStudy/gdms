@@ -16,6 +16,9 @@ public class AdviserScore {
         this.sid = sid;
     }
 
+    public AdviserScore() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -30,5 +33,31 @@ public class AdviserScore {
 
     public String getSid() {
         return sid;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setTid(String tid) {
+        this.tid = tid;
+    }
+
+    public void setAdviserScore(Integer adviserScore) {
+        this.adviserScore = adviserScore;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    @Override
+    public String toString() {
+        return "AdviserScore{" +
+                "id=" + id +
+                ", tid='" + tid + '\'' +
+                ", adviserScore=" + adviserScore +
+                ", sid='" + sid + '\'' +
+                '}';
     }
 }

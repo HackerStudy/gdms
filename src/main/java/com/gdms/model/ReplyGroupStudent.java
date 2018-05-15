@@ -11,13 +11,13 @@ public class ReplyGroupStudent {
     @GeneratedValue(generator = "UUID")
     private Integer id;
 
-    private String tid;
+    private String sid;
 
     private Integer gid;
 
-    public ReplyGroupStudent(Integer id, String tid, Integer gid) {
+    public ReplyGroupStudent(Integer id, String sid, Integer gid) {
         this.id = id;
-        this.tid = tid;
+        this.sid = sid;
         this.gid = gid;
     }
 
@@ -28,20 +28,20 @@ public class ReplyGroupStudent {
         return id;
     }
 
-    public String getTid() {
-        return tid;
-    }
-
-    public Integer getGid() {
-        return gid;
-    }
-
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setTid(String tid) {
-        this.tid = tid;
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public Integer getGid() {
+        return gid;
     }
 
     public void setGid(Integer gid) {
@@ -52,7 +52,7 @@ public class ReplyGroupStudent {
     public String toString() {
         return "ReplyGroupStudent{" +
                 "id=" + id +
-                ", tid='" + tid + '\'' +
+                ", sid='" + sid + '\'' +
                 ", gid=" + gid +
                 '}';
     }

@@ -20,6 +20,7 @@ import org.apache.log4j.Logger;
 import org.json.HTTP;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -340,12 +341,107 @@ public class AdviseController {
         return mv;
     }
 
+    @RequestMapping(value = "/distributionAdviseGetAllJson", method = RequestMethod.POST)
+    @ResponseBody
+    public Object distributionAdviseGetAllJson(HttpServletRequest request,HttpSession session){
+        Map<String,Object> map = new HashMap<String,Object>();
+        int page = Integer.valueOf(request.getParameter("page"));// 获得页数
+        int limit = Integer.valueOf(request.getParameter("limit"));// 获得每页显示条数
+        List<AdviseTeacherVo> adviseTeacherVoList=teacherService.queryPageAdviseTeacherVoList(page,limit);
+        // 分页查询
+        int size = teacherService.queryCountAdviseTeacherVo();
+        // 返回数据
+        map.put("code",0);
+        map.put("msg","");
+        map.put("count",size);
+        map.put("data",adviseTeacherVoList);
+        return JSONObject.toJSON(map);
+    }
+
     @RequestMapping(value = "/goDistribution", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView goDistribution(){
+    public ModelAndView goDistribution(HttpServletRequest request,HttpSession session){
         ModelAndView mv = new ModelAndView();
+        int id=Integer.valueOf(request.getParameter("id"));
+        String tid=request.getParameter("tid");
+        Teacher teacher=new Teacher();
+        teacher.setId(id);
+        teacher.setTid(tid);
         mv.setViewName("/view/adviser/distribution");
+        session.setAttribute("adviserTeacher",teacher);
         return mv;
+    }
+
+    @RequestMapping(value = "/distributionGetAllJson", method = RequestMethod.POST)
+    @ResponseBody
+    public Object distributionGetAllJson(HttpServletRequest request,HttpSession session){
+        Map<String,Object> map = new HashMap<String,Object>();
+        int page = Integer.valueOf(request.getParameter("page"));// 获得页数
+        int limit = Integer.valueOf(request.getParameter("limit"));// 获得每页显示条数
+        List<AdviseStudentVo> adviseStudentVoList=studentService.queryPageDistributionStudent(page,limit);
+        // 分页查询
+        int size = studentService.queryCountDistributionStudent();
+        // 返回数据
+        map.put("code",0);
+        map.put("msg","");
+        map.put("count",size);
+        map.put("data",adviseStudentVoList);
+        return JSONObject.toJSON(map);
+    }
+
+    @RequestMapping(value = "/allot", method = RequestMethod.POST)
+    @ResponseBody
+    public Object allot(HttpServletRequest request,HttpSession session){
+        Map<String, Object> map = new HashMap<String, Object>();
+        int id=Integer.valueOf(request.getParameter("id"));
+        String sid=request.getParameter("sid");
+        Teacher teacher=(Teacher) session.getAttribute("adviserTeacher");
+        AdviseTeacher adviseTeacher1=adviseTeacherService.queryAdviseTeacherByTid(teacher.getTid());
+        AdviseTeacher adviseTeacher=new AdviseTeacher();
+        adviseTeacher.setTid(teacher.getTid());
+        adviseTeacher.setHaveNumber(adviseTeacher1.getHaveNumber()+1);
+        int i=adviseTeacherService.updateAdviseTeacherByTid(adviseTeacher);
+        AdviseTAndS adviseTAndS=new AdviseTAndS();
+        adviseTAndS.setSid(sid);
+        adviseTAndS.setTid(teacher.getTid());
+        int j=adviseTAndSService.insertAdviseTAndS(adviseTAndS);
+        Student student=new Student();
+        student.setId(id);
+        student.setAdviserid(teacher.getId());
+        int q=studentService.updateStudent(student);
+        // 先保存组
+        return KitUtil.returnMap("200",StaticFinalVar.ALLOT_OK);
+    }
+
+    @RequestMapping(value = "/allAllot", method = RequestMethod.POST)
+    @ResponseBody
+    public Object allAllot(@RequestBody AdviseStudentVo[] adviseStudentVos,HttpServletRequest request, HttpSession session){
+        Map<String, Object> map = new HashMap<String, Object>();
+        Teacher teacher=(Teacher) session.getAttribute("adviserTeacher");
+        int length=adviseStudentVos.length;
+        AdviseTeacher adviseTeacher1=adviseTeacherService.queryAdviseTeacherByTid(teacher.getTid());
+        int remain = adviseTeacher1.getLimitNumber()-adviseTeacher1.getHaveNumber();
+        if(remain>=length){
+            AdviseTeacher adviseTeacher=new AdviseTeacher();
+            adviseTeacher.setTid(teacher.getTid());
+            adviseTeacher.setHaveNumber(adviseTeacher1.getHaveNumber()+length);
+            int i=adviseTeacherService.updateAdviseTeacherByTid(adviseTeacher);
+            for(AdviseStudentVo list:adviseStudentVos){
+                AdviseTAndS adviseTAndS=new AdviseTAndS();
+                adviseTAndS.setSid(list.getSid());
+                adviseTAndS.setTid(teacher.getTid());
+                int j=adviseTAndSService.insertAdviseTAndS(adviseTAndS);
+                Student student=new Student();
+                student.setId(list.getId());
+                student.setAdviserid(teacher.getId());
+                int q=studentService.updateStudent(student);
+            }
+            // 先保存组
+            return KitUtil.returnMap("200",StaticFinalVar.ALLOT_OK);
+        }else{
+            // 先保存组
+            return KitUtil.returnMap("101",StaticFinalVar.ALLOT_ERR);
+        }
     }
 
     @RequestMapping(value = "/goSetLimitNumber", method = RequestMethod.GET)

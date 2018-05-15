@@ -72,7 +72,7 @@ public class StudentReplyScore {
 
     @Override
     public String toString() {
-        return "StudentReplyScore{" +
+        return "StudentReplyScoreVo{" +
                 "id=" + id +
                 ", sid='" + sid + '\'' +
                 ", openTopicScore=" + openTopicScore +

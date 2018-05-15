@@ -14,7 +14,8 @@ public class AdviseTAndS {
 
     private String sid;
 
-    public AdviseTAndS(String tid, String sid) {
+    public AdviseTAndS(Integer id,String tid, String sid) {
+        this.id=id;
         this.tid = tid;
         this.sid = sid;
     }

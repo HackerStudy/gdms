@@ -87,7 +87,7 @@ public class ApiCommon {
         map1.put("fileUrl",fileUrl);
         map.put("code", 200);
         map.put("msg", "");
-        map.put("fileName",fileName);
+        map1.put("fileName",fileName);
         map.put("data", map1);
         return map;
     }
@@ -113,12 +113,12 @@ public class ApiCommon {
                 String gdmspath="E:/IDEA/WorkSpace/gdms/src/main/webapp/";
                 String path =  gdmspath+ StaticFinalVar.FILE + name + suffixName;
                 System.out.println("path:"+path);
-                String fileurl = StaticFinalVar.FILE + name + suffixName;
-                System.out.println("file>>>>>>>>>>>>>" + name + suffixName);
-                System.out.println(fileurl);
 //                File localFile = new File(path);
 //                file.transferTo(localFile);
                 FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(path));
+                String fileurl =name + suffixName;
+                System.out.println("file>>>>>>>>>>>>>" + name + suffixName);
+                System.out.println(fileurl);
                 return fileurl;
             } catch (IOException e) {
                 e.printStackTrace();
@@ -173,21 +173,18 @@ public class ApiCommon {
      */
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<byte[]> download(HttpServletRequest request,
-                                           @RequestParam(value = "fileName",required = false) String fileName,
-                                           Model model)throws Exception {
+    public ResponseEntity<byte[]> download(@RequestParam(value = "fileName",required = false) String fileName,@RequestParam(value = "fileUrl",required = false) String fileUrl)throws Exception {
         //下载文件路径
 //        String path = request.getServletContext().getRealPath("");
         String path="E:/IDEA/WorkSpace/gdms/src/main/webapp/uplodefiles/file";
-        System.out.println("fileName:"+fileName);
-        File file = new File(path+File.separator+fileName);
+        File file = new File(path+File.separator+fileUrl);
 //        //下载显示的文件名，解决中文名称乱码问题
-//        String downloadFielName = new String(fileName.getBytes("UTF-8"),"iso-8859-1");
+        String downloadFielName = new String(fileName.getBytes("UTF-8"),"iso-8859-1");
         HttpHeaders headers = new HttpHeaders();
         //application/octet-stream ： 二进制流数据（最常见的文件下载）。
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         //通知浏览器以attachment（下载方式）打开文件
-        headers.setContentDispositionFormData("attachment", fileName);
+        headers.setContentDispositionFormData("attachment", downloadFielName);
         return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),
                 headers, HttpStatus.CREATED);
     }

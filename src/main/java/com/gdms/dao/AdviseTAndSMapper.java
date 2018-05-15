@@ -4,6 +4,8 @@ import com.gdms.model.Advise;
 import com.gdms.model.AdviseTAndS;
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 public interface AdviseTAndSMapper extends Mapper<AdviseTAndS> {
     int deleteByPrimaryKey(Integer id);
 
@@ -20,4 +22,6 @@ public interface AdviseTAndSMapper extends Mapper<AdviseTAndS> {
     int updateAdviseTAndS(AdviseTAndS adviseTAndS);
 
     int insertAdviseTAndS(AdviseTAndS adviseTAndS);
+
+    List<AdviseTAndS> queryAdviseTAndSByTid(String tid);
 }

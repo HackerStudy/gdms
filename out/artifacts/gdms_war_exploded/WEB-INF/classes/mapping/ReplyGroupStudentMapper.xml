@@ -4,19 +4,70 @@
   <resultMap id="BaseResultMap" type="com.gdms.model.ReplyGroupStudent">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="tid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sid" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="gid" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
+
+  <resultMap id="ReplyStudentVoMap" type="ReplyStudentVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List">
-    id, tid, gid
+    id, sid, gid
   </sql>
-  <!--<select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
-    <!--select -->
-    <!--<include refid="Base_Column_List" />-->
-    <!--from reply_group_teacher-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</select>-->
+
+  <select id="queryReplyStudentVo" resultMap="ReplyStudentVoMap">
+    select
+    a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email,b.tname
+    from student a
+    inner JOIN teacher b on a.adviserid=b.id
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+  </select>
+  <select id="queryReplyGroupStudentBySid" parameterType="java.lang.String" resultType="ReplyGroupStudent">
+    select
+    <include refid="Base_Column_List" />
+    from reply_group_student
+    where sid = #{sid,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryReplyStudentVoByGid" resultMap="ReplyStudentVoMap">
+  select
+  a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email,b.tname
+  from student a
+  inner JOIN teacher b on a.adviserid=b.id
+  INNER  JOIN department c ON a.did=c.did
+  inner join major d on a.mid=d.mid
+  inner join sex e on a.sex=e.id
+  inner join reply_group_student f on a.sid=f.sid
+  where f.gid=#{gid,jdbcType=INTEGER}
+</select>
+
+  <select id="queryCountReplyStudentVoByGid" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from student a
+    inner JOIN teacher b on a.adviserid=b.id
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join reply_group_student f on a.sid=f.sid
+    where f.gid=#{gid,jdbcType=INTEGER}
+  </select>
   <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
     <!--delete from reply_group_teacher-->
     <!--where id = #{id,jdbcType=INTEGER}-->
@@ -25,31 +76,31 @@
     <!--insert into reply_group_teacher (id, tid, gid)-->
     <!--values (#{id,jdbcType=INTEGER}, #{tid,jdbcType=VARCHAR}, #{gid,jdbcType=INTEGER})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.ReplyGroupStudent">-->
-    <!--insert into reply_group_teacher-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
-      <!--<if test="id != null">-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="tid != null">-->
-        <!--tid,-->
-      <!--</if>-->
-      <!--<if test="gid != null">-->
-        <!--gid,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
-      <!--<if test="id != null">-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="tid != null">-->
-        <!--#{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="gid != null">-->
-        <!--#{gid,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertReplyGroupStudent" parameterType="com.gdms.model.ReplyGroupStudent">
+    insert into reply_group_student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="gid != null">
+        gid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null">
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="gid != null">
+        #{gid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
   <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.ReplyGroupStudent">-->
     <!--update reply_group_teacher-->
     <!--<set>-->
@@ -135,4 +186,11 @@
       <!--gid = #{gid,jdbcType=INTEGER}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <select id="queryReplyGroupStudentByGid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from reply_group_student
+    where gid = #{gid,jdbcType=INTEGER}
+  </select>
 </mapper>

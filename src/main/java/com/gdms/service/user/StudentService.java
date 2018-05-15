@@ -30,4 +30,10 @@ public interface StudentService extends BaseService<Student> {
     Integer queryCountAdviseStudent(String tid);
 
     StudentInfoVo queryStudentInfoVoBySid(String sid);
+
+    List<AdviseStudentVo> queryPageDistributionStudent(Integer page, Integer rows);
+
+    List<AdviseStudentVo> queryDistributionStudent();
+
+    Integer queryCountDistributionStudent();
 }

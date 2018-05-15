@@ -2,10 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gdms.dao.ReplyGroupMapper" >
   <resultMap id="BaseResultMap" type="com.gdms.model.ReplyGroup" >
+  <constructor >
+    <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="group_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="group_leader_tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="group_teacher_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="group_student_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+  </constructor>
+</resultMap>
+
+  <resultMap id="ReplyGroupVoMap" type="ReplyGroupVo" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="group_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="group_leader_tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="group_teacher_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="group_student_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
@@ -13,12 +24,42 @@
   <sql id="Base_Column_List" >
     id, group_name, group_leader_tid, group_teacher_number, group_student_number
   </sql>
-  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
-    <!--select -->
-    <!--<include refid="Base_Column_List" />-->
-    <!--from reply_group-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</select>-->
+  <select id="queryReplyGroupVo" resultMap="ReplyGroupVoMap">
+    select
+    a.id,a.group_name,a.group_leader_tid,b.tname,a.group_teacher_number,a.group_student_number
+    from reply_group a
+    INNER JOIN teacher b ON a.group_leader_tid=b.tid
+  </select>
+
+  <select id="queryCountReplyGroupVo" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+     from reply_group a
+    INNER JOIN teacher b ON a.group_leader_tid=b.tid
+  </select>
+
+    <select id="queryReplyGroupByGroupLeaderId" resultType="ReplyGroup">
+        select *
+        from reply_group
+        where group_leader_tid=#{groupLeaderId,jdbcType=VARCHAR}
+    </select>
+
+  <select id="queryReplyGroupVoByGid" resultMap="ReplyGroupVoMap" parameterType="java.lang.Integer">
+    select
+    a.id,a.group_name,a.group_leader_tid,b.tname,a.group_teacher_number,a.group_student_number
+    from reply_group a
+    INNER JOIN teacher b ON a.group_leader_tid=b.tid
+    WHERE a.id=#{gid,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryCountReplyGroupVoByGid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    select
+    COUNT(*)
+    from reply_group a
+    INNER JOIN teacher b ON a.group_leader_tid=b.tid
+    WHERE a.id=#{gid,jdbcType=INTEGER}
+  </select>
+
   <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
     <!--delete from reply_group-->
     <!--where id = #{id,jdbcType=INTEGER}-->
@@ -29,61 +70,61 @@
     <!--values (#{id,jdbcType=INTEGER}, #{groupName,jdbcType=VARCHAR}, #{groupLeaderTid,jdbcType=VARCHAR}, -->
       <!--#{groupTeacherNumber,jdbcType=INTEGER}, #{groupStudentNumber,jdbcType=INTEGER})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.ReplyGroup" >-->
-    <!--insert into reply_group-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="groupName != null" >-->
-        <!--group_name,-->
-      <!--</if>-->
-      <!--<if test="groupLeaderTid != null" >-->
-        <!--group_leader_tid,-->
-      <!--</if>-->
-      <!--<if test="groupTeacherNumber != null" >-->
-        <!--group_teacher_number,-->
-      <!--</if>-->
-      <!--<if test="groupStudentNumber != null" >-->
-        <!--group_student_number,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="groupName != null" >-->
-        <!--#{groupName,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="groupLeaderTid != null" >-->
-        <!--#{groupLeaderTid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="groupTeacherNumber != null" >-->
-        <!--#{groupTeacherNumber,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="groupStudentNumber != null" >-->
-        <!--#{groupStudentNumber,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
-  <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.ReplyGroup" >-->
-    <!--update reply_group-->
-    <!--<set >-->
-      <!--<if test="groupName != null" >-->
-        <!--group_name = #{groupName,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="groupLeaderTid != null" >-->
-        <!--group_leader_tid = #{groupLeaderTid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="groupTeacherNumber != null" >-->
-        <!--group_teacher_number = #{groupTeacherNumber,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="groupStudentNumber != null" >-->
-        <!--group_student_number = #{groupStudentNumber,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</set>-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</update>-->
+  <insert id="insertReplyGroup" parameterType="com.gdms.model.ReplyGroup" >
+    insert into reply_group
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="groupName != null" >
+        group_name,
+      </if>
+      <if test="groupLeaderTid != null" >
+        group_leader_tid,
+      </if>
+      <if test="groupTeacherNumber != null" >
+        group_teacher_number,
+      </if>
+      <if test="groupStudentNumber != null" >
+        group_student_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="groupName != null" >
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupLeaderTid != null" >
+        #{groupLeaderTid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupTeacherNumber != null" >
+        #{groupTeacherNumber,jdbcType=INTEGER},
+      </if>
+      <if test="groupStudentNumber != null" >
+        #{groupStudentNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateReplyGroup" parameterType="com.gdms.model.ReplyGroup" >
+    update reply_group
+    <set >
+      <if test="groupName != null" >
+        group_name = #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupLeaderTid != null" >
+        group_leader_tid = #{groupLeaderTid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupTeacherNumber != null" >
+        group_teacher_number = #{groupTeacherNumber,jdbcType=INTEGER},
+      </if>
+      <if test="groupStudentNumber != null" >
+        group_student_number = #{groupStudentNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.ReplyGroup" >-->
     <!--update reply_group-->
     <!--set group_name = #{groupName,jdbcType=VARCHAR},-->

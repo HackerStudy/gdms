@@ -33,55 +33,55 @@
       <!--#{midScore,jdbcType=INTEGER}, #{graduateScore,jdbcType=INTEGER}, #{replyScore,jdbcType=INTEGER}, -->
       <!--#{entryStatus,jdbcType=INTEGER})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.ReplyScore" >-->
-    <!--insert into reply_score-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="sid != null" >-->
-        <!--sid,-->
-      <!--</if>-->
-      <!--<if test="openTopicScore != null" >-->
-        <!--open_topic_score,-->
-      <!--</if>-->
-      <!--<if test="midScore != null" >-->
-        <!--mid_score,-->
-      <!--</if>-->
-      <!--<if test="graduateScore != null" >-->
-        <!--graduate_score,-->
-      <!--</if>-->
-      <!--<if test="replyScore != null" >-->
-        <!--reply_score,-->
-      <!--</if>-->
-      <!--<if test="entryStatus != null" >-->
-        <!--entry_status,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="sid != null" >-->
-        <!--#{sid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="openTopicScore != null" >-->
-        <!--#{openTopicScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="midScore != null" >-->
-        <!--#{midScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="graduateScore != null" >-->
-        <!--#{graduateScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="replyScore != null" >-->
-        <!--#{replyScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="entryStatus != null" >-->
-        <!--#{entryStatus,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertReplyScore" parameterType="com.gdms.model.ReplyScore" >
+    insert into reply_score
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="openTopicScore != null" >
+        open_topic_score,
+      </if>
+      <if test="midScore != null" >
+        mid_score,
+      </if>
+      <if test="graduateScore != null" >
+        graduate_score,
+      </if>
+      <if test="replyScore != null" >
+        reply_score,
+      </if>
+      <if test="entryStatus != null" >
+        entry_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null" >
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="openTopicScore != null" >
+        #{openTopicScore,jdbcType=INTEGER},
+      </if>
+      <if test="midScore != null" >
+        #{midScore,jdbcType=INTEGER},
+      </if>
+      <if test="graduateScore != null" >
+        #{graduateScore,jdbcType=INTEGER},
+      </if>
+      <if test="replyScore != null" >
+        #{replyScore,jdbcType=INTEGER},
+      </if>
+      <if test="entryStatus != null" >
+        #{entryStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
   <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.ReplyScore" >-->
     <!--update reply_score-->
     <!--<set >-->

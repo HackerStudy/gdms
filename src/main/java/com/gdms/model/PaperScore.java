@@ -13,6 +13,9 @@ public class PaperScore {
         this.paperScore = paperScore;
     }
 
+    public PaperScore() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -23,5 +26,26 @@ public class PaperScore {
 
     public Integer getPaperScore() {
         return paperScore;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public void setPaperScore(Integer paperScore) {
+        this.paperScore = paperScore;
+    }
+
+    @Override
+    public String toString() {
+        return "PaperScore{" +
+                "id=" + id +
+                ", sid='" + sid + '\'' +
+                ", paperScore=" + paperScore +
+                '}';
     }
 }

@@ -40,10 +40,11 @@
         <div class="layui-form-item">
             <label class="layui-form-label" style="width:120px">课题名称:</label>
                 <div class="layui-input-inline" style="width: 250px">
-                    <select name="sex" lay-verify="required" lay-search="">
+                    <select name="topicName" lay-verify="required" lay-search="">
                         <option value="">请选择课题</option>
-                        <option value="1">课题一</option>
-                        <option value="2">课题二</option>
+                        <c:forEach items="${teacherTopicList}" var="list">
+                            <option value="${list.id}">${list.topicName}</option>
+                        </c:forEach>
                     </select>
                 </div>
         </div>
@@ -55,6 +56,15 @@
                 <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
                 <button type="button" class="layui-btn" id="test9">开始上传</button>
                 <p id="demoText"></p>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <c:choose><c:when test="${status==200}">
+                    <button id="button" class="layui-btn layui-btn-sm layui-btn-danger " lay-submit lay-filter="add"><i class="layui-icon">&#xe609;提交</i></button>
+                </c:when><c:otherwise>
+                    <button id="button" class="layui-btn layui-btn-sm layui-btn-danger layui-disabled"  disabled  lay-submit lay-filter="add"><i class="layui-icon">&#xe609;提交</i></button>
+                </c:otherwise></c:choose>
             </div>
         </div>
     </form>
@@ -114,7 +124,7 @@
 
         //监听提交，发送请求
         form.on('submit(add)', function(data){
-            $.post("<%=basePath%>advise/retreat",data.field,function(data){
+            $.post("<%=basePath%>topic/addTopicByOther",data.field,function(data){
                 // 获取 session
                 if(data.code!=200){
                     layer.msg(data.msg,{offset: 'auto',icon: 5});

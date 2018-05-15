@@ -68,4 +68,17 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements Stud
         return studentMapper.queryStudentInfoVoBySid(sid);
     }
 
+    public List<AdviseStudentVo> queryPageDistributionStudent(Integer page, Integer rows) {
+        PageHelper.startPage(page, rows);
+        return queryDistributionStudent();
+    }
+
+    public List<AdviseStudentVo> queryDistributionStudent() {
+        return studentMapper.queryDistributionStudent();
+    }
+
+    public Integer queryCountDistributionStudent() {
+        return studentMapper.queryCountDistributionStudent();
+    }
+
 }

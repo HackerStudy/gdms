@@ -40,17 +40,35 @@
         <div class="layui-form-item">
             <label class="layui-form-label" style="width:120px">课题名称:</label>
             <div class="layui-input-inline">
-                <input name="topicName" value="课题一" lay-verify="required" autocomplete="off" class="layui-input layui-disabled" type="text"  style="width: 300px" disabled>
+                <input name="topicName" value="${topicApply.topicName}" lay-verify="required" autocomplete="off" class="layui-input layui-disabled" type="text"  style="width: 300px" disabled>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label"style="width:120px">附件:</label>
             <%--<a href="/apiCommon/download/?fileUrl=/uplodefiles/file/4090a9a26f2743dab05c32fa8f48fffb.xlsx">课题申请书</a>--%>
-            <div style="padding-top: 8px;"><a href="<%=basePath%>apiCommon/download?fileName=de19907f241e487cb3e6128f903c0b39.xlsx">课题申请书</a></div>
+            <div style="padding-top: 8px;"><a href="<%=basePath%>apiCommon/download?fileName=${topicApply.attachmentName}&fileUrl=${topicApply.attachmentUrl}">${topicApply.attachmentName}</a></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"style="width:120px">课题通过情况:</label>
+            <c:choose><c:when test="${topicApply.passSituation==0}">
+                <div style="padding-top: 8px;"><span>正在审核中</span></div>
+            </c:when><c:when test="${topicApply.passSituation==1}">
+                <div style="padding-top: 8px;"><span>通过</span></div>
+            </c:when><c:when test="${topicApply.passSituation==2}">
+                <div style="padding-top: 8px;"><span>未通过</span></div>
+            </c:when><c:otherwise>
+                <div style="padding-top: 8px;"><span>你还未选课题，请尽快选择</span></div>
+            </c:otherwise></c:choose>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn layui-btn-sm layui-btn-danger" lay-submit lay-filter="add"><i class="layui-icon">&#xe640;取消申请</i></button>
+                <c:choose><c:when test="${topicApply.passSituation==0||topicApply.passSituation==2}">
+                    <button class="layui-btn layui-btn-sm layui-btn-danger" lay-submit lay-filter="add"><i class="layui-icon">&#xe640;取消申请</i></button>
+                </c:when><c:when test="${topicApply.passSituation==1}">
+                    <button class="layui-btn layui-disabled" disabled lay-submit lay-filter="add"><i class="layui-icon">&#xe640;取消申请</i></button>
+                </c:when><c:otherwise>
+                    <button class="layui-btn layui-disabled" disabled lay-submit lay-filter="add"><i class="layui-icon">&#xe640;取消申请</i></button>
+                </c:otherwise></c:choose>
             </div>
         </div>
     </form>
@@ -58,59 +76,10 @@
 <script>
     layui.use(['element','upload','form'], function(){
         var $ = layui.jquery;
-        var form = layui.form,upload = layui.upload;
-
-        //选完文件后不自动上传
-        upload.render({
-            elem: '#test8'
-            ,url: '/apiCommon/setFile'
-            ,auto: false
-            ,accept: 'file'
-            // ,exts:'docx|doc|xlsx|txt|xls'
-            , field: 'layuiFile' //设定文件域的字段名
-            // , before: function (obj) { //文件提交上传前的回调
-            //     //预读本地文件示例，不支持ie8
-            //     obj.preview(function (index, file, result, data) {
-            //         //index:文件的索引，file:文件的对象，result:文件base64编码，比如图片
-            //         $('#demo1').css('display','block').attr('src', result); //链接（base64）
-            //     });
-            // }
-            //,multiple: true
-            ,bindAction: '#test9'
-            // ,choose: function(obj){
-            //     //将每次选择的文件追加到文件队列
-            //     var files = obj.pushFile();
-            //     //预读本地文件，如果是多文件，则会遍历。(不支持ie8/9)
-            //     obj.preview(function(index, file, result){
-            //         console.log(index); //得到文件索引
-            //         console.log(file); //得到文件对象
-            //         console.log(result); //得到文件base64编码，比如图片
-            //     });
-            // }
-            ,done: function(res){
-                //如果上传失败
-                if (res.code!=200) {
-                    return layer.msg('上传失败');
-                }
-                //上传成功
-                if(res.code == 200){
-                    $('#attachmentUrl').val(res.data.fileUrl);
-                    $('#attachmentName').val(res.data.fileName);
-                }
-            }
-            // , error: function () {
-            //     //演示失败状态，并实现重传
-            //     var demoText = $('#demoText');
-            //     demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-            //     demoText.find('.demo-reload').on('click', function () {
-            //         uploadInst.upload();
-            //     });
-            // }
-        });
-
+        var form = layui.form
         //监听提交，发送请求
         form.on('submit(add)', function(data){
-            $.post("<%=basePath%>advise/retreat",data.field,function(data){
+            $.post("<%=basePath%>topic/cancelApply",data.field,function(data){
                 // 获取 session
                 if(data.code!=200){
                     layer.msg(data.msg,{offset: 'auto',icon: 5});

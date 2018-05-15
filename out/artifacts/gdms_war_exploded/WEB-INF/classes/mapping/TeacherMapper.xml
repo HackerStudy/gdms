@@ -20,23 +20,23 @@
   </resultMap>
 
   <resultMap id="AdviseTeacherVoMap" type="AdviseTeacherVo" >
-  <constructor >
-    <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-    <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="work_time" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="hdegree" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="teaching_direction" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="position" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
-    <arg column="have_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
-    <arg column="limit_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
-  </constructor>
-</resultMap>
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="work_time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="hdegree" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teaching_direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="position" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="have_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="limit_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
 
   <resultMap id="TeacherInfoVoMap" type="TeacherInfoVo" >
     <constructor >

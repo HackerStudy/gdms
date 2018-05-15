@@ -12,15 +12,39 @@
       <arg column="pass_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
+
+  <resultMap id="StudentScoreVoMap" type="StudentScoreVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="adviser_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="reply_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="paper_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="total_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+
+  <resultMap id="ConfirmScoreMap" type="ConfirmScore" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="adviser_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="reply_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="paper_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, sid, adviser_score, reply_score, paper_score, total_score, pass_status
   </sql>
-  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
-    <!--select -->
-    <!--<include refid="Base_Column_List" />-->
-    <!--from student_score-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</select>-->
+  <select id="queryStudentScoreBySid" resultType="StudentScore" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from student_score
+    where sid = #{sid,jdbcType=VARCHAR}
+  </select>
   <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
     <!--delete from student_score-->
     <!--where id = #{id,jdbcType=INTEGER}-->
@@ -33,55 +57,55 @@
       <!--#{replyScore,jdbcType=INTEGER}, #{paperScore,jdbcType=INTEGER}, #{totalScore,jdbcType=INTEGER}, -->
       <!--#{passStatus,jdbcType=INTEGER})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.StudentScore" >-->
-    <!--insert into student_score-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="sid != null" >-->
-        <!--sid,-->
-      <!--</if>-->
-      <!--<if test="adviserScore != null" >-->
-        <!--adviser_score,-->
-      <!--</if>-->
-      <!--<if test="replyScore != null" >-->
-        <!--reply_score,-->
-      <!--</if>-->
-      <!--<if test="paperScore != null" >-->
-        <!--paper_score,-->
-      <!--</if>-->
-      <!--<if test="totalScore != null" >-->
-        <!--total_score,-->
-      <!--</if>-->
-      <!--<if test="passStatus != null" >-->
-        <!--pass_status,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="sid != null" >-->
-        <!--#{sid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="adviserScore != null" >-->
-        <!--#{adviserScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="replyScore != null" >-->
-        <!--#{replyScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="paperScore != null" >-->
-        <!--#{paperScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="totalScore != null" >-->
-        <!--#{totalScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="passStatus != null" >-->
-        <!--#{passStatus,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertStudentScore" parameterType="com.gdms.model.StudentScore" >
+    insert into student_score
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="adviserScore != null" >
+        adviser_score,
+      </if>
+      <if test="replyScore != null" >
+        reply_score,
+      </if>
+      <if test="paperScore != null" >
+        paper_score,
+      </if>
+      <if test="totalScore != null" >
+        total_score,
+      </if>
+      <if test="passStatus != null" >
+        pass_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null" >
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="adviserScore != null" >
+        #{adviserScore,jdbcType=INTEGER},
+      </if>
+      <if test="replyScore != null" >
+        #{replyScore,jdbcType=INTEGER},
+      </if>
+      <if test="paperScore != null" >
+        #{paperScore,jdbcType=INTEGER},
+      </if>
+      <if test="totalScore != null" >
+        #{totalScore,jdbcType=INTEGER},
+      </if>
+      <if test="passStatus != null" >
+        #{passStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
   <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.StudentScore" >-->
     <!--update student_score-->
     <!--<set >-->
@@ -116,4 +140,72 @@
       <!--pass_status = #{passStatus,jdbcType=INTEGER}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <select id="queryStudentScoreVoByTid" resultMap="StudentScoreVoMap" parameterType="java.lang.String">
+    select
+    a.id,b.sid,b.name,a.adviser_score,a.reply_score,a.paper_score,a.total_score
+    from student_score a
+    INNER  JOIN student b ON a.sid=b.sid
+    inner JOIN  advise_teacherandstudent c on c.sid=a.sid
+    where c.tid=#{tid,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryCountStudentScoreVoByTid" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    COUNT(*)
+    from student_score a
+    INNER  JOIN student b ON a.sid=b.sid
+    inner JOIN  advise_teacherandstudent c on c.sid=a.sid
+    where c.tid=#{tid,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryStudentScoreVoByGid" resultMap="StudentScoreVoMap" parameterType="java.lang.Integer">
+    select
+    a.id,b.sid,b.name,a.adviser_score,a.reply_score,a.paper_score,a.total_score
+    from student_score a
+    INNER  JOIN student b ON a.sid=b.sid
+    inner join reply_group_student c on c.sid=a.sid
+    where c.gid=#{gid,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryCountStudentScoreVoByGid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    select
+    COUNT(*)
+    from student_score a
+    INNER  JOIN student b ON a.sid=b.sid
+    inner join reply_group_student c on c.sid=a.sid
+    where c.gid=#{gid,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryStudentScoreVo" resultMap="StudentScoreVoMap">
+    select
+    a.id,b.sid,b.name,a.adviser_score,a.reply_score,a.paper_score,a.total_score
+    from student_score a
+    INNER  JOIN student b ON a.sid=b.sid
+  </select>
+
+  <select id="queryCountStudentScoreVo" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from student_score a
+    INNER  JOIN student b ON a.sid=b.sid
+  </select>
+
+  <select id="queryFinalScoreVo" resultMap="ConfirmScoreMap">
+    select
+    a.id,a.sid,a.name,b.adviser_score,c.reply_score,d.paper_score
+    from student a
+    INNER JOIN adviser_score b ON a.sid=b.sid
+    inner JOIN reply_score c on c.sid=a.sid
+    INNER JOIN paper_score d on d.sid=a.sid
+  </select>
+
+  <select id="queryCountFinalScoreVo" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+     from student a
+    INNER JOIN adviser_score b ON a.sid=b.sid
+    inner JOIN reply_score c on c.sid=a.sid
+    INNER JOIN paper_score d on d.sid=a.sid
+  </select>
 </mapper>

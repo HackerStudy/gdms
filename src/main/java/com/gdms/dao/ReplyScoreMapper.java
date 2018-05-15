@@ -7,4 +7,5 @@ import tk.mybatis.mapper.common.Mapper;
 
 @Component
 public interface ReplyScoreMapper extends Mapper<ReplyScore> {
+    int insertReplyScore(ReplyScore replyScore);
 }

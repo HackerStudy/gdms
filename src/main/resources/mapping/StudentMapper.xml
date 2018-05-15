@@ -36,20 +36,20 @@
 </resultMap>
 
   <resultMap id="studentInfoVoMap" type="StudentInfoVo" >
-    <constructor >
-      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="icon" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
+  <constructor >
+    <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="icon" jdbcType="VARCHAR" javaType="java.lang.String" />
+  </constructor>
+</resultMap>
 
   <sql id="Base_Column_List" >
     id, sid, name, password, sex, did, mid, grade, sclass, phone, email, icon, adviserid, 
@@ -400,6 +400,26 @@ where b.tid=#{tid}
     inner join major d on a.mid=d.mid
     inner join sex e on a.sex=e.id
     where a.sid= #{sid}
+  </select>
+
+  <select id="queryDistributionStudent" resultMap="adviseStudentList">
+    select
+    a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email
+    from student a
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where a.adviserid is NULL
+  </select>
+
+  <select id="queryCountDistributionStudent" resultType="java.lang.Integer">
+    select
+    COUNT(*)
+    from student a
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where a.adviserid is NULL
   </select>
 
 </mapper>

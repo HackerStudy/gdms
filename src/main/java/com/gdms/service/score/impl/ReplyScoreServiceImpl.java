@@ -20,4 +20,8 @@ public class ReplyScoreServiceImpl extends BaseServiceImpl<ReplyScore> implement
     private Logger log = Logger.getLogger(ReplyScoreServiceImpl.class);
     @Resource
     private ReplyScoreMapper replyScoreMapper;
+
+    public int insertReplyScore(ReplyScore replyScore) {
+        return replyScoreMapper.insertReplyScore(replyScore);
+    }
 }

@@ -11,12 +11,20 @@
   <sql id="Base_Column_List" >
     id, topic_name, tid
   </sql>
-  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
-    <!--select -->
-    <!--<include refid="Base_Column_List" />-->
-    <!--from teacher_topic-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</select>-->
+  <select id="queryTeacherTopicByTid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from teacher_topic
+    where tid = #{tid,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="queryCountTeacherTopic" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select
+    COUNT(*)
+    from teacher_topic
+    where tid = #{tid,jdbcType=VARCHAR}
+  </select>
   <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
     <!--delete from teacher_topic-->
     <!--where id = #{id,jdbcType=INTEGER}-->
@@ -27,31 +35,31 @@
     <!--values (#{id,jdbcType=INTEGER}, #{topicName,jdbcType=VARCHAR}, #{tid,jdbcType=VARCHAR}-->
       <!--)-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.TeacherTopic" >-->
-    <!--insert into teacher_topic-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="topicName != null" >-->
-        <!--topic_name,-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--tid,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="topicName != null" >-->
-        <!--#{topicName,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--#{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertTeacherTopic" parameterType="com.gdms.model.TeacherTopic" >
+    insert into teacher_topic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="topicName != null" >
+        topic_name,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="topicName != null" >
+        #{topicName,jdbcType=VARCHAR},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
   <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.TeacherTopic" >-->
     <!--update teacher_topic-->
     <!--<set >-->

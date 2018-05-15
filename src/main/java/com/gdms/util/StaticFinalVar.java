@@ -62,4 +62,8 @@ public class StaticFinalVar {
     public static final String USERHAVE_ERR ="该用户已存在";
 
     public static final String MAJOR_ERR ="请选择与院部相对应的专业";
+    public static final String DOWNLOAD_OK ="下载成功";
+
+    public static final String ALLOT_OK ="分配成功";
+    public static final String ALLOT_ERR ="人数超过限制";
 }
