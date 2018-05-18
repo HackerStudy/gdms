@@ -15,4 +15,6 @@ public interface TeacherTopicMapper extends Mapper<TeacherTopic> {
 
     int queryCountTeacherTopic(String tid);
 
+    TeacherTopic queryTeacherTopicByTopicName(String topicName);
+
 }

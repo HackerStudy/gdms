@@ -28,37 +28,37 @@
     <!--values (#{id,jdbcType=INTEGER}, #{tid,jdbcType=VARCHAR}, #{haveNumber,jdbcType=INTEGER}, -->
       <!--#{limitNumber,jdbcType=INTEGER})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.AdviseTeacher" >-->
-    <!--insert into advise_teacher-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--tid,-->
-      <!--</if>-->
-      <!--<if test="haveNumber != null" >-->
-        <!--have_number,-->
-      <!--</if>-->
-      <!--<if test="limitNumber != null" >-->
-        <!--limit_number,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--#{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="haveNumber != null" >-->
-        <!--#{haveNumber,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="limitNumber != null" >-->
-        <!--#{limitNumber,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertAdviseTeacherByTid" parameterType="com.gdms.model.AdviseTeacher" >
+    insert into advise_teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="haveNumber != null" >
+        have_number,
+      </if>
+      <if test="limitNumber != null" >
+        limit_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="haveNumber != null" >
+        #{haveNumber,jdbcType=INTEGER},
+      </if>
+      <if test="limitNumber != null" >
+        #{limitNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
   <update id="updateAdviseTeacher" parameterType="com.gdms.model.AdviseTeacher" >
     update advise_teacher
     <set >

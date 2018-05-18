@@ -27,10 +27,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.print.attribute.standard.Sides;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.net.PasswordAuthentication;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -111,7 +109,7 @@ public class AdviseController {
                 map = KitUtil.returnMap("101", StaticFinalVar.APPLYTTEACHER_OK_);
                 return JSONObject.toJSON(map);
             }else{
-                if(limitNumber-haveNumber>=0) {
+                if(limitNumber-haveNumber>0) {
                     advise.setId(advise1.getId());
                     advise.setPass(0);
                     int j = adviseService.updateAdvise(advise);
@@ -128,7 +126,7 @@ public class AdviseController {
                 }
             }
         }else{
-            if(limitNumber-haveNumber>=0) {
+            if(limitNumber-haveNumber>0) {
                 int j = adviseService.insertAdvise(advise);
                 if (j > 0) {
                     map = KitUtil.returnMap("200", StaticFinalVar.APPLY_OK_);
@@ -378,9 +376,11 @@ public class AdviseController {
         Map<String,Object> map = new HashMap<String,Object>();
         int page = Integer.valueOf(request.getParameter("page"));// 获得页数
         int limit = Integer.valueOf(request.getParameter("limit"));// 获得每页显示条数
-        List<AdviseStudentVo> adviseStudentVoList=studentService.queryPageDistributionStudent(page,limit);
+        Teacher teacher1=(Teacher) session.getAttribute("adviserTeacher");
+        Teacher teacher=teacherService.queryTeacherByTid(teacher1.getTid());
+        List<AdviseStudentVo> adviseStudentVoList=studentService.queryPageDistributionStudent(teacher.getDid(),page,limit);
         // 分页查询
-        int size = studentService.queryCountDistributionStudent();
+        int size = studentService.queryCountDistributionStudent(teacher.getDid());
         // 返回数据
         map.put("code",0);
         map.put("msg","");
@@ -397,20 +397,24 @@ public class AdviseController {
         String sid=request.getParameter("sid");
         Teacher teacher=(Teacher) session.getAttribute("adviserTeacher");
         AdviseTeacher adviseTeacher1=adviseTeacherService.queryAdviseTeacherByTid(teacher.getTid());
-        AdviseTeacher adviseTeacher=new AdviseTeacher();
-        adviseTeacher.setTid(teacher.getTid());
-        adviseTeacher.setHaveNumber(adviseTeacher1.getHaveNumber()+1);
-        int i=adviseTeacherService.updateAdviseTeacherByTid(adviseTeacher);
-        AdviseTAndS adviseTAndS=new AdviseTAndS();
-        adviseTAndS.setSid(sid);
-        adviseTAndS.setTid(teacher.getTid());
-        int j=adviseTAndSService.insertAdviseTAndS(adviseTAndS);
-        Student student=new Student();
-        student.setId(id);
-        student.setAdviserid(teacher.getId());
-        int q=studentService.updateStudent(student);
-        // 先保存组
-        return KitUtil.returnMap("200",StaticFinalVar.ALLOT_OK);
+        if(adviseTeacher1.getLimitNumber()>adviseTeacher1.getHaveNumber()){
+            AdviseTeacher adviseTeacher=new AdviseTeacher();
+            adviseTeacher.setTid(teacher.getTid());
+            adviseTeacher.setHaveNumber(adviseTeacher1.getHaveNumber()+1);
+            int i=adviseTeacherService.updateAdviseTeacherByTid(adviseTeacher);
+            AdviseTAndS adviseTAndS=new AdviseTAndS();
+            adviseTAndS.setSid(sid);
+            adviseTAndS.setTid(teacher.getTid());
+            int j=adviseTAndSService.insertAdviseTAndS(adviseTAndS);
+            Student student=new Student();
+            student.setId(id);
+            student.setAdviserid(teacher.getId());
+            int q=studentService.updateStudent(student);
+            // 先保存组
+            return KitUtil.returnMap("200",StaticFinalVar.ALLOT_OK);
+        }else{
+            return KitUtil.returnMap("101",StaticFinalVar.ALLOT_ERR);
+        }
     }
 
     @RequestMapping(value = "/allAllot", method = RequestMethod.POST)
@@ -481,5 +485,34 @@ public class AdviseController {
         return JSONObject.toJSON(map);
     }
 
+    @RequestMapping(value = "/goCarryStudent", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView goCarryStudent(HttpServletRequest request,HttpSession session){
+        ModelAndView mv = new ModelAndView();
+//        Integer id= Integer.valueOf(request.getParameter("id"));
+        String tid=request.getParameter("tid");
+        session.setAttribute("tid",tid);
+        mv.setViewName("/view/adviser/lookAllCarryStudent");
+        return mv;
+    }
+
+    @RequestMapping(value = "/AllCarryStudentGetAllJson", method = RequestMethod.POST)
+    @ResponseBody
+    public Object AllCarryStudentGetAllJson(HttpServletRequest request,HttpSession session){
+        Map<String,Object> map = new HashMap<String,Object>();
+        String page = request.getParameter("page");// 获得页数
+        String limit = request.getParameter("limit");// 获得每页显示条数
+        String tid =(String) session.getAttribute("tid");
+        Teacher teacher=teacherService.queryTeacherByTid(tid);
+        List<AdviseStudentVo> adviseStudentVoList=studentService.queryPageAdviseStudent(teacher.getTid(),Integer.valueOf(page),Integer.valueOf(limit));
+        // 分页查询
+        int size = studentService.queryCountAdviseStudent(teacher.getTid());
+        // 返回数据
+        map.put("code",0);
+        map.put("msg","");
+        map.put("count",size);
+        map.put("data",adviseStudentVoList);
+        return JSONObject.toJSON(map);
+    }
 
 }

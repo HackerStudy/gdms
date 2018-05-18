@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="gdms:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/gdms_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/target/kit-admin</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -8,6 +8,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: javax:javaee-api:7.0" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Maven: junit:junit:4.12" />
@@ -77,7 +78,9 @@
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-utils:1.5.15" />
         </element>
       </element>
-      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-devtools:unknown" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/kit-admin/META-INF/MANIFEST.MF" />
+      </element>
       <element id="javaee-facet-resources" facet="gdms/web/Web" />
     </root>
   </artifact>

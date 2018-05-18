@@ -57,6 +57,24 @@
     </constructor>
   </resultMap>
 
+  <resultMap id="TeacherVoMap" type="TeacherVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="work_time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="hdegree" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="teaching_direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="position" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="identityname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, tid, tname, password, sex, work_time, hdegree, teaching_direction, position, 
     icon, did, mid, identity_id
@@ -83,10 +101,27 @@
       <if test="tid!=null">
         tid= #{tid,jdbcType=VARCHAR}
       </if>
-      <if  test="did!=null" >
+      <if  test="did!=0" >
         and did=#{did,jdbcType=INTEGER}
       </if>
-      <if  test="mid!=null" >
+      <if  test="mid!=0" >
+        and mid=#{mid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+
+  <select id="queryCountByCondition" resultType="java.lang.Integer" parameterType="teacher" >
+    select
+    COUNT(*)
+    from teacher
+    <where>
+      <if test="tid!=null">
+        tid= #{tid,jdbcType=VARCHAR}
+      </if>
+      <if  test="did!=0" >
+        and did=#{did,jdbcType=INTEGER}
+      </if>
+      <if  test="mid!=0" >
         and mid=#{mid,jdbcType=INTEGER}
       </if>
     </where>
@@ -326,5 +361,56 @@
     inner join sex e on a.sex=e.id
     inner join identity f on a.identity_id=f.identity_id
     where a.tid= #{tid}
+  </select>
+
+  <select id="queryTeacherByIdentity" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+    where  identity_id= #{identity,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryTeacherVo" resultMap="TeacherVoMap" parameterType="teacher" >
+    select
+    a.id,a.tid,a.tname,e.sex_name,a.work_time,a.hdegree,a.teaching_direction,a.position,c.department_name,d.major_name,f.identityname,b.phone,b.email
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join identity f on f.identity_id=a.identity_id
+    <where>
+      <if test="tid!=null">
+        a.tid= #{tid,jdbcType=VARCHAR}
+      </if>
+      <if  test="did!=0" >
+        and a.did=#{did,jdbcType=INTEGER}
+      </if>
+      <if  test="mid!=0" >
+        and a.mid=#{mid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+
+  <select id="queryCountTeacherVo" resultType="java.lang.Integer" parameterType="teacher" >
+    select
+    COUNT(*)
+    from teacher a
+    inner join teacher_contact b  ON  a.tid=b.tid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    inner join identity f on f.identity_id=a.identity_id
+    <where>
+      <if test="tid!=null">
+        a.tid= #{tid,jdbcType=VARCHAR}
+      </if>
+      <if  test="did!=0" >
+        and a.did=#{did,jdbcType=INTEGER}
+      </if>
+      <if  test="mid!=0" >
+        and a.mid=#{mid,jdbcType=INTEGER}
+      </if>
+    </where>
   </select>
 </mapper>

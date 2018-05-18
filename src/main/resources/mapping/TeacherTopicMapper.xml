@@ -18,6 +18,12 @@
     where tid = #{tid,jdbcType=VARCHAR}
   </select>
 
+  <select id="queryTeacherTopicByTopicName" resultType="TeacherTopic" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from teacher_topic
+    where topic_name = #{topicName,jdbcType=VARCHAR}
+  </select>
 
   <select id="queryCountTeacherTopic" resultType="java.lang.Integer" parameterType="java.lang.String" >
     select

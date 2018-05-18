@@ -5,6 +5,7 @@ import com.gdms.model.Teacher;
 import com.gdms.model.TeacherContact;
 import com.gdms.vo.AdviseTeacherVo;
 import com.gdms.vo.TeacherInfoVo;
+import com.gdms.vo.TeacherVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.common.Mapper;
@@ -21,6 +22,8 @@ public interface TeacherMapper extends Mapper<Teacher> {
 
     List<Teacher> getTeacherList(Teacher teacher);
 
+    int queryCountByCondition(Teacher teacher);
+
     Teacher queryTeacherByTid(@Param("tid") String tid);
 
     int queryidByTid(@Param("tid") String tid);
@@ -36,4 +39,10 @@ public interface TeacherMapper extends Mapper<Teacher> {
     int queryCountAdviseTeacherVoByDid(@Param("did") Integer did,@Param("identity") Integer identity);
 
     TeacherInfoVo queryTeacherInfoVoByTid(@Param("tid") String tid);
+
+    List<Teacher> queryTeacherByIdentity(Integer identity);
+
+    List<TeacherVo> queryTeacherVo(Teacher teacher);
+
+    int queryCountTeacherVo(Teacher teacher);
 }

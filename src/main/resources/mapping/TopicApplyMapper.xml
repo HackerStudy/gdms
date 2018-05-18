@@ -34,6 +34,14 @@
     from topic_apply
     where sid = #{sid,jdbcType=VARCHAR}
   </select>
+
+    <select id="queryTopicApplyByTopicName" resultType="TopicApply" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from topic_apply
+        where topic_name = #{topicName,jdbcType=VARCHAR}
+    </select>
+
   <delete id="deleteTopicApplyBySid" parameterType="java.lang.String" >
     delete from topic_apply
     where sid = #{sid,jdbcType=VARCHAR}
@@ -135,9 +143,9 @@
         c.id,a.sid,a.name,c.topic_name,d.type_name,e.pass_name,c.attachment_name
         from student a
         INNER  JOIN  teacher b ON a.adviserid=b.id
-        INNER  JOIN topic_apply c ON a.sid=c.sid
-        INNER  JOIN types d ON c.type=d.type_id
-        INNER  JOIN pass_situation e ON c.pass_situation=e.passId
+        left join topic_apply c ON a.sid=c.sid
+        left join types d ON c.type=d.type_id
+        left join pass_situation e ON c.pass_situation=e.passId
         where b.id =#{id,jdbcType=INTEGER}
     </select>
 
@@ -146,9 +154,9 @@
         COUNT(*)
         from student a
         INNER  JOIN  teacher b ON a.adviserid=b.id
-        INNER  JOIN topic_apply c ON a.sid=c.sid
-        INNER  JOIN types d ON c.type=d.type_id
-        INNER  JOIN pass_situation e ON c.pass_situation=e.passId
+        left join topic_apply c ON a.sid=c.sid
+        left join types d ON c.type=d.type_id
+        left join pass_situation e ON c.pass_situation=e.passId
         where b.id =#{id,jdbcType=INTEGER}
     </select>
 

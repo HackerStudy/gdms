@@ -2,6 +2,7 @@ package com.gdms.dao;
 
 import com.gdms.model.Student;
 import com.gdms.vo.AdviseStudentVo;
+import com.gdms.vo.GStudentVo;
 import com.gdms.vo.StudentInfoVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -43,7 +44,11 @@ public interface StudentMapper extends Mapper<Student> {
 
     StudentInfoVo queryStudentInfoVoBySid(String sid);
 
-    List<AdviseStudentVo> queryDistributionStudent();
+    List<AdviseStudentVo> queryDistributionStudent(Integer did);
 
-    Integer queryCountDistributionStudent();
+    Integer queryCountDistributionStudent(Integer did);
+
+    List<GStudentVo> queryGStudentVo(Student student);
+
+    Integer queryCountGStudentVo(Student student);
 }

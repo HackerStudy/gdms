@@ -51,6 +51,23 @@
   </constructor>
 </resultMap>
 
+  <resultMap id="GStudentVoMap" type="GStudentVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="group_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, sid, name, password, sex, did, mid, grade, sclass, phone, email, icon, adviserid, 
     replygroupid
@@ -402,24 +419,67 @@ where b.tid=#{tid}
     where a.sid= #{sid}
   </select>
 
-  <select id="queryDistributionStudent" resultMap="adviseStudentList">
+  <select id="queryDistributionStudent" resultMap="adviseStudentList" parameterType="java.lang.Integer">
     select
     a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email
     from student a
     INNER  JOIN department c ON a.did=c.did
     inner join major d on a.mid=d.mid
     inner join sex e on a.sex=e.id
-    where a.adviserid is NULL
+    where a.adviserid is NULL and a.did=#{did,jdbcType=INTEGER}
   </select>
 
-  <select id="queryCountDistributionStudent" resultType="java.lang.Integer">
+  <select id="queryCountDistributionStudent" resultType="java.lang.Integer" parameterType="java.lang.Integer">
     select
     COUNT(*)
     from student a
     INNER  JOIN department c ON a.did=c.did
     inner join major d on a.mid=d.mid
     inner join sex e on a.sex=e.id
-    where a.adviserid is NULL
+    where a.adviserid is NULL and a.did=#{did,jdbcType=INTEGER}
   </select>
 
+  <select id="queryGStudentVo" resultMap="GStudentVoMap" parameterType="Student" >
+    select
+    a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email,f.tname,g.group_name
+    from student a
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    left join teacher f on f.id=a.adviseridf
+    left join reply_group g on g.id=a.replygroupid
+    <where>
+      <if test="sid!=null">
+        a.sid= #{sid,jdbcType=VARCHAR}
+      </if>
+      <if  test="did!=0" >
+        and a.did=#{did,jdbcType=INTEGER}
+      </if>
+      <if  test="mid!=0" >
+        and a.mid=#{mid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
+
+  <select id="queryCountGStudentVo" resultType="java.lang.Integer" parameterType="Student" >
+    select
+    COUNT(*)
+    from student a
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    left join teacher f on f.id=a.adviserid
+    left join reply_group g on g.id=a.replygroupid
+    <where>
+      <if test="sid!=null">
+        a.sid= #{sid,jdbcType=VARCHAR}
+      </if>
+      <if  test="did!=0" >
+        and a.did=#{did,jdbcType=INTEGER}
+      </if>
+      <if  test="mid!=0" >
+        and a.mid=#{mid,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
 </mapper>

@@ -83,7 +83,7 @@ public class GroupController {
 
         String page = request.getParameter("page");// 获得页数
         String limit = request.getParameter("limit");// 获得每页显示条数
-        String search = request.getParameter("search");// 获取搜索条件
+        String search = null;// 获取搜索条件
 
 //        封装数据
         GGroup gGroup = new GGroup();

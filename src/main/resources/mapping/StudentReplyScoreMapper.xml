@@ -78,24 +78,24 @@
       </if>
     </trim>
   </insert>
-  <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.StudentReplyScoreVo" >-->
-    <!--update student_reply_score-->
-    <!--<set >-->
-      <!--<if test="sid != null" >-->
-        <!--sid = #{sid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="openTopicScore != null" >-->
-        <!--open_topic_score = #{openTopicScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="midScore != null" >-->
-        <!--mid_score = #{midScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="graduateScore != null" >-->
-        <!--graduate_score = #{graduateScore,jdbcType=INTEGER},-->
-      <!--</if>-->
-    <!--</set>-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</update>-->
+  <update id="updateStudentReplyScore" parameterType="com.gdms.model.StudentReplyScore" >
+    update student_reply_score
+    <set >
+      <if test="sid != null" >
+        sid = #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="openTopicScore != null" >
+        open_topic_score = #{openTopicScore,jdbcType=INTEGER},
+      </if>
+      <if test="midScore != null" >
+        mid_score = #{midScore,jdbcType=INTEGER},
+      </if>
+      <if test="graduateScore != null" >
+        graduate_score = #{graduateScore,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.StudentReplyScoreVo" >-->
     <!--update student_reply_score-->
     <!--set sid = #{sid,jdbcType=VARCHAR},-->
@@ -107,37 +107,37 @@
 
   <select id="queryStuentReplyScoreVoByTid" resultMap="StudentReplyScoreVoMap" parameterType="java.lang.String">
   select
-  a.id,a.sid,b.name,a.open_topic_score,a.mid_score,a.graduate_score
-  from student_reply_score a
-  INNER  JOIN student b ON a.sid=b.sid
-  inner join advise_teacherandstudent c on a.sid=c.sid
+  a.id,b.sid,b.name,a.open_topic_score,a.mid_score,a.graduate_score
+  from student b
+  left JOIN student_reply_score  a ON a.sid=b.sid
+  inner join advise_teacherandstudent c on b.sid=c.sid
   where c.tid=#{tid,jdbcType=VARCHAR}
 </select>
 
   <select id="queryCountStuentReplyScoreVoByTid" resultType="java.lang.Integer" parameterType="java.lang.String">
     select
     COUNT(*)
-    from student_reply_score a
-    INNER  JOIN student b ON a.sid=b.sid
-    inner join advise_teacherandstudent c on a.sid=c.sid
+    from student b
+    left JOIN student_reply_score  a ON a.sid=b.sid
+    inner join advise_teacherandstudent c on b.sid=c.sid
     where c.tid=#{tid,jdbcType=VARCHAR}
   </select>
 
   <select id="queryStuentReplyScoreVoByGid" resultMap="StudentReplyScoreVoMap" parameterType="java.lang.Integer">
     select
-    a.id,a.sid,b.name,a.open_topic_score,a.mid_score,a.graduate_score
-    from student_reply_score a
-    INNER  JOIN student b ON a.sid=b.sid
-    inner JOIN  reply_group_student c on a.sid=c.sid
+    a.id,b.sid,b.name,a.open_topic_score,a.mid_score,a.graduate_score
+     from student b
+    left JOIN student_reply_score  a ON a.sid=b.sid
+    inner JOIN  reply_group_student c on b.sid=c.sid
     where c.gid=#{gid,jdbcType=INTEGER}
   </select>
 
   <select id="queryCountStuentReplyScoreVoByGid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
     select
     COUNT(*)
-    from student_reply_score a
-    INNER  JOIN student b ON a.sid=b.sid
-    inner JOIN  reply_group_student c on a.sid=c.sid
+     from student b
+    left JOIN student_reply_score  a ON a.sid=b.sid
+    inner JOIN  reply_group_student c on b.sid=c.sid
     where c.gid=#{gid,jdbcType=INTEGER}
   </select>
 

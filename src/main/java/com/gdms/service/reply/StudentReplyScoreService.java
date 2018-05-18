@@ -24,4 +24,6 @@ public interface StudentReplyScoreService extends BaseService<StudentReplyScore>
     List<StudentReplyScoreVo> queryStuentReplyScoreVoByGid(Integer gid);
 
     int queryCountStuentReplyScoreVoByGid(Integer gid);
+
+    int updateStudentReplyScore(StudentReplyScore studentReplyScore);
 }

@@ -6,6 +6,7 @@ import com.gdms.model.TeacherContact;
 import com.gdms.service.common.BaseService;
 import com.gdms.vo.AdviseTeacherVo;
 import com.gdms.vo.TeacherInfoVo;
+import com.gdms.vo.TeacherVo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public interface TeacherService extends BaseService<Teacher> {
     int updateTeacher(Teacher teacher);
 
     List<Teacher> getTeacherList(Teacher teacher, Integer page, Integer rows);
+
+    int queryCountByCondition(Teacher teacher);
 
     Teacher queryTeacherByTid(String tid);
 
@@ -33,7 +36,6 @@ public interface TeacherService extends BaseService<Teacher> {
 
     int queryCountAdviseTeacherVo();
 
-
     List<AdviseTeacherVo> queryPageAdviseTeacherVoListByDid(Integer did,Integer identity,Integer page, Integer rows);
 
     List<AdviseTeacherVo> queryAdviseTeacherVoListByDid(Integer did,Integer identity);
@@ -41,5 +43,13 @@ public interface TeacherService extends BaseService<Teacher> {
     int queryCountAdviseTeacherVoByDid(Integer did,Integer identity);
 
     TeacherInfoVo queryTeacherInfoVoByTid(String tid);
+
+    List<Teacher> queryTeacherByIdentity(Integer identity);
+
+    List<TeacherVo> queryPageTeacherVoList(Teacher teacher, Integer page, Integer rows);
+
+    List<TeacherVo> queryTeacherVo(Teacher teacher);
+
+    int queryCountTeacherVo(Teacher teacher);
 
 }

@@ -2,6 +2,7 @@ package com.gdms.service.user;
 import com.gdms.model.Student;
 import com.gdms.service.common.BaseService;
 import com.gdms.vo.AdviseStudentVo;
+import com.gdms.vo.GStudentVo;
 import com.gdms.vo.StudentInfoVo;
 import org.apache.ibatis.annotations.Param;
 
@@ -31,9 +32,15 @@ public interface StudentService extends BaseService<Student> {
 
     StudentInfoVo queryStudentInfoVoBySid(String sid);
 
-    List<AdviseStudentVo> queryPageDistributionStudent(Integer page, Integer rows);
+    List<AdviseStudentVo> queryPageDistributionStudent(Integer did,Integer page, Integer rows);
 
-    List<AdviseStudentVo> queryDistributionStudent();
+    List<AdviseStudentVo> queryDistributionStudent(Integer did);
 
-    Integer queryCountDistributionStudent();
+    Integer queryCountDistributionStudent(Integer did);
+
+    List<GStudentVo> queryPageGStudentVo(Student student,Integer page, Integer rows);
+
+    List<GStudentVo> queryGStudentVo(Student student);
+
+    Integer queryCountGStudentVo(Student student);
 }

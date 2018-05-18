@@ -7,6 +7,8 @@ import com.gdms.controller.score.ScoreController;
 import com.gdms.model.*;
 import com.gdms.service.reply.*;
 import com.gdms.service.topic.TopicApplyService;
+import com.gdms.service.user.StudentService;
+import com.gdms.service.user.TeacherService;
 import com.gdms.util.StaticFinalVar;
 import com.gdms.vo.*;
 import jdk.nashorn.internal.ir.RuntimeNode;
@@ -47,6 +49,12 @@ public class ReplyController {
 
     @Resource
     StudentReplyScoreService studentReplyScoreService;
+
+    @Resource
+    StudentService studentService;
+
+    @Resource
+    TeacherService teacherService;
 
     @RequestMapping(value = "/goLookStayReplyGroup", method = RequestMethod.GET)
     @ResponseBody
@@ -461,11 +469,19 @@ public class ReplyController {
         Map<String,Object> map = new HashMap<String,Object>();
         List<ReplyStudentVo> replyStudentVoList=replyGroupStudentService.queryReplyStudentVo();
         List<ReplyStudentVo> replyStudentVoList1=new ArrayList<ReplyStudentVo>();
+        int id=new Integer(session.getAttribute("groupId1").toString());
+        ReplyGroup replyGroup=replyGroupService.queryById(id);
+        Teacher teacher=teacherService.queryTeacherByTid(replyGroup.getGroupLeaderTid());
         for (ReplyStudentVo list2:replyStudentVoList) {
             ReplyGroupStudent replyGroupStudent=replyGroupStudentService.queryReplyGroupStudentBySid(list2.getSid());
             if(replyGroupStudent!=null){
             }else{
-                replyStudentVoList1.add(list2);
+                Student student=studentService.queryStudentBySid(list2.getSid());
+                if (student.getDid()==teacher.getDid()){
+                    replyStudentVoList1.add(list2);
+                }else{
+
+                }
             }
         }
         map.put("code",0);
@@ -534,11 +550,19 @@ public class ReplyController {
         Map<String,Object> map = new HashMap<String,Object>();
         List<ReplyTeacherVo> replyTeacherVoList=replyGroupTeacherService.queryReplyTeacherVo();
         List<ReplyTeacherVo> replyTeacherVoList1=new ArrayList<ReplyTeacherVo>();
+        int id=new Integer(session.getAttribute("groupId1").toString());
+        ReplyGroup replyGroup=replyGroupService.queryById(id);
+        Teacher teacher=teacherService.queryTeacherByTid(replyGroup.getGroupLeaderTid());
             for (ReplyTeacherVo list2:replyTeacherVoList) {
                 ReplyGroupTeacher replyGroupTeacher=replyGroupTeacherService.queryReplyGroupTeacherByTid(list2.getTid());
                 if(replyGroupTeacher!=null){
                 }else{
-                    replyTeacherVoList1.add(list2);
+                    Teacher teacher1=teacherService.queryTeacherByTid(list2.getTid());
+                    if(teacher.getDid()==teacher1.getDid()) {
+                        replyTeacherVoList1.add(list2);
+                    }else{
+
+                    }
                 }
             }
             map.put("code",0);
@@ -635,11 +659,12 @@ public class ReplyController {
             j=studentReplyScoreService.insertStudentReplyScore(studentReplyScore1);
         }else{
             StudentReplyScore studentReplyScore1=new StudentReplyScore();
+            studentReplyScore1.setId(studentReplyScore.getId());
             studentReplyScore1.setSid(replyReview.getSid());
             studentReplyScore1.setOpenTopicScore((studentReplyScore.getOpenTopicScore()+replyReview.getOpenTopicScore())/2);
             studentReplyScore1.setMidScore((studentReplyScore.getMidScore()+replyReview.getMidScore())/2);
             studentReplyScore1.setGraduateScore((studentReplyScore.getGraduateScore()+replyReview.getGraduateScore())/2);
-            j=studentReplyScoreService.insertStudentReplyScore(studentReplyScore1);
+            j=studentReplyScoreService.updateStudentReplyScore(studentReplyScore1);
         }
         if(j>0){
             int i=replyReviewService.deleteById(id);

@@ -15,7 +15,7 @@
   <select id="queryAllNotice" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from notice
+    from notice order BY time DESC
   </select>
   <delete id="deleteNoticeByid" parameterType="java.lang.Integer" >
     delete from notice

@@ -9,4 +9,6 @@ public interface AdviseTeacherMapper extends Mapper<AdviseTeacher> {
     int updateAdviseTeacher(AdviseTeacher adviseTeacher);
 
     int updateAdviseTeacherByTid(AdviseTeacher adviseTeacher);
+
+    int insertAdviseTeacherByTid(AdviseTeacher adviseTeacher);
 }

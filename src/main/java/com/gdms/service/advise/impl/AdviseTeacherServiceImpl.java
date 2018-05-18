@@ -34,4 +34,8 @@ public class AdviseTeacherServiceImpl extends BaseServiceImpl<AdviseTeacher> imp
     public int updateAdviseTeacherByTid(AdviseTeacher adviseTeacher) {
         return adviseTeacherMapper.updateAdviseTeacherByTid(adviseTeacher);
     }
+
+    public int insertAdviseTeacherByTid(AdviseTeacher adviseTeacher) {
+        return adviseTeacherMapper.insertAdviseTeacherByTid(adviseTeacher);
+    }
 }

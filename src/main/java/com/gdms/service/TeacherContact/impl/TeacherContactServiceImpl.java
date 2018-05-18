@@ -38,4 +38,16 @@ public class TeacherContactServiceImpl extends BaseServiceImpl<TeacherContact> i
     public int updateTeacherContactByTid(TeacherContact teacherContact) {
         return teacherContactMapper.updateTeacherContactByTid(teacherContact);
     }
+
+    public TeacherContact queryTeacherContactByTid(String tid) {
+        return teacherContactMapper.queryTeacherContactByTid(tid);
+    }
+
+    public int insertTeacherContact(TeacherContact teacherContact) {
+        return teacherContactMapper.insertTeacherContact(teacherContact);
+    }
+
+    public int deleteTeacherContactByTid(String tid) {
+        return teacherContactMapper.deleteTeacherContactByTid(tid);
+    }
 }

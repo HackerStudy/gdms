@@ -387,7 +387,7 @@ public class ScoreController {
         int adviserScore=Integer.valueOf(request.getParameter("adviserScore"));
         int replyScore=Integer.valueOf(request.getParameter("replyScore"));
         int paperScore=Integer.valueOf(request.getParameter("paperScore"));
-        int totalScore=(adviserScore+replyScore+paperScore)/3;
+        int totalScore=Integer.parseInt(new java.text.DecimalFormat("0").format((adviserScore*0.5)+(replyScore*0.35)+(paperScore*0.15)));
         StudentScore studentScore=new StudentScore();
         studentScore.setSid(sid);
         studentScore.setAdviserScore(adviserScore);

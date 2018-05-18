@@ -65,24 +65,33 @@ public class TopicController {
 
     @RequestMapping(value = "/addTopicByOnself", method = RequestMethod.POST)
     @ResponseBody
-    public Object addTopicByOnself(HttpServletRequest request,HttpSession session){
-        String topicName=request.getParameter("topicName");
-        int type=0;
-        String attachmentName=request.getParameter("attachmentName");
-        String attachmentUrl=request.getParameter("attachmentUrl");
-        Student student=(Student) session.getAttribute("student");
-        String sid=student.getSid();
-        TopicApply topicApply=new TopicApply();
+    public Object addTopicByOnself(HttpServletRequest request,HttpSession session) {
+        String topicName = request.getParameter("topicName");
+        int type = 0;
+        String attachmentName = request.getParameter("attachmentName");
+        String attachmentUrl = request.getParameter("attachmentUrl");
+        Student student = (Student) session.getAttribute("student");
+        String sid = student.getSid();
+        TopicApply topicApply = new TopicApply();
         topicApply.setTopicName(topicName);
         topicApply.setType(type);
         topicApply.setAttachmentName(attachmentName);
         topicApply.setAttachmentUrl(attachmentUrl);
         topicApply.setSid(sid);
-        int i=topicApplyService.insertTopicApply(topicApply);
-        if(i>0){
-            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
-        }else {
-            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+        TopicApply topicApply1=topicApplyService.queryTopicApplyByTopicName(topicName);
+        if(topicApply1==null) {
+            if (attachmentName == null || attachmentName.equals("")) {
+                return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.UPLOAD_ERR));
+            } else {
+                int i = topicApplyService.insertTopicApply(topicApply);
+                if (i > 0) {
+                    return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
+                } else {
+                    return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.ADD_ERR));
+                }
+            }
+        }else{
+            return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.TOPICSTAY_ERR));
         }
     }
 
@@ -121,11 +130,20 @@ public class TopicController {
         topicApply.setAttachmentName(attachmentName);
         topicApply.setAttachmentUrl(attachmentUrl);
         topicApply.setSid(sid);
-        int i=topicApplyService.insertTopicApply(topicApply);
-        if(i>0){
-            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
-        }else {
-            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+        TopicApply topicApply1=topicApplyService.queryTopicApplyByTopicName(topicName);
+        if(topicApply1==null) {
+            if (attachmentName == null || attachmentName.equals("")) {
+                return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.UPLOAD_ERR));
+            } else {
+                int i = topicApplyService.insertTopicApply(topicApply);
+                if (i > 0) {
+                    return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
+                } else {
+                    return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.ADD_ERR));
+                }
+            }
+        }else{
+            return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.TOPICSTAY_ERR));
         }
     }
 
@@ -206,11 +224,17 @@ public class TopicController {
         TeacherTopic teacherTopic=new TeacherTopic();
         teacherTopic.setTopicName(topicName);
         teacherTopic.setTid(teacher.getTid());
-        int i=teacherTopicService.insertTeacherTopic(teacherTopic);
-        if(i>0){
-            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
-        }else {
-            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+        TopicApply topicApply=topicApplyService.queryTopicApplyByTopicName(topicName);
+        TeacherTopic teacherTopic1=teacherTopicService.queryTeacherTopicByTopicName(topicName);
+        if(topicApply==null&&teacherTopic1==null) {
+            int i = teacherTopicService.insertTeacherTopic(teacherTopic);
+            if (i > 0) {
+                return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
+            } else {
+                return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.ADD_ERR));
+            }
+        }else{
+            return JSONObject.toJSON(KitUtil.returnMap("101", StaticFinalVar.TOPICSTAY_ERR));
         }
     }
 

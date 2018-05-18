@@ -35,47 +35,47 @@
     <!--from teacher_contact-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</select>-->
-  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
-    <!--delete from teacher_contact-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
-  <!--</delete>-->
+  <delete id="deleteTeacherContactByTid" parameterType="java.lang.String" >
+    delete from teacher_contact
+    where tid = #{tid,jdbcType=VARCHAR}
+  </delete>
   <!--<insert id="insert" parameterType="com.gdms.model.TeacherContact" >-->
     <!--insert into teacher_contact (id, tid, email, -->
       <!--phone)-->
     <!--values (#{id,jdbcType=INTEGER}, #{tid,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, -->
       <!--#{phone,jdbcType=VARCHAR})-->
   <!--</insert>-->
-  <!--<insert id="insertSelective" parameterType="com.gdms.model.TeacherContact" >-->
-    <!--insert into teacher_contact-->
-    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--id,-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--tid,-->
-      <!--</if>-->
-      <!--<if test="email != null" >-->
-        <!--email,-->
-      <!--</if>-->
-      <!--<if test="phone != null" >-->
-        <!--phone,-->
-      <!--</if>-->
-    <!--</trim>-->
-    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
-      <!--<if test="id != null" >-->
-        <!--#{id,jdbcType=INTEGER},-->
-      <!--</if>-->
-      <!--<if test="tid != null" >-->
-        <!--#{tid,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="email != null" >-->
-        <!--#{email,jdbcType=VARCHAR},-->
-      <!--</if>-->
-      <!--<if test="phone != null" >-->
-        <!--#{phone,jdbcType=VARCHAR},-->
-      <!--</if>-->
-    <!--</trim>-->
-  <!--</insert>-->
+  <insert id="insertTeacherContact" parameterType="com.gdms.model.TeacherContact" >
+    insert into teacher_contact
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
   <update id="updateTeacherContactByTid" parameterType="com.gdms.model.TeacherContact" >
     update teacher_contact
     <set >
@@ -95,4 +95,10 @@
       <!--phone = #{phone,jdbcType=VARCHAR}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <select id="queryTeacherContactByTid" resultType="TeacherContact">
+    select
+    <include refid="Base_Column_List" />
+    from teacher_contact WHERE tid=#{tid,jdbcType=VARCHAR}
+  </select>
 </mapper>

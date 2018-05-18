@@ -28,4 +28,6 @@ public interface AdminService extends BaseService<Admin> {
     int updateAdmin(Admin admin);
 
     Admin queryAdminByKitAdminUsername(String kitAdminUsername);
+
+    List<Admin> queryAdminByIdentity(Integer identity);
 }

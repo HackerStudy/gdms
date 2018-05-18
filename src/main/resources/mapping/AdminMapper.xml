@@ -173,4 +173,10 @@
     from kit_admin
     where kit_admin_username = #{kitAdminUsername,jdbcType=VARCHAR}
   </select>
+
+  <select id="queryAdminByIdentity" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include  refid="Base_Column_List"/>
+    from kit_admin where group_id=#{identity,jdbcType=INTEGER}
+  </select>
 </mapper>

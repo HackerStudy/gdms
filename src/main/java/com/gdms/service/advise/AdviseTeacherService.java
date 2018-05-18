@@ -10,4 +10,6 @@ public interface AdviseTeacherService extends BaseService<AdviseTeacher> {
     int updateAdviseTeacher(AdviseTeacher adviseTeacher);
 
     int updateAdviseTeacherByTid(AdviseTeacher adviseTeacher);
+
+    int insertAdviseTeacherByTid(AdviseTeacher adviseTeacher);
 }

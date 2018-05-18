@@ -82,9 +82,9 @@ public class PersonController {
         if(i>0){
             Admin admin1=adminService.queryByUUID(kitAdminId);
             session.setAttribute("admin",admin1);
-            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.ADD_OK));
+            return JSONObject.toJSON(KitUtil.returnMap("200", StaticFinalVar.UPDATE_OK));
         }else {
-            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.ADD_ERR));
+            return JSONObject.toJSON(KitUtil.returnMap("101",StaticFinalVar.UPDATE_ERR));
         }
     }
 

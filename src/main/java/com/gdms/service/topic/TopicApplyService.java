@@ -36,4 +36,6 @@ public interface TopicApplyService extends BaseService<TopicApply> {
     int queryCountStudentTopicVoByGid(Integer gid);
 
     int updateTopicApplyById(TopicApply topicApply);
+
+    TopicApply queryTopicApplyByTopicName(String topicName);
 }

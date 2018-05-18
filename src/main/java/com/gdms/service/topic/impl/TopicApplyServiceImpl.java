@@ -79,4 +79,8 @@ public class TopicApplyServiceImpl extends BaseServiceImpl<TopicApply> implement
     public int updateTopicApplyById(TopicApply topicApply) {
         return topicApplyMapper.updateTopicApplyById(topicApply);
     }
+
+    public TopicApply queryTopicApplyByTopicName(String topicName) {
+        return topicApplyMapper.queryTopicApplyByTopicName(topicName);
+    }
 }

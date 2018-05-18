@@ -248,7 +248,9 @@ public class AdminController {
         String kitAdminUsername = request.getParameter("kitAdminUsername");
         String kitAdminPassword = request.getParameter("kitAdminPassword");
         Admin admin = new Admin();
-        admin.setKitAdminId(KitUtil.uuid());
+        int i= (int)(Math.random() * 1000000);
+        String id=String.valueOf(i);
+        admin.setKitAdminId(id);
         admin.setKitAdminName(kitAdminName);
         admin.setKitAdminUsername(kitAdminUsername);
         admin.setKitAdminImgUrl(imgurl);

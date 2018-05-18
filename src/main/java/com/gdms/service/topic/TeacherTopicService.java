@@ -14,5 +14,7 @@ public interface TeacherTopicService extends BaseService<TeacherTopic> {
 
     int queryCountTeacherTopic(String tid);
 
+    TeacherTopic queryTeacherTopicByTopicName(String topicName);
+
     int insertTeacherTopic(TeacherTopic teacherTopic);
 }

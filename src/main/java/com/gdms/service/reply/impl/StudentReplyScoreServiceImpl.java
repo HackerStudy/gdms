@@ -57,4 +57,8 @@ public class StudentReplyScoreServiceImpl extends BaseServiceImpl<StudentReplySc
     public int queryCountStuentReplyScoreVoByGid(Integer gid) {
         return studentReplyScoreMapper.queryCountStuentReplyScoreVoByGid(gid);
     }
+
+    public int updateStudentReplyScore(StudentReplyScore studentReplyScore) {
+        return studentReplyScoreMapper.updateStudentReplyScore(studentReplyScore);
+    }
 }

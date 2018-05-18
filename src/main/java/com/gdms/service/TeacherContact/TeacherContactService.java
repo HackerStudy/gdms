@@ -14,4 +14,10 @@ public interface TeacherContactService  extends BaseService<TeacherContact> {
     List<TeacherContact> queryTeacherContactList();
 
     int updateTeacherContactByTid(TeacherContact teacherContact);
+
+    TeacherContact queryTeacherContactByTid(String tid);
+
+    int insertTeacherContact(TeacherContact teacherContact);
+
+    int deleteTeacherContactByTid(String tid);
 }

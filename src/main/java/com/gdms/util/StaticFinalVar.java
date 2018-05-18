@@ -9,7 +9,7 @@ public class StaticFinalVar {
     public static final String YAN = "kit20180205";  // 这里是密码加密，混淆密文，这个我们尽量不要去修改
     public static final String IMG_FILES = "uplodefiles/image/";  // 这里是保存图片的根目录，必须保证有读写权限
     public static final String FILE = "uplodefiles/file/";
-    public static final String USERNAME_OR_PWD_ERR = "用户名、密码或者身份错误";
+    public static final String USERNAME_OR_PWD_ERR = "密码输入错误";
     public static final String ADD_OK = "添加成功";
     public static final String ADD_ERR = "添加失败，请稍后再试";
     public static final String DEL_OK = "删除成功";
@@ -66,4 +66,11 @@ public class StaticFinalVar {
 
     public static final String ALLOT_OK ="分配成功";
     public static final String ALLOT_ERR ="人数超过限制";
+    public static final String LOGINIDNTITY_ERR ="用户名或身份输入错误";
+    public static final String LOGINSTUDENT_ERR ="用户名、密码或身份输入错误";
+    public static final String LOGINAGAIN_OK ="请重新登录";
+    public static final String DIDANDMID_ERR ="请输入与院部相对应的专业";
+    public static final String UPLOAD_ERR ="请上传课题附件";
+    public static final String TOPICSTAY_ERR ="该课题已存在，请从输入新的课题名";
+
 }

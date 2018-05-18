@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="gdms:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/gdms_war</output-path>
-    <root id="archive" name="gdms_war.war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="kit-admin.war">
       <element id="artifact" artifact-name="gdms:war exploded" />
     </root>
   </artifact>

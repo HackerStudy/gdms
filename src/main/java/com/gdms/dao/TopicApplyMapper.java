@@ -29,4 +29,6 @@ public interface TopicApplyMapper extends Mapper<TopicApply> {
 
     int updateTopicApplyById(TopicApply topicApply);
 
+    TopicApply queryTopicApplyByTopicName(String topicName);
+
 }

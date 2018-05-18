@@ -7,6 +7,7 @@ import com.gdms.service.common.impl.BaseServiceImpl;
 import com.gdms.service.user.TeacherService;
 import com.gdms.vo.AdviseTeacherVo;
 import com.gdms.vo.TeacherInfoVo;
+import com.gdms.vo.TeacherVo;
 import com.github.pagehelper.PageHelper;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,10 @@ public class TeacherServiceImpl extends BaseServiceImpl<Teacher> implements Teac
     public List<Teacher> getTeacherList(Teacher teacher, Integer page, Integer rows) {
         PageHelper.startPage(page, rows);
         return teacherMapper.getTeacherList(teacher);
+    }
+
+    public int queryCountByCondition(Teacher teacher) {
+        return teacherMapper.queryCountByCondition(teacher);
     }
 
     public Teacher queryTeacherByTid(String tid) {
@@ -86,6 +91,23 @@ public class TeacherServiceImpl extends BaseServiceImpl<Teacher> implements Teac
 
     public TeacherInfoVo queryTeacherInfoVoByTid(String tid) {
         return teacherMapper.queryTeacherInfoVoByTid(tid);
+    }
+
+    public List<Teacher> queryTeacherByIdentity(Integer identity) {
+        return teacherMapper.queryTeacherByIdentity(identity);
+    }
+
+    public List<TeacherVo> queryPageTeacherVoList(Teacher teacher, Integer page, Integer rows) {
+        PageHelper.startPage(page, rows);
+        return queryTeacherVo(teacher);
+    }
+
+    public List<TeacherVo> queryTeacherVo(Teacher teacher) {
+        return teacherMapper.queryTeacherVo(teacher);
+    }
+
+    public int queryCountTeacherVo(Teacher teacher) {
+        return teacherMapper.queryCountTeacherVo(teacher);
     }
 
 }

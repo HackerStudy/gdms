@@ -33,6 +33,10 @@ public class TeacherTopicServiceImpl extends BaseServiceImpl<TeacherTopic> imple
         return teacherTopicMapper.queryCountTeacherTopic(tid);
     }
 
+    public TeacherTopic queryTeacherTopicByTopicName(String topicName) {
+        return teacherTopicMapper.queryTeacherTopicByTopicName(topicName);
+    }
+
     public int insertTeacherTopic(TeacherTopic teacherTopic) {
         return teacherTopicMapper.insertTeacherTopic(teacherTopic);
     }

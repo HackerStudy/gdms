@@ -5,6 +5,7 @@ import com.gdms.model.Student;
 import com.gdms.service.common.impl.BaseServiceImpl;
 import com.gdms.service.user.StudentService;
 import com.gdms.vo.AdviseStudentVo;
+import com.gdms.vo.GStudentVo;
 import com.gdms.vo.StudentInfoVo;
 import com.github.pagehelper.PageHelper;
 import org.apache.log4j.Logger;
@@ -68,17 +69,30 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements Stud
         return studentMapper.queryStudentInfoVoBySid(sid);
     }
 
-    public List<AdviseStudentVo> queryPageDistributionStudent(Integer page, Integer rows) {
+    public List<AdviseStudentVo> queryPageDistributionStudent(Integer did,Integer page, Integer rows) {
         PageHelper.startPage(page, rows);
-        return queryDistributionStudent();
+        return queryDistributionStudent(did);
     }
 
-    public List<AdviseStudentVo> queryDistributionStudent() {
-        return studentMapper.queryDistributionStudent();
+    public List<AdviseStudentVo> queryDistributionStudent(Integer did) {
+        return studentMapper.queryDistributionStudent(did);
     }
 
-    public Integer queryCountDistributionStudent() {
-        return studentMapper.queryCountDistributionStudent();
+    public Integer queryCountDistributionStudent(Integer did) {
+        return studentMapper.queryCountDistributionStudent(did);
+    }
+
+    public List<GStudentVo> queryPageGStudentVo(Student student, Integer page, Integer rows) {
+        PageHelper.startPage(page, rows);
+        return queryGStudentVo(student);
+    }
+
+    public List<GStudentVo> queryGStudentVo(Student student) {
+        return studentMapper.queryGStudentVo(student);
+    }
+
+    public Integer queryCountGStudentVo(Student student) {
+        return studentMapper.queryCountGStudentVo(student);
     }
 
 }
