@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gdms.dao.AdviseMapper" >
+  <resultMap id="BaseResultMap" type="com.gdms.model.Advise" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="pass" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+
+  <resultMap id="adviseStudentList" type="AdviseStudentVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, tid, sid, pass
+  </sql>
+  <select id="queryAdviseBySid" resultType="advise" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from advise_apply
+    where sid = #{sid}
+  </select>
+
+  <select id="queryCount" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select
+    COUNT(*)
+    from advise_apply
+    where tid = #{tid}
+  </select>
+
+  <select id="getAdviseList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from advise_apply
+    where tid = #{tid} and pass=#{pass}
+  </select>
+
+  <delete id="deleteByTidAndSid">
+    delete from advise_apply
+    where tid = #{tid,jdbcType=VARCHAR} and sid=#{sid,jdbcType=VARCHAR}
+  </delete>
+  <!--<insert id="insert" parameterType="com.gdms.model.Advise" >-->
+    <!--insert into advise_apply (id, tid, sid, -->
+      <!--pass)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{tid,jdbcType=VARCHAR}, #{sid,jdbcType=VARCHAR}, -->
+      <!--#{pass,jdbcType=INTEGER})-->
+  <!--</insert>-->
+  <insert id="insertAdvise" parameterType="com.gdms.model.Advise" >
+    insert into advise_apply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="pass != null" >
+        pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="sid != null" >
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null" >
+        #{pass,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateAdvise" parameterType="com.gdms.model.Advise" >
+    update advise_apply
+    <set >
+      <if test="tid != null" >
+        tid = #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="sid != null" >
+        sid = #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null" >
+        pass = #{pass,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.Advise" >-->
+    <!--update advise_apply-->
+    <!--set tid = #{tid,jdbcType=VARCHAR},-->
+      <!--sid = #{sid,jdbcType=VARCHAR},-->
+      <!--pass = #{pass,jdbcType=INTEGER}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+
+  <select id="queryApplyStudent" resultMap="adviseStudentList" parameterType="java.lang.String" >
+    select
+    a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email
+    from student a
+    inner join advise_apply b  ON  a.sid=b.sid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where b.tid= #{tid} and b.pass=0
+  </select>
+
+  <select id="queryCountApplyStudent" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select
+    COUNT(*)
+    from student a
+     inner join advise_apply b  ON  a.sid=b.sid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where b.tid= #{tid} and b.pass=0
+  </select>
+
+
+</mapper>

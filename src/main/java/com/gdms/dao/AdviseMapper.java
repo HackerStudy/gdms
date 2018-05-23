@@ -1,6 +1,7 @@
 package com.gdms.dao;
 
 import com.gdms.model.Advise;
+import com.gdms.vo.AdviseStudentVo;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
@@ -30,4 +31,9 @@ public interface AdviseMapper extends Mapper<Advise> {
     int queryCount(String tid);
 
     int updateAdvise(Advise advise);
+
+    List<AdviseStudentVo> queryApplyStudent(String tid);
+
+    Integer queryCountApplyStudent(String tid);
+
 }

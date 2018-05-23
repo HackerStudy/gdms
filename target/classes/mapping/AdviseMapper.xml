@@ -9,6 +9,22 @@
       <arg column="pass" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
+
+  <resultMap id="adviseStudentList" type="AdviseStudentVo" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="department_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="grade" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sclass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, tid, sid, pass
   </sql>
@@ -96,4 +112,28 @@
       <!--pass = #{pass,jdbcType=INTEGER}-->
     <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</update>-->
+
+  <select id="queryApplyStudent" resultMap="adviseStudentList" parameterType="java.lang.String" >
+    select
+    a.id,a.sid,a.name,e.sex_name,c.department_name,d.major_name,a.grade,a.sclass,a.phone,a.email
+    from student a
+    inner join advise_apply b  ON  a.sid=b.sid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where b.tid= #{tid} and b.pass=0
+  </select>
+
+  <select id="queryCountApplyStudent" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select
+    COUNT(*)
+    from student a
+     inner join advise_apply b  ON  a.sid=b.sid
+    INNER  JOIN department c ON a.did=c.did
+    inner join major d on a.mid=d.mid
+    inner join sex e on a.sex=e.id
+    where b.tid= #{tid} and b.pass=0
+  </select>
+
+
 </mapper>

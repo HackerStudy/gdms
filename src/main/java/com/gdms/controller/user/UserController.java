@@ -453,7 +453,7 @@ public class UserController {
         teacher.setPosition(position);
         teacher.setIdentityId(identityId);
         Teacher teacher1=teacherService.queryById(id);
-        if(teacher1.getTid()==tid){
+        if(teacher1.getTid().equals(tid)){
 
         }else{
             AdviseTeacher adviseTeacher=adviseTeacherService.queryAdviseTeacherByTid(teacher1.getTid());
@@ -482,10 +482,14 @@ public class UserController {
         Integer id = Integer.valueOf(request.getParameter("id"));
         String tid=request.getParameter("tid");
         // 删除
+        AdviseTeacher adviseTeacher=adviseTeacherService.queryAdviseTeacherByTid(tid);
+        if(adviseTeacher!=null) {
+            int q = adviseTeacherService.deleteById(adviseTeacher.getId());
+        }else{
+
+        }
         int i = teacherService.deleteById(id);
         int j=teacherContactService.deleteTeacherContactByTid(tid);
-        AdviseTeacher adviseTeacher=adviseTeacherService.queryAdviseTeacherByTid(tid);
-        int q=adviseTeacherService.deleteById(adviseTeacher.getId());
         map = (i>0)? KitUtil.returnMap("200", StaticFinalVar.DEL_OK):KitUtil.returnMap("101",StaticFinalVar.DEL_ERR);
         return JSONObject.toJSON(map);
     }
@@ -500,7 +504,11 @@ public class UserController {
             j=teacherService.deleteById(list.getId());
             f=teacherContactService.deleteTeacherContactByTid(list.getTid());
             AdviseTeacher adviseTeacher=adviseTeacherService.queryAdviseTeacherByTid(list.getTid());
-            int q=adviseTeacherService.deleteById(adviseTeacher.getId());
+            if(adviseTeacher!=null) {
+                int q=adviseTeacherService.deleteById(adviseTeacher.getId());
+            }else{
+
+            }
             if(j>0){
             }else{
                 map1=KitUtil.returnMap("200",StaticFinalVar.DEL_ERR);

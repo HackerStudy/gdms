@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gdms.dao.IdentityMapper" >
+  <resultMap id="BaseResultMap" type="com.gdms.model.Identity" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="identity_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="identityname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="group_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, identity_id, identityname, group_id
+  </sql>
+  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
+    <!--select -->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from identity-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</select>-->
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
+    <!--delete from identity-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</delete>-->
+  <!--<insert id="insert" parameterType="com.gdms.model.Identity" >-->
+    <!--insert into identity (id, identity_id, identityname, -->
+      <!--group_id)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{identityId,jdbcType=INTEGER}, #{identityname,jdbcType=VARCHAR}, -->
+      <!--#{groupId,jdbcType=INTEGER})-->
+  <!--</insert>-->
+  <!--<insert id="insertSelective" parameterType="com.gdms.model.Identity" >-->
+    <!--insert into identity-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--id,-->
+      <!--</if>-->
+      <!--<if test="identityId != null" >-->
+        <!--identity_id,-->
+      <!--</if>-->
+      <!--<if test="identityname != null" >-->
+        <!--identityname,-->
+      <!--</if>-->
+      <!--<if test="groupId != null" >-->
+        <!--group_id,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
+      <!--<if test="id != null" >-->
+        <!--#{id,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="identityId != null" >-->
+        <!--#{identityId,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="identityname != null" >-->
+        <!--#{identityname,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="groupId != null" >-->
+        <!--#{groupId,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+  <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.Identity" >-->
+    <!--update identity-->
+    <!--<set >-->
+      <!--<if test="identityId != null" >-->
+        <!--identity_id = #{identityId,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="identityname != null" >-->
+        <!--identityname = #{identityname,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="groupId != null" >-->
+        <!--group_id = #{groupId,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</set>-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+  <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.Identity" >-->
+    <!--update identity-->
+    <!--set identity_id = #{identityId,jdbcType=INTEGER},-->
+      <!--identityname = #{identityname,jdbcType=VARCHAR},-->
+      <!--group_id = #{groupId,jdbcType=INTEGER}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+</mapper>

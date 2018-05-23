@@ -8,6 +8,7 @@ import com.gdms.service.advise.AdviseService;
 import com.gdms.service.common.impl.BaseServiceImpl;
 import com.gdms.service.user.StudentService;
 import com.gdms.service.user.impl.UserServiceImpl;
+import com.gdms.vo.AdviseStudentVo;
 import com.github.pagehelper.PageHelper;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,19 @@ public class AdviseServiceImpl extends BaseServiceImpl<Advise> implements Advise
 
     public int updateAdvise(Advise advise) {
         return adviseMapper.updateAdvise(advise);
+    }
+
+    public List<AdviseStudentVo> queryPageApplyStudent(String tid, Integer page, Integer rows) {
+        PageHelper.startPage(page, rows);
+        return queryApplyStudent(tid);
+    }
+
+    public List<AdviseStudentVo> queryApplyStudent(String tid) {
+        return adviseMapper.queryApplyStudent(tid);
+    }
+
+    public Integer queryCountApplyStudent(String tid) {
+        return adviseMapper.queryCountApplyStudent(tid);
     }
 
 }

@@ -201,23 +201,24 @@ public class AdviseController {
         String limit = request.getParameter("limit");// 获得每页显示条数
         Teacher teacher=(Teacher) session.getAttribute("teacher");
 //        Student student=new Student();
-        List<Advise> adviseList=adviseService.queryPageByTid(teacher.getTid(),0,Integer.valueOf(page),Integer.valueOf(limit));
-        List<Student> studentList= studentService.queryAll();
-        List<StudentVo> studentVoList=new ArrayList<StudentVo>();
-        for (Student list:studentList) {
-            for(Advise list2:adviseList){
-                if(list2.getSid().equals(list.getSid())){
-                    StudentVo studentVo=new StudentVo(list.getId(),list.getSid(),list.getName(),list.getSex(),list.getDid(),list.getMid(),list.getGrade(),list.getSclass(),list.getPhone(),list.getEmail());
-                    studentVoList.add(studentVo);
-                }
-            }
-        }
-        int size = adviseService.queryCount(teacher.getTid());
+//        List<Advise> adviseList=adviseService.queryPageByTid(teacher.getTid(),0,Integer.valueOf(page),Integer.valueOf(limit));
+//        List<Student> studentList= studentService.queryAll();
+//        List<StudentVo> studentVoList=new ArrayList<StudentVo>();
+//        for (Student list:studentList) {
+//            for(Advise list2:adviseList){
+//                if(list2.getSid().equals(list.getSid())){
+//                    StudentVo studentVo=new StudentVo(list.getId(),list.getSid(),list.getName(),list.getSex(),list.getDid(),list.getMid(),list.getGrade(),list.getSclass(),list.getPhone(),list.getEmail());
+//                    studentVoList.add(studentVo);
+//                }
+//            }
+//        }
+        List<AdviseStudentVo> adviseStudentVoList=adviseService.queryPageApplyStudent(teacher.getTid(),Integer.valueOf(page),Integer.valueOf(limit));
+        int size = adviseService.queryCountApplyStudent(teacher.getTid());
         // 返回数据
         map.put("code",0);
         map.put("msg","");
         map.put("count",size);
-        map.put("data",studentVoList);
+        map.put("data",adviseStudentVoList);
         return JSONObject.toJSON(map);
     }
 

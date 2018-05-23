@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gdms.dao.ReplyScoreMapper" >
+  <resultMap id="BaseResultMap" type="com.gdms.model.ReplyScore" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="open_topic_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="mid_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="graduate_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="reply_score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="entry_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sid, open_topic_score, mid_score, graduate_score, reply_score, entry_status
+  </sql>
+  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
+    <!--select -->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from reply_score-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</select>-->
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
+    <!--delete from reply_score-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</delete>-->
+  <!--<insert id="insert" parameterType="com.gdms.model.ReplyScore" >-->
+    <!--insert into reply_score (id, sid, open_topic_score, -->
+      <!--mid_score, graduate_score, reply_score, -->
+      <!--entry_status)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{openTopicScore,jdbcType=INTEGER}, -->
+      <!--#{midScore,jdbcType=INTEGER}, #{graduateScore,jdbcType=INTEGER}, #{replyScore,jdbcType=INTEGER}, -->
+      <!--#{entryStatus,jdbcType=INTEGER})-->
+  <!--</insert>-->
+  <insert id="insertReplyScore" parameterType="com.gdms.model.ReplyScore" >
+    insert into reply_score
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="openTopicScore != null" >
+        open_topic_score,
+      </if>
+      <if test="midScore != null" >
+        mid_score,
+      </if>
+      <if test="graduateScore != null" >
+        graduate_score,
+      </if>
+      <if test="replyScore != null" >
+        reply_score,
+      </if>
+      <if test="entryStatus != null" >
+        entry_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null" >
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="openTopicScore != null" >
+        #{openTopicScore,jdbcType=INTEGER},
+      </if>
+      <if test="midScore != null" >
+        #{midScore,jdbcType=INTEGER},
+      </if>
+      <if test="graduateScore != null" >
+        #{graduateScore,jdbcType=INTEGER},
+      </if>
+      <if test="replyScore != null" >
+        #{replyScore,jdbcType=INTEGER},
+      </if>
+      <if test="entryStatus != null" >
+        #{entryStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <!--<update id="updateByPrimaryKeySelective" parameterType="com.gdms.model.ReplyScore" >-->
+    <!--update reply_score-->
+    <!--<set >-->
+      <!--<if test="sid != null" >-->
+        <!--sid = #{sid,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="openTopicScore != null" >-->
+        <!--open_topic_score = #{openTopicScore,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="midScore != null" >-->
+        <!--mid_score = #{midScore,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="graduateScore != null" >-->
+        <!--graduate_score = #{graduateScore,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="replyScore != null" >-->
+        <!--reply_score = #{replyScore,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="entryStatus != null" >-->
+        <!--entry_status = #{entryStatus,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</set>-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+  <!--<update id="updateByPrimaryKey" parameterType="com.gdms.model.ReplyScore" >-->
+    <!--update reply_score-->
+    <!--set sid = #{sid,jdbcType=VARCHAR},-->
+      <!--open_topic_score = #{openTopicScore,jdbcType=INTEGER},-->
+      <!--mid_score = #{midScore,jdbcType=INTEGER},-->
+      <!--graduate_score = #{graduateScore,jdbcType=INTEGER},-->
+      <!--reply_score = #{replyScore,jdbcType=INTEGER},-->
+      <!--entry_status = #{entryStatus,jdbcType=INTEGER}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+</mapper>

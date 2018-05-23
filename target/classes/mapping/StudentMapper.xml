@@ -446,7 +446,7 @@ where b.tid=#{tid}
     INNER  JOIN department c ON a.did=c.did
     inner join major d on a.mid=d.mid
     inner join sex e on a.sex=e.id
-    left join teacher f on f.id=a.adviseridf
+    left join teacher f on f.id=a.adviserid
     left join reply_group g on g.id=a.replygroupid
     <where>
       <if test="sid!=null">
